@@ -1,0 +1,6541 @@
+#############################################################################################
+# Welcome to EliteEnchantments, using this plugin you can create your own
+# enchantments or use the default ones.
+#
+# How to create your own enchantments?
+#
+# 1) Copy and paste one of the default enchantments underneath the Enchants: section
+# 2) Change all the values to match how you want the enchant to be
+# 3) Set the effects from the wide range of effects which can be found at /ee effects
+# 4) Save the file and restart (recommended) or you can use /ee reload
+#
+# Usable options
+# cooldown - The time taken to cooldown before the enchant can be active
+# chance - Chance that this enchant has to be activated
+# condition - A condition you can set that needs to be reached before an enchant can execute
+#
+# headless: [Enchantment Name (Lowercase)]
+#   name: "Headless" [Enchantment Displayname]
+#   description: [Enchantment Description]
+#     - 'Victims have a chance of'
+#     - 'dropping their head on death.'
+#   group: "SIMPLE" [Enchantment Group]
+#   applies: "SWORDS" [Enchantment Application Group]
+#   type: "KILL" [Enchantment Type]
+#   levels:
+#     1: [Level Number]
+#       chance: 2.5 [Enchantment Chance] (OPTIONAL)
+#       cooldown: 5 [Enchantment Cooldown] (OPTIONAL)
+#       condition: "isTargetHolding BOW" (OPTIONAL)
+#       effects:
+#         - 'DROP_HEAD' [Enchantment Effect]
+#############################################################################################
+Enchants:
+  ################################################################################################
+  #                                        SIMPLE                                                #
+  ################################################################################################
+  headless:
+    name: "Headless"
+    description:
+      - 'Victims have a chance of'
+      - 'dropping their head on death.'
+    group: "SIMPLE"
+    applies: "SWORDS"
+    type: "KILL"
+    levels:
+      1:
+        chance: 15
+        effects:
+          - 'DROP_HEAD:TARGET'
+      2:
+        chance: 35
+        effects:
+          - 'DROP_HEAD:TARGET'
+      3:
+        chance: 50
+        effects:
+          - 'DROP_HEAD:TARGET'
+  confusion:
+    name: "Confusion"
+    description:
+      - 'A chance to deal nausea to your victim.'
+    group: "SIMPLE"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.05
+        cooldown: 2
+        effects:
+          - 'POTION:CONFUSION:1:TARGET:3'
+      2:
+        chance: 1.95
+        cooldown: 2
+        effects:
+          - 'POTION:CONFUSION:2:TARGET:3'
+      3:
+        chance: 2.5
+        cooldown: 2
+        effects:
+          - 'POTION:CONFUSION:2:TARGET:3'
+  experience:
+    name: "Experience"
+    description:
+      - 'Gives more exp when mining blocks.'
+    group: "SIMPLE"
+    applies: "PICKAXE"
+    type: "MINE"
+    levels:
+      1:
+        chance: 15
+        effects:
+          - 'EXP:1.5'
+      2:
+        chance: 30
+        effects:
+          - 'EXP:2'
+      3:
+        chance: 45
+        effects:
+          - 'EXP:2.5'
+      4:
+        chance: 60
+        effects:
+          - 'EXP:3'
+      5:
+        chance: 75
+        effects:
+          - 'EXP:5'
+  insomnia:
+    name: "Insomnia"
+    description:
+      - 'Gives slowness, slow swinging'
+      - 'and confusion.'
+    group: "SIMPLE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 5
+        effects:
+          - 'POTION:CONFUSION:1:TARGET:3'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'POTION:SLOW_DIGGING:1:TARGET:3'
+      2:
+        chance: 3
+        cooldown: 5
+        effects:
+          - 'POTION:CONFUSION:1:TARGET:3'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'POTION:SLOW_DIGGING:1:TARGET:3'
+      3:
+        chance: 4
+        cooldown: 5
+        effects:
+          - 'POTION:CONFUSION:1:TARGET:3'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'POTION:SLOW_DIGGING:1:TARGET:3'
+      4:
+        chance: 5
+        cooldown: 5
+        effects:
+          - 'POTION:CONFUSION:1:TARGET:3'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'POTION:SLOW_DIGGING:1:TARGET:3'
+      5:
+        chance: 7
+        cooldown: 5
+        effects:
+          - 'POTION:CONFUSION:2:TARGET:3'
+          - 'POTION:SLOW:2:TARGET:3'
+          - 'POTION:SLOW_DIGGING:2:TARGET:3'
+      6:
+        chance: 9
+        cooldown: 5
+        effects:
+          - 'POTION:CONFUSION:2:TARGET:3'
+          - 'POTION:SLOW:2:TARGET:3'
+          - 'POTION:SLOW_DIGGING:2:TARGET:3'
+      7:
+        chance: 12
+        cooldown: 5
+        effects:
+          - 'POTION:CONFUSION:2:TARGET:5'
+          - 'POTION:SLOW:2:TARGET:5'
+          - 'POTION:SLOW_DIGGING:2:TARGET:5'
+  lightning:
+    name: "Lightning"
+    description:
+      - 'A chance to strike lightning'
+      - 'where you strike.'
+    group: "SIMPLE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 4
+        cooldown: 5
+        effects:
+          - 'LIGHTNING:TARGET:REAL'
+      2:
+        chance: 8
+        cooldown: 5
+        effects:
+          - 'LIGHTNING:TARGET:REAL'
+      3:
+        chance: 12
+        cooldown: 5
+        effects:
+          - 'LIGHTNING:TARGET:REAL'
+  thundering-blow:
+    name: "Thundering Blow"
+    description:
+      - 'Can cause smite effect'
+      - 'on your enemy.'
+    group: "SIMPLE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.25
+        cooldown: 5
+        effects:
+          - 'LIGHTNING:TARGET:REAL'
+      2:
+        chance: 2.75
+        cooldown: 5
+        effects:
+          - 'LIGHTNING:TARGET:REAL'
+      3:
+        chance: 4
+        cooldown: 5
+        effects:
+          - 'LIGHTNING:TARGET:REAL'
+  decapitation:
+    name: "Decapitation"
+    description:
+      - 'Victims have a chance of dropping'
+      - 'their head on death.'
+    group: "SIMPLE"
+    applies: "AXE"
+    type: "KILL"
+    levels:
+      1:
+        chance: 15
+        effects:
+          - 'DROP_HEAD:TARGET'
+      2:
+        chance: 30
+        effects:
+          - 'DROP_HEAD:TARGET'
+      3:
+        chance: 50
+        effects:
+          - 'DROP_HEAD:TARGET'
+  obliterate:
+    name: "Obliterate"
+    description:
+      - 'Extreme knockback.'
+    group: "SIMPLE"
+    applies: "WEAPON"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 2.75
+        cooldown: 5
+        effects:
+          - 'KNOCKBACK:TARGET:1'
+      2:
+        chance: 4
+        cooldown: 5
+        effects:
+          - 'KNOCKBACK:TARGET:1'
+      3:
+        chance: 6.25
+        cooldown: 5
+        effects:
+          - 'KNOCKBACK:TARGET:1'
+      4:
+        chance: 8
+        cooldown: 5
+        effects:
+          - 'KNOCKBACK:TARGET:1'
+      5:
+        chance: 10
+        cooldown: 5
+        effects:
+          - 'KNOCKBACK:TARGET:2'
+  haste:
+    name: "Haste"
+    description:
+      - 'Allows you to swing your tools faster.'
+    group: "SIMPLE"
+    applies: "TOOLS"
+    type: "HELD"
+    levels:
+      1:
+        effects:
+          - 'POTION:FAST_DIGGING:1:PLAYER'
+      2:
+        effects:
+          - 'POTION:FAST_DIGGING:2:PLAYER'
+      3:
+        effects:
+          - 'POTION:FAST_DIGGING:3:PLAYER'
+  healing:
+    name: "Healing"
+    description:
+      - 'Heals friendly players hit with'
+      - 'arrow shot by this bow Also has a'
+      - 'chance to increase durability of'
+      - 'armor and give absorption/health boost.'
+    group: "SIMPLE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 5
+        cooldown: 5
+        effects:
+          - 'HEAL:ADD:1:3'
+      2:
+        chance: 7
+        cooldown: 5
+        effects:
+          - 'HEAL:ADD:1:3'
+      3:
+        chance: 9
+        cooldown: 5
+        effects:
+          - 'HEAL:ADD:1:3'
+      4:
+        chance: 11
+        cooldown: 5
+        effects:
+          - 'HEAL:ADD:1:3'
+  auto-smelt:
+    name: "Auto Smelt"
+    description:
+      - 'Ores are automatically smelted when mined.'
+    group: "SIMPLE"
+    applies: "PICKAXE"
+    type: "MINE"
+    levels:
+      1:
+        chance: 34
+        effects:
+          - 'SMELT'
+      2:
+        chance: 75
+        effects:
+          - 'SMELT'
+      3:
+        effects:
+          - 'SMELT'
+  aquatic:
+    name: "Aquatic"
+    description:
+      - 'Gives permanent water breathing.'
+    group: "SIMPLE"
+    applies: "HELMET"
+    type: "PASSIVE"
+    levels:
+      1:
+        effects:
+          - 'POTION:WATER_BREATHING:1:PLAYER'
+  glowing:
+    name: "Glowing"
+    description:
+      - 'Gives permanent night vision.'
+    group: "SIMPLE"
+    applies: "HELMET"
+    type: "PASSIVE"
+    levels:
+      1:
+        effects:
+          - 'POTION:NIGHT_VISION:1:PLAYER'
+  oxygenate:
+    name: "Oxygenate"
+    description:
+      - 'Refills oxygen levels when breaking blocks under water.'
+    group: "SIMPLE"
+    applies: "PICKAXE"
+    type: "MINE"
+    levels:
+      1:
+        cooldown: 3
+        effects:
+          - 'FILL_OXYGEN'
+  lumberjack:
+    name: "Lumberjack"
+    description:
+      - 'A chance to break the entire tree.'
+    group: "SIMPLE"
+    applies: "AXE"
+    type: "MINE"
+    levels:
+      1:
+        chance: 34
+        cooldown: 3
+        effects:
+          - 'BREAK_TREE'
+      2:
+        chance: 75
+        cooldown: 3
+        effects:
+          - 'BREAK_TREE'
+      3:
+        cooldown: 3
+        effects:
+          - 'BREAK_TREE'
+  extinguish:
+    name: "Extinguish"
+    description:
+      - 'A chance to extinguish flames.'
+    group: "SIMPLE"
+    applies: "BOOTS"
+    type: "FIRE"
+    levels:
+      1:
+        chance: 15
+        cooldown: 3
+        effects:
+          - 'EXTINGUISH:PLAYER'
+      2:
+        chance: 33
+        cooldown: 3
+        effects:
+          - 'EXTINGUISH:PLAYER'
+  ################################################################################################
+  #                                        UNIQUE                                                #
+  ################################################################################################
+  deep-wounds:
+    name: "Deep Wounds"
+    description:
+      - 'Increases the chance of you'
+      - 'giving the bleed effect.'
+    group: "UNIQUE"
+    applies: "WEAPON"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.75
+        cooldown: 5
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'DAMAGE_INCREASE:5'
+      2:
+        chance: 3
+        cooldown: 5
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'DAMAGE_INCREASE:5'
+      3:
+        chance: 5
+        cooldown: 5
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'DAMAGE_INCREASE:5'
+  featherweight:
+    name: "Featherweight"
+    description:
+      - 'A chance to give a burst of haste.'
+    group: "UNIQUE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 25
+        cooldown: 5
+        effects:
+          - 'POTION:FAST_DIGGING:1:PLAYER:5'
+      2:
+        chance: 50
+        cooldown: 5
+        effects:
+          - 'POTION:FAST_DIGGING:2:PLAYER:5'
+      3:
+        chance: 75
+        cooldown: 5
+        effects:
+          - 'POTION:FAST_DIGGING:3:PLAYER:5'
+  nutrition:
+    name: "Nutrition"
+    description:
+      - '1.2-2x normal hunger replenishment,'
+      - 'allows you to eat more golden apples'
+      - 'before contracting Golden Apple Sickness.'
+    group: "UNIQUE"
+    applies: "LEGGINGS"
+    type: "PASSIVE"
+    levels:
+      1:
+        effects:
+          - 'POTION:SATURATION:1:PLAYER'
+      2:
+        effects:
+          - 'POTION:SATURATION:2:PLAYER'
+      3:
+        effects:
+          - 'POTION:SATURATION:3:PLAYER'
+  ragdoll:
+    name: "Ragdoll"
+    description:
+      - 'Whenever you take damage'
+      - 'you are pushed far back.'
+    group: "UNIQUE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 2.75
+        cooldown: 5
+        effects:
+          - 'KNOCKBACK:PLAYER:4'
+      2:
+        chance: 4
+        cooldown: 5
+        effects:
+          - 'KNOCKBACK:PLAYER:4'
+      3:
+        chance: 6.25
+        cooldown: 5
+        effects:
+          - 'KNOCKBACK:PLAYER:4'
+      4:
+        chance: 8
+        cooldown: 5
+        effects:
+          - 'KNOCKBACK:PLAYER:4'
+  obsidian-destroyer:
+    name: "Obsidian Destroyer"
+    description:
+      - 'Chance to instantly break'
+      - 'obsidian blocks.'
+    group: "UNIQUE"
+    applies: "PICKAXE"
+    type: "INTERACT"
+    levels:
+      1:
+        chance: 15
+        effects:
+          - 'BREAKER:OBSIDIAN'
+      2:
+        chance: 30
+        effects:
+          - 'BREAKER:OBSIDIAN'
+      3:
+        chance: 50
+        effects:
+          - 'BREAKER:OBSIDIAN'
+      4:
+        chance: 65
+        effects:
+          - 'BREAKER:OBSIDIAN'
+      5:
+        chance: 80
+        effects:
+          - 'BREAKER:OBSIDIAN'
+  berserk:
+    name: "Berserk"
+    description:
+      - 'A chance of strength and mining fatigue.'
+    group: "UNIQUE"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.25
+        cooldown: 5
+        effects:
+          - 'POTION:INCREASE_DAMAGE:1:PLAYER:3'
+          - 'POTION:SLOW_DIGGING:1:PLAYER:3'
+      2:
+        chance: 2.95
+        cooldown: 5
+        effects:
+          - 'POTION:INCREASE_DAMAGE:1:PLAYER:3'
+          - 'POTION:SLOW_DIGGING:1:PLAYER:3'
+      3:
+        chance: 4.5
+        cooldown: 5
+        effects:
+          - 'POTION:INCREASE_DAMAGE:1:PLAYER:3'
+          - 'POTION:SLOW_DIGGING:1:PLAYER:3'
+      4:
+        chance: 6
+        cooldown: 5
+        effects:
+          - 'POTION:INCREASE_DAMAGE:1:PLAYER:3'
+          - 'POTION:SLOW_DIGGING:1:PLAYER:3'
+      5:
+        chance: 8
+        cooldown: 5
+        effects:
+          - 'POTION:INCREASE_DAMAGE:1:PLAYER:3'
+          - 'POTION:SLOW_DIGGING:1:PLAYER:3'
+  plague-carrier:
+    name: "Plague Carrier"
+    description:
+      - 'When near death summons creepers'
+      - 'and debuffs to avenge you.'
+    group: "UNIQUE"
+    applies: "LEGGINGS"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 2
+        cooldown: 20
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'SPAWN:CREEPER:20:1:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:1:TARGET:5'
+      2:
+        chance: 3
+        cooldown: 20
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'SPAWN:CREEPER:20:1:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:1:TARGET:5'
+      3:
+        chance: 4
+        cooldown: 20
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'SPAWN:CREEPER:20:1:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:1:TARGET:5'
+      4:
+        chance: 5
+        cooldown: 20
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'SPAWN:CREEPER:20:2:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:2:TARGET:5'
+      5:
+        chance: 6
+        cooldown: 20
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'SPAWN:CREEPER:20:2:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:2:TARGET:5'
+      6:
+        chance: 7
+        cooldown: 20
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'SPAWN:CREEPER:20:2:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:2:TARGET:5'
+      7:
+        chance: 8
+        cooldown: 20
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'SPAWN:CREEPER:20:2:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:2:TARGET:5'
+      8:
+        chance: 9
+        cooldown: 20
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'SPAWN:CREEPER:20:2:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:3:TARGET:5'
+  self-destruct:
+    name: "Self Destruct"
+    description:
+      - 'When close to death buffed'
+      - 'TnT spawns around you.'
+    group: "UNIQUE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 13
+        cooldown: 20
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'TNT:1:PLAYER'
+      2:
+        chance: 17
+        cooldown: 20
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'TNT:2:PLAYER'
+      3:
+        chance: 22
+        cooldown: 20
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'TNT:3:PLAYER'
+  explosive:
+    name: "Explosive"
+    description:
+      - 'Explosive arrows.'
+    group: "UNIQUE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 3
+        cooldown: 3
+        effects:
+          - 'EXPLODE:2:false:TARGET'
+      2:
+        chance: 5
+        cooldown: 3
+        effects:
+          - 'EXPLODE:2:false:TARGET'
+      3:
+        chance: 8
+        cooldown: 3
+        effects:
+          - 'EXPLODE:2:false:TARGET'
+      4:
+        chance: 10
+        cooldown: 3
+        effects:
+          - 'EXPLODE:2:false:TARGET'
+      5:
+        chance: 12
+        cooldown: 3
+        effects:
+          - 'EXPLODE:2:false:TARGET'
+  molten:
+    name: "Molten"
+    description:
+      - 'Chance of setting your attacker ablaze.'
+    group: "UNIQUE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 4
+        cooldown: 3
+        effects:
+          - 'FLAME:1:TARGET'
+      2:
+        chance: 6
+        cooldown: 3
+        effects:
+          - 'FLAME:2:TARGET'
+      3:
+        chance: 8
+        cooldown: 3
+        effects:
+          - 'FLAME:4:TARGET'
+      4:
+        chance: 10
+        cooldown: 3
+        effects:
+          - 'FLAME:6:TARGET'
+  ravenous:
+    name: "Ravenous"
+    description:
+      - 'A chance to regain hunger.'
+    group: "UNIQUE"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 2
+        cooldown: 2
+        effects:
+          - 'FEED:2'
+      2:
+        chance: 4
+        cooldown: 2
+        effects:
+          - 'FEED:3'
+      3:
+        chance: 6
+        cooldown: 2
+        effects:
+          - 'FEED:5'
+      4:
+        chance: 8
+        cooldown: 2
+        effects:
+          - 'FEED:8'
+  ender-shift:
+    name: "Ender Shift"
+    description:
+      - 'Gives a speed/health boost at low hp.'
+    group: "UNIQUE"
+    applies: "BOOTS"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 8
+        cooldown: 10
+        condition: "isPlayerHealth <= 3"
+        effects:
+          - 'SOUND:ENDERDRAGON_GROWL:1'
+          - 'POTION:SPEED:1:PLAYER:4'
+          - 'POTION:ABSORPTION:4:PLAYER:2'
+      2:
+        chance: 10
+        cooldown: 10
+        condition: "isPlayerHealth <= 3"
+        effects:
+          - 'SOUND:ENDERDRAGON_GROWL:1'
+          - 'POTION:SPEED:1:PLAYER:4'
+          - 'POTION:ABSORPTION:4:PLAYER:2'
+      3:
+        chance: 12
+        cooldown: 10
+        condition: "isPlayerHealth <= 3"
+        effects:
+          - 'SOUND:ENDERDRAGON_GROWL:1'
+          - 'POTION:SPEED:1:PLAYER:4'
+          - 'POTION:ABSORPTION:4:PLAYER:2'
+  skill-swipe:
+    name: "Skill Swipe"
+    description:
+      - 'A chance to steal some of your enemy''s'
+      - 'EXP every time you damage them.'
+    group: "UNIQUE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 2
+        cooldown: 2
+        effects:
+          - 'STEAL_EXP:6'
+      2:
+        chance: 5
+        cooldown: 2
+        effects:
+          - 'STEAL_EXP:12'
+      3:
+        chance: 7
+        cooldown: 2
+        effects:
+          - 'STEAL_EXP:18'
+      4:
+        chance: 9
+        cooldown: 2
+        effects:
+          - 'STEAL_EXP:24'
+      5:
+        chance: 11
+        cooldown: 2
+        effects:
+          - 'STEAL_EXP:30'
+  virus:
+    name: "Virus"
+    description:
+      - 'Multiplies all Wither and Poison damage'
+      - 'the affected target receives and has a'
+      - 'chance to remove regeneration effects on hit.'
+    group: "UNIQUE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 3
+        cooldown: 5
+        effects:
+          - 'POTION:WITHER:1:TARGET:3'
+          - 'POTION:POISON:1:TARGET:3'
+      2:
+        chance: 5
+        cooldown: 5
+        effects:
+          - 'POTION:WITHER:1:TARGET:3'
+          - 'POTION:POISON:1:TARGET:3'
+      3:
+        chance: 7
+        cooldown: 5
+        effects:
+          - 'POTION:WITHER:1:TARGET:3'
+          - 'POTION:POISON:1:TARGET:3'
+      4:
+        chance: 9
+        cooldown: 5
+        effects:
+          - 'POTION:WITHER:1:TARGET:3'
+          - 'POTION:POISON:1:TARGET:3'
+  curse:
+    name: "Curse"
+    description:
+      - 'Gives strength, slowness'
+      - 'and resistance at low hp.'
+    group: "UNIQUE"
+    applies: "CHESTPLATE"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 3.5
+        cooldown: 6
+        conditon: "isPlayerHealth <= 4"
+        effects:
+          - 'POTION:INCREASE_DAMAGE:1:PLAYER:5'
+          - 'POTION:SLOW:1:PLAYER:5'
+          - 'POTION:DAMAGE_RESISTANCE:1:PLAYER:5'
+      2:
+        chance: 5
+        cooldown: 6
+        conditon: "isPlayerHealth <= 4"
+        effects:
+          - 'POTION:INCREASE_DAMAGE:1:PLAYER:5'
+          - 'POTION:SLOW:1:PLAYER:5'
+          - 'POTION:DAMAGE_RESISTANCE:1:PLAYER:5'
+      3:
+        chance: 7.5
+        cooldown: 6
+        conditon: "isPlayerHealth <= 4"
+        effects:
+          - 'POTION:INCREASE_DAMAGE:1:PLAYER:5'
+          - 'POTION:SLOW:1:PLAYER:5'
+          - 'POTION:DAMAGE_RESISTANCE:1:PLAYER:5'
+      4:
+        chance: 9
+        cooldown: 6
+        conditon: "isPlayerHealth <= 4"
+        effects:
+          - 'POTION:INCREASE_DAMAGE:2:PLAYER:5'
+          - 'POTION:SLOW:2:PLAYER:5'
+          - 'POTION:DAMAGE_RESISTANCE:1:PLAYER:5'
+      5:
+        chance: 12
+        cooldown: 6
+        conditon: "isPlayerHealth <= 4"
+        effects:
+          - 'POTION:INCREASE_DAMAGE:2:PLAYER:5'
+          - 'POTION:SLOW:2:PLAYER:5'
+          - 'POTION:DAMAGE_RESISTANCE:2:PLAYER:5'
+  telepathy:
+    name: "Telepathy"
+    description:
+      - 'Automatically places blocks broken'
+      - 'by tools in your inventory.'
+    group: "UNIQUE"
+    applies: "TOOLS"
+    type: "MINE"
+    levels:
+      1:
+        chance: 40
+        effects:
+          - 'TELEPORT_DROPS'
+      2:
+        chance: 60
+        effects:
+          - 'TELEPORT_DROPS'
+      3:
+        chance: 80
+        effects:
+          - 'TELEPORT_DROPS'
+      4:
+        effects:
+          - 'TELEPORT_DROPS'
+  leech:
+    name: "Leech"
+    description:
+      - 'A chance to gain saturation and'
+      - 'give your opponent hunger.'
+    group: "UNIQUE"
+    applies: "WEAPON"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 3.25
+        cooldown: 2
+        effects:
+          - 'POTION:SATURATION:1:PLAYER:4'
+          - 'POTION:HUNGER:1:TARGET:4'
+      2:
+        chance: 5
+        cooldown: 2
+        effects:
+          - 'POTION:SATURATION:1:PLAYER:4'
+          - 'POTION:HUNGER:1:TARGET:4'
+      3:
+        chance: 7.15
+        cooldown: 2
+        effects:
+          - 'POTION:SATURATION:1:PLAYER:4'
+          - 'POTION:HUNGER:1:TARGET:4'
+      4:
+        chance: 9
+        cooldown: 2
+        effects:
+          - 'POTION:SATURATION:1:PLAYER:4'
+          - 'POTION:HUNGER:1:TARGET:4'
+  uneasy:
+    name: "Uneasy"
+    description:
+      - 'A chance to confuse your opponent.'
+    group: "UNIQUE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 1.05
+        cooldown: 2
+        effects:
+          - 'POTION:CONFUSION:1:TARGET:3'
+      2:
+        chance: 1.95
+        cooldown: 2
+        effects:
+          - 'POTION:CONFUSION:2:TARGET:3'
+      3:
+        chance: 2.5
+        cooldown: 2
+        effects:
+          - 'POTION:CONFUSION:2:TARGET:3'
+  ################################################################################################
+  #                                        ELITE                                                 #
+  ################################################################################################
+  greatsword:
+    name: "Greatsword"
+    description:
+      - 'Multiplies damage against players'
+      - 'who are wielding a BOW at the time'
+      - 'they are hit.'
+    group: "ELITE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 3.5
+        cooldown: 3
+        conditon: "isTargetHolding BOW"
+        effects:
+          - 'DAMAGE_INCREASE:100'
+      2:
+        chance: 5
+        cooldown: 3
+        conditon: "isTargetHolding BOW"
+        effects:
+          - 'DAMAGE_INCREASE:100'
+      3:
+        chance: 7.5
+        cooldown: 3
+        conditon: "isTargetHolding BOW"
+        effects:
+          - 'DAMAGE_INCREASE:100'
+      4:
+        chance: 10
+        cooldown: 3
+        conditon: "isTargetHolding BOW"
+        effects:
+          - 'DAMAGE_INCREASE:100'
+      5:
+        chance: 12.5
+        cooldown: 3
+        conditon: "isTargetHolding BOW"
+        effects:
+          - 'DAMAGE_INCREASE:100'
+  hardened:
+    name: "Hardened"
+    description:
+      - 'Armor takes less durability damage.'
+    group: "ELITE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 6.25
+        effects:
+          - 'ADD_DURABILITY:2'
+      2:
+        chance: 9
+        effects:
+          - 'ADD_DURABILITY:2'
+      3:
+        chance: 11
+        effects:
+          - 'ADD_DURABILITY:2'
+  paralyze:
+    name: "Paralyze"
+    description:
+      - 'Gives lightning effect and a'
+      - 'chance for slowness and slow swinging.'
+      - 'Also inflicts direct damage on proc.'
+    group: "ELITE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 0.95
+        cooldown: 5
+        effects:
+          - 'LIGHTNING:TARGET:EFFECT'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'POTION:SLOW_DIGGING:1:TARGET:3'
+          - 'DAMAGE:1:2:TARGET'
+      2:
+        chance: 1.95
+        cooldown: 5
+        effects:
+          - 'LIGHTNING:TARGET:EFFECT'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'POTION:SLOW_DIGGING:1:TARGET:3'
+          - 'DAMAGE:1:2:TARGET'
+      3:
+        chance: 2.95
+        cooldown: 5
+        effects:
+          - 'LIGHTNING:TARGET:EFFECT'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'POTION:SLOW_DIGGING:1:TARGET:3'
+          - 'DAMAGE:1:2:TARGET'
+      4:
+        chance: 3.95
+        cooldown: 5
+        effects:
+          - 'LIGHTNING:TARGET:EFFECT'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'POTION:SLOW_DIGGING:1:TARGET:3'
+          - 'DAMAGE:1:2:TARGET'
+  rocket-escape:
+    name: "Rocket Escape"
+    description:
+      - 'Blast off into the air at low HP.'
+    group: "ELITE"
+    applies: "BOOTS"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 30
+        cooldown: 8
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'THROW:0:5:0:PLAYER'
+          - 'SOUND:ENTITY_GENERIC_EXPLODE:2:5'
+      2:
+        chance: 60
+        cooldown: 8
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'THROW:0:5:0:PLAYER'
+          - 'SOUND:ENTITY_GENERIC_EXPLODE:2:5'
+      3:
+        chance: 80
+        cooldown: 8
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'THROW:0:5:0:PLAYER'
+          - 'SOUND:ENTITY_GENERIC_EXPLODE:2:5'
+  blind:
+    name: "Blind"
+    description:
+      - 'A Chance of causing blindness when attacking.'
+    group: "ELITE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 7.5
+        cooldown: 3
+        effects:
+          - 'POTION:BLINDNESS:1:TARGET:4'
+      2:
+        chance: 9
+        cooldown: 3
+        effects:
+          - 'POTION:BLINDNESS:1:TARGET:4'
+      3:
+        chance: 12
+        cooldown: 3
+        effects:
+          - 'POTION:BLINDNESS:1:TARGET:4'
+  anti-gravity:
+    name: "Anti Gravity"
+    description:
+      - 'Super jump but does not negate fall damage.'
+    group: "ELITE"
+    applies: "BOOTS"
+    type: "PASSIVE"
+    levels:
+      1:
+        effects:
+          - 'POTION:JUMP:3:PLAYER'
+      2:
+        effects:
+          - 'POTION:JUMP:4:PLAYER'
+      3:
+        effects:
+          - 'POTION:JUMP:5:PLAYER'
+  poison:
+    name: "Poison"
+    description:
+      - 'A chance of giving the poison effect.'
+    group: "ELITE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 5
+        cooldown: 3
+        effects:
+          - 'POTION:POISON:1:TARGET:3'
+      2:
+        chance: 8
+        cooldown: 3
+        effects:
+          - 'POTION:POISON:1:TARGET:3'
+      3:
+        chance: 12
+        cooldown: 3
+        effects:
+          - 'POTION:POISON:1:TARGET:3'
+  pummel:
+    name: "Pummel"
+    description:
+      - 'Chance to slow nearby enemy players'
+      - 'for a short period.'
+    group: "ELITE"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 3
+        cooldown: 5
+        effects:
+          - 'POTION:SLOW:1:TARGET:3'
+      2:
+        chance: 6
+        cooldown: 5
+        effects:
+          - 'POTION:SLOW:1:TARGET:3'
+      3:
+        chance: 9
+        cooldown: 5
+        effects:
+          - 'POTION:SLOW:1:TARGET:3'
+  shackle:
+    name: "Shackle"
+    description:
+      - 'Prevents mobs spawned from mob spawners'
+      - 'from suffering from knockback from'
+      - 'your attacks.'
+    group: "ELITE"
+    applies: "WEAPON"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 25
+        effects:
+          - 'SHACKLE'
+      2:
+        chance: 50
+        effects:
+          - 'SHACKLE'
+      3:
+        effects:
+          - 'SHACKLE'
+  poisoned:
+    name: "Poisoned"
+    description:
+      - 'Chance to give poison to your attacker.'
+    group: "ELITE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 4
+        cooldown: 3
+        effects:
+          - 'POTION:POISON:1:TARGET:3'
+      2:
+        chance: 6
+        cooldown: 3
+        effects:
+          - 'POTION:POISON:1:TARGET:3'
+      3:
+        chance: 9
+        cooldown: 3
+        effects:
+          - 'POTION:POISON:1:TARGET:3'
+      4:
+        chance: 12
+        cooldown: 3
+        effects:
+          - 'POTION:POISON:1:TARGET:3'
+  stormcaller:
+    name: "Stormcaller"
+    description:
+      - 'Strikes lightning on attacking players.'
+    group: "ELITE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 3.5
+        cooldown: 8
+        effects:
+          - 'LIGHTNING:TARGET:REAL'
+      2:
+        chance: 7
+        cooldown: 8
+        effects:
+          - 'LIGHTNING:TARGET:REAL'
+      3:
+        chance: 10
+        cooldown: 8
+        effects:
+          - 'LIGHTNING:TARGET:REAL'
+      4:
+        chance: 12
+        cooldown: 8
+        effects:
+          - 'LIGHTNING:TARGET:REAL'
+  infernal:
+    name: "Infernal"
+    description:
+      - 'Explosive fire effect.'
+    group: "ELITE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 6
+        cooldown: 4
+        effects:
+          - 'FLAME:3:TARGET'
+          - 'PARTICLE:FLAME'
+          - 'TNT:1'
+      2:
+        chance: 9
+        cooldown: 4
+        effects:
+          - 'FLAME:3:TARGET'
+          - 'PARTICLE:FLAME'
+          - 'TNT:1'
+      3:
+        chance: 10
+        cooldown: 4
+        effects:
+          - 'FLAME:3:TARGET'
+          - 'PARTICLE:FLAME'
+          - 'TNT:1'
+  venom:
+    name: "Venom"
+    description:
+      - 'A chance of dealing poison.'
+    group: "ELITE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 5
+        cooldown: 3
+        effects:
+          - 'POTION:POISON:1:TARGET:3'
+      2:
+        chance: 8
+        cooldown: 3
+        effects:
+          - 'POTION:POISON:1:TARGET:3'
+      3:
+        chance: 11
+        cooldown: 3
+        effects:
+          - 'POTION:POISON:1:TARGET:3'
+  solitude:
+    name: "Solitude"
+    description:
+      - 'Increases chance and length of the'
+      - 'Silence enchantment procing on enemy'
+      - 'players by up to 3X.'
+    group: "ELITE"
+    applies: "WEAPON"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 4
+        cooldown: 6
+        effects:
+          - 'DISABLE_ENCHANTMENT_GROUP:SIMPLE:8'
+          - 'DISABLE_ENCHANTMENT_GROUP:UNIQUE:8'
+          - 'DISABLE_ENCHANTMENT_GROUP:ELITE:8'
+          - 'DISABLE_ENCHANTMENT_GROUP:ULTIMATE:8'
+          - 'DISABLE_ENCHANTMENT_GROUP:LEGENDARY:8'
+          - 'DISABLE_ENCHANTMENT_GROUP:SOUL:8'
+          - 'DISABLE_ENCHANTMENT_GROUP:HEROIC:8'
+          - 'DISABLE_ENCHANTMENT_GROUP:MASTERY:8'
+      2:
+        chance: 6
+        cooldown: 6
+        effects:
+          - 'DISABLE_ENCHANTMENT_GROUP:SIMPLE:10'
+          - 'DISABLE_ENCHANTMENT_GROUP:UNIQUE:10'
+          - 'DISABLE_ENCHANTMENT_GROUP:ELITE:10'
+          - 'DISABLE_ENCHANTMENT_GROUP:ULTIMATE:10'
+          - 'DISABLE_ENCHANTMENT_GROUP:LEGENDARY:10'
+          - 'DISABLE_ENCHANTMENT_GROUP:SOUL:10'
+          - 'DISABLE_ENCHANTMENT_GROUP:HEROIC:10'
+          - 'DISABLE_ENCHANTMENT_GROUP:MASTERY:10'
+      3:
+        chance: 9.25
+        cooldown: 6
+        effects:
+          - 'DISABLE_ENCHANTMENT_GROUP:SIMPLE:12'
+          - 'DISABLE_ENCHANTMENT_GROUP:UNIQUE:12'
+          - 'DISABLE_ENCHANTMENT_GROUP:ELITE:12'
+          - 'DISABLE_ENCHANTMENT_GROUP:ULTIMATE:12'
+          - 'DISABLE_ENCHANTMENT_GROUP:LEGENDARY:12'
+          - 'DISABLE_ENCHANTMENT_GROUP:SOUL:12'
+          - 'DISABLE_ENCHANTMENT_GROUP:HEROIC:12'
+          - 'DISABLE_ENCHANTMENT_GROUP:MASTERY:12'
+      4:
+        chance: 11
+        cooldown: 6
+        effects:
+          - 'DISABLE_ENCHANTMENT_GROUP:SIMPLE:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:UNIQUE:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:ELITE:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:ULTIMATE:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:LEGENDARY:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:SOUL:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:HEROIC:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:MASTERY:15'
+  vampire:
+    name: "Vampire"
+    description:
+      - 'A chance to heal you for up to 3hp a'
+      - 'few seconds after you strike.'
+    group: "ELITE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 2.5
+        cooldown: 5
+        effects:
+          - 'HEAL:STEAL:1:3'
+      2:
+        chance: 4
+        cooldown: 5
+        effects:
+          - 'HEAL:STEAL:1:3'
+      3:
+        chance: 8
+        cooldown: 5
+        effects:
+          - 'HEAL:STEAL:1:3'
+  frozen:
+    name: "Frozen"
+    description:
+      - 'Can cause slowness when attacked.'
+    group: "ELITE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 5
+        cooldown: 3
+        effects:
+          - 'POTION:SLOW:1:TARGET:4'
+      2:
+        chance: 8
+        cooldown: 3
+        effects:
+          - 'POTION:SLOW:1:TARGET:4'
+      3:
+        chance: 12
+        cooldown: 3
+        effects:
+          - 'POTION:SLOW:1:TARGET:4'
+  wither:
+    name: "Wither"
+    description:
+      - 'A chance to give the wither effect.'
+    group: "ELITE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 3
+        cooldown: 4
+        effects:
+          - 'POTION:WITHER:1:TARGET:3'
+      2:
+        chance: 5
+        cooldown: 4
+        effects:
+          - 'POTION:WITHER:1:TARGET:3'
+      3:
+        chance: 7
+        cooldown: 4
+        effects:
+          - 'POTION:WITHER:1:TARGET:3'
+      4:
+        chance: 9
+        cooldown: 4
+        effects:
+          - 'POTION:WITHER:1:TARGET:3'
+      5:
+        chance: 11
+        cooldown: 4
+        effects:
+          - 'POTION:WITHER:1:TARGET:3'
+  farcast:
+    name: "Farcast"
+    description:
+      - 'Chance to knockback melee attackers by '
+      - 'a couple of blocks when they hit you.'
+      - 'The lower your health,'
+      - 'the higher the chance to proc.'
+    group: "ELITE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 3
+        cooldown: 2
+        effects:
+          - 'KNOCKBACK:TARGET:3'
+      2:
+        chance: 6
+        cooldown: 2
+        effects:
+          - 'KNOCKBACK:TARGET:3'
+      3:
+        chance: 9
+        cooldown: 2
+        effects:
+          - 'KNOCKBACK:TARGET:3'
+      4:
+        chance: 12
+        cooldown: 2
+        effects:
+          - 'KNOCKBACK:TARGET:3'
+      5:
+        chance: 15
+        cooldown: 2
+        effects:
+          - 'KNOCKBACK:TARGET:3'
+  snare:
+    name: "Snare"
+    description:
+      - 'Chance to slow and fatigue enemies with projectiles.'
+    group: "ELITE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 4
+        cooldown: 4
+        effects:
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'POTION:SLOW_DIGGING:1:TARGET:3'
+      2:
+        chance: 6
+        cooldown: 4
+        effects:
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'POTION:SLOW_DIGGING:1:TARGET:3'
+      3:
+        chance: 8
+        cooldown: 4
+        effects:
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'POTION:SLOW_DIGGING:1:TARGET:3'
+      4:
+        chance: 10
+        cooldown: 4
+        effects:
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'POTION:SLOW_DIGGING:1:TARGET:3'
+  shockwave:
+    name: "Shockwave"
+    description:
+      - 'The chance to push back your attacker.'
+    group: "ELITE"
+    applies: "CHESTPLATE"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 6
+        effects:
+          - 'KNOCKBACK:TARGET:5'
+      2:
+        chance: 3
+        cooldown: 6
+        effects:
+          - 'KNOCKBACK:TARGET:5'
+      3:
+        chance: 5
+        cooldown: 6
+        effects:
+          - 'KNOCKBACK:TARGET:5'
+      4:
+        chance: 7.5
+        cooldown: 6
+        effects:
+          - 'KNOCKBACK:TARGET:6'
+      5:
+        chance: 9
+        cooldown: 6
+        effects:
+          - 'KNOCKBACK:TARGET:6'
+  cactus:
+    name: "Cactus"
+    description:
+      - 'Injurs your attacker but does'
+      - 'not affect your durability.'
+    group: "ELITE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 4
+        cooldown: 5
+        effects:
+          - 'DAMAGE:1:4:TARGET'
+          - 'PARTICLE:BLOCK_BREAK;CACTUS:PLAYER'
+      2:
+        chance: 8
+        cooldown: 5
+        effects:
+          - 'DAMAGE:1:4:TARGET'
+          - 'PARTICLE:BLOCK_BREAK;CACTUS:PLAYER'
+  reforged:
+    name: "Reforged"
+    description:
+      - 'Protects tool durability, items'
+      - 'will take longer to break.'
+    group: "ELITE"
+    applies: "TOOLS"
+    type: "MINE"
+    levels:
+      1:
+        chance: 8
+        effects:
+          - 'ADD_DURABILITY_ITEM:10'
+      2:
+        chance: 16
+        effects:
+          - 'ADD_DURABILITY_ITEM:10'
+      3:
+        chance: 24
+        effects:
+          - 'ADD_DURABILITY_ITEM:10'
+      4:
+        chance: 32
+        effects:
+          - 'ADD_DURABILITY_ITEM:10'
+      5:
+        chance: 40
+        effects:
+          - 'ADD_DURABILITY_ITEM:10'
+      6:
+        chance: 48
+        effects:
+          - 'ADD_DURABILITY_ITEM:10'
+      7:
+        chance: 56
+        effects:
+          - 'ADD_DURABILITY_ITEM:10'
+      8:
+        chance: 74
+        effects:
+          - 'ADD_DURABILITY_ITEM:10'
+      9:
+        chance: 82
+        effects:
+          - 'ADD_DURABILITY_ITEM:10'
+      10:
+        effects:
+          - 'ADD_DURABILITY_ITEM:10'
+  voodoo:
+    name: "Voodoo"
+    description:
+      - 'Gives a chance to deal weakness.'
+    group: "ELITE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 2.5
+        cooldown: 4
+        effects:
+          - 'POTION:WEAKNESS:1:TARGET:4'
+      2:
+        chance: 4
+        cooldown: 4
+        effects:
+          - 'POTION:WEAKNESS:1:TARGET:4'
+      3:
+        chance: 6
+        cooldown: 4
+        effects:
+          - 'POTION:WEAKNESS:1:TARGET:4'
+      4:
+        chance: 8
+        cooldown: 4
+        effects:
+          - 'POTION:WEAKNESS:1:TARGET:4'
+      5:
+        chance: 10
+        cooldown: 4
+        effects:
+          - 'POTION:WEAKNESS:1:TARGET:4'
+      6:
+        chance: 12.5
+        cooldown: 4
+        effects:
+          - 'POTION:WEAKNESS:1:TARGET:4'
+  springs:
+    name: "Springs"
+    description:
+      - 'Gives jump boost.'
+    group: "ELITE"
+    applies: "BOOTS"
+    type: "PASSIVE"
+    levels:
+      1:
+        effects:
+          - 'POTION:JUMP:1:PLAYER'
+      2:
+        effects:
+          - 'POTION:JUMP:2:PLAYER'
+      3:
+        effects:
+          - 'POTION:JUMP:3:PLAYER'
+  demonforged:
+    name: "Demonforged"
+    description:
+      - 'Increases durability loss'
+      - 'on your enemy''s armor.'
+    group: "ELITE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 7
+        effects:
+          - 'DAMAGE_ARMOR:1'
+      2:
+        chance: 2.75
+        cooldown: 7
+        effects:
+          - 'DAMAGE_ARMOR:1'
+      3:
+        chance: 4
+        cooldown: 7
+        effects:
+          - 'DAMAGE_ARMOR:1'
+      4:
+        chance: 6
+        cooldown: 7
+        effects:
+          - 'DAMAGE_ARMOR:1'
+  undead-ruse:
+    name: "Undead Ruse"
+    description:
+      - 'When hit you have a chance to spawn'
+      - 'zombie hordes to distract and disorient'
+      - 'your opponents.'
+    group: "ELITE"
+    applies: "ARMOR"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 0.25
+        cooldown: 10
+        effects:
+          - 'SPAWN:ZOMBIE:10:2:5:&a&l%player%''s Summoned Minions'
+      2:
+        chance: 0.5
+        cooldown: 10
+        effects:
+          - 'SPAWN:ZOMBIE:10:2:5:&a&l%player%''s Summoned Minions'
+      3:
+        chance: 0.75
+        cooldown: 10
+        effects:
+          - 'SPAWN:ZOMBIE:10:3:5:&a&l%player%''s Summoned Minions'
+      4:
+        chance: 0.85
+        cooldown: 10
+        effects:
+          - 'SPAWN:ZOMBIE:10:3:5:&a&l%player%''s Summoned Minions'
+      5:
+        chance: 1
+        cooldown: 10
+        effects:
+          - 'SPAWN:ZOMBIE:10:3:5:&a&l%player%''s Summoned Minions'
+      6:
+        chance: 2
+        cooldown: 10
+        effects:
+          - 'SPAWN:ZOMBIE:10:4:5:&a&l%player%''s Summoned Minions'
+      7:
+        chance: 3
+        cooldown: 10
+        effects:
+          - 'SPAWN:ZOMBIE:10:4:5:&a&l%player%''s Summoned Minions'
+      8:
+        chance: 4
+        cooldown: 10
+        effects:
+          - 'SPAWN:ZOMBIE:10:4:5:&a&l%player%''s Summoned Minions'
+      9:
+        chance: 5
+        cooldown: 10
+        effects:
+          - 'SPAWN:ZOMBIE:10:4:5:&a&l%player%''s Summoned Minions'
+      10:
+        chance: 6
+        cooldown: 10
+        effects:
+          - 'SPAWN:ZOMBIE:10:5:5:&a&l%player%''s Summoned Minions'
+  smoke-bomb:
+    name: "Smoke Bomb"
+    description:
+      - 'When you are near death, you will'
+      - 'spawn a smoke bomb to distract your enemies.'
+    group: "ELITE"
+    applies: "HELMET"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 3
+        cooldown: 5
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'PARTICLE:SMOKE_LARGE'
+          - 'POTION:BLINDNESS:1:TARGET:4'
+      2:
+        chance: 5
+        cooldown: 5
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'PARTICLE:SMOKE_LARGE'
+          - 'POTION:BLINDNESS:1:TARGET:4'
+      3:
+        chance: 8
+        cooldown: 5
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'PARTICLE:SMOKE_LARGE'
+          - 'POTION:BLINDNESS:1:TARGET:4'
+      4:
+        chance: 10
+        cooldown: 5
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'PARTICLE:SMOKE_LARGE'
+          - 'POTION:BLINDNESS:1:TARGET:4'
+      5:
+        chance: 12
+        cooldown: 5
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'PARTICLE:SMOKE_LARGE'
+          - 'POTION:BLINDNESS:1:TARGET:4'
+      6:
+        chance: 14
+        cooldown: 5
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'PARTICLE:SMOKE_LARGE'
+          - 'POTION:BLINDNESS:1:TARGET:4'
+      7:
+        chance: 16
+        cooldown: 5
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'PARTICLE:SMOKE_LARGE'
+          - 'POTION:BLINDNESS:1:TARGET:4'
+      8:
+        chance: 18
+        cooldown: 5
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'PARTICLE:SMOKE_LARGE'
+          - 'POTION:BLINDNESS:1:TARGET:4'
+  execute:
+    name: "Execute"
+    description:
+      - 'Damage buff when your target is at low hp.'
+    group: "ELITE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.25
+        cooldown: 6
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'DAMAGE_INCREASE:12'
+      2:
+        chance: 2.5
+        cooldown: 6
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'DAMAGE_INCREASE:12'
+      3:
+        chance: 3.75
+        cooldown: 6
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'DAMAGE_INCREASE:12'
+      4:
+        chance: 5
+        cooldown: 6
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'DAMAGE_INCREASE:12'
+      5:
+        chance: 6.75
+        cooldown: 6
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'DAMAGE_INCREASE:12'
+      6:
+        chance: 8
+        cooldown: 6
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'DAMAGE_INCREASE:12'
+      7:
+        chance: 10
+        cooldown: 6
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'DAMAGE_INCREASE:12'
+  trickster:
+    name: "Trickster"
+    description:
+      - 'When hit you have a chance to teleport'
+      - 'directly behind your opponent and take'
+      - 'them by surprise.'
+    group: "ELITE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 0.95
+        cooldown: 8
+        effects:
+          - 'TELEPORT_BEHIND'
+      2:
+        chance: 1.75
+        cooldown: 8
+        effects:
+          - 'TELEPORT_BEHIND'
+      3:
+        chance: 2.5
+        cooldown: 8
+        effects:
+          - 'TELEPORT_BEHIND'
+      4:
+        chance: 3.75
+        cooldown: 8
+        effects:
+          - 'TELEPORT_BEHIND'
+      5:
+        chance: 4.5
+        cooldown: 8
+        effects:
+          - 'TELEPORT_BEHIND'
+      6:
+        chance: 5.75
+        cooldown: 8
+        effects:
+          - 'TELEPORT_BEHIND'
+      7:
+        chance: 6.25
+        cooldown: 8
+        effects:
+          - 'TELEPORT_BEHIND'
+      8:
+        chance: 7
+        cooldown: 8
+        effects:
+          - 'TELEPORT_BEHIND'
+  trap:
+    name: "Trap"
+    description:
+      - 'A chance to give a buffed slowness effect.'
+    group: "ELITE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 3
+        cooldown: 4
+        effects:
+          - 'POTION:SLOW:2:TARGET:4'
+      2:
+        chance: 6
+        cooldown: 4
+        effects:
+          - 'POTION:SLOW:2:TARGET:4'
+      3:
+        chance: 9
+        cooldown: 4
+        effects:
+          - 'POTION:SLOW:2:TARGET:4'
+  ################################################################################################
+  #                                       Ultimate                                               #
+  ################################################################################################
+  marksman:
+    name: "Marksman"
+    description:
+      - 'Increases damage dealt with bows, this enchantment is stackable.'
+    group: "ULTIMATE"
+    applies: "ARMOR"
+    type: "BOW"
+    levels:
+      1:
+        chance: 3.75
+        cooldown: 6
+        condition: "isPlayerHolding BOW"
+        effects:
+          - 'DAMAGE_INCREASE:10'
+      2:
+        chance: 5
+        cooldown: 6
+        condition: "isPlayerHolding BOW"
+        effects:
+          - 'DAMAGE_INCREASE:15'
+      3:
+        chance: 7.75
+        cooldown: 6
+        condition: "isPlayerHolding BOW"
+        effects:
+          - 'DAMAGE_INCREASE:20'
+      4:
+        chance: 9
+        cooldown: 6
+        condition: "isPlayerHolding BOW"
+        effects:
+          - 'DAMAGE_INCREASE:25'
+  block:
+    name: "Block"
+    description:
+      - 'A chance to increase damage and redirect an attack.'
+    group: "ULTIMATE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 3.75
+        cooldown: 6
+        effects:
+          - 'DAMAGE_INCREASE:10'
+      2:
+        chance: 5
+        cooldown: 6
+        effects:
+          - 'DAMAGE_INCREASE:10'
+      3:
+        chance: 8.25
+        cooldown: 6
+        effects:
+          - 'DAMAGE_INCREASE:10'
+  detonate:
+    name: "Detonate"
+    description:
+      - 'Summons up to a 3x3x3 explosion around'
+      - 'any blocks you break.'
+    group: "ULTIMATE"
+    applies: "TOOLS"
+    type: "MINE"
+    levels:
+      1:
+        chance: 10
+        effects:
+          - 'TRENCH:1'
+      2:
+        chance: 20
+        effects:
+          - 'TRENCH:1'
+      3:
+        chance: 30
+        effects:
+          - 'TRENCH:1'
+      4:
+        chance: 40
+        effects:
+          - 'TRENCH:1'
+      5:
+        chance: 50
+        effects:
+          - 'TRENCH:1'
+      6:
+        chance: 60
+        effects:
+          - 'TRENCH:1'
+      7:
+        chance: 70
+        effects:
+          - 'TRENCH:1'
+      8:
+        chance: 80
+        effects:
+          - 'TRENCH:1'
+      9:
+        effects:
+          - 'TRENCH:1'
+  ender-walker:
+    name: "Ender Walker"
+    description:
+      - 'Wither and Poison do not injure'
+      - 'and have a chance to heal at high levels.'
+    group: "ULTIMATE"
+    applies: "BOOTS"
+    type: "DEFENSE"
+    levels:
+      1:
+        effects:
+          - 'IMMUNE:POTION'
+      2:
+        effects:
+          - 'IMMUNE:POTION'
+      3:
+        effects:
+          - 'DEFENSE;1.5;HEAL:ADD:1:2'
+          - 'IMMUNE:POTION'
+      4:
+        effects:
+          - 'DEFENSE;2.5;HEAL:ADD:1:3'
+          - 'IMMUNE:POTION'
+      5:
+        effects:
+          - 'DEFENSE;3;HEAL:ADD:2:4'
+          - 'IMMUNE:POTION'
+  iceaspect:
+    name: "Ice Aspect"
+    description:
+      - 'A chance of causing the slowness effect on your enemy.'
+    group: "ULTIMATE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 6
+        cooldown: 4
+        effects:
+          - 'POTION:SLOW:1:TARGET:4'
+      2:
+        chance: 12
+        cooldown: 4
+        effects:
+          - 'POTION:SLOW:1:TARGET:4'
+      3:
+        chance: 18
+        cooldown: 4
+        effects:
+          - 'POTION:SLOW:1:TARGET:4'
+  assassin:
+    name: "Assassin"
+    description:
+      - 'The closer you are to your enemy, the more'
+      - 'damage you deal (up to 1.25x).'
+      - 'However, if you are more than 2 blocks away,'
+      - 'you will deal LESS damage than normal.'
+    group: "ULTIMATE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 4.25
+        cooldown: 5
+        effects:
+          - 'DAMAGE_DISTANCE'
+      2:
+        chance: 7
+        cooldown: 5
+        effects:
+          - 'DAMAGE_DISTANCE'
+      3:
+        chance: 9.5
+        cooldown: 5
+        effects:
+          - 'DAMAGE_DISTANCE'
+      4:
+        chance: 11
+        cooldown: 5
+        effects:
+          - 'DAMAGE_DISTANCE'
+      5:
+        chance: 13
+        cooldown: 5
+        effects:
+          - 'DAMAGE_DISTANCE'
+  unfocus:
+    name: "Unfocus"
+    description:
+      - 'Chance to Unfocus target player, reducing'
+      - 'their outgoing bow damage by 50% for up'
+      - 'to 10 seconds.'
+    group: "ULTIMATE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 5
+        cooldown: 10
+        effects:
+          - 'POTION:WEAKNESS:1:TARGET:10'
+      2:
+        chance: 6
+        cooldown: 10
+        effects:
+          - 'POTION:WEAKNESS:1:TARGET:10'
+      3:
+        chance: 7
+        cooldown: 10
+        effects:
+          - 'POTION:WEAKNESS:1:TARGET:10'
+      4:
+        chance: 8
+        cooldown: 10
+        effects:
+          - 'POTION:WEAKNESS:1:TARGET:10'
+      5:
+        chance: 9
+        cooldown: 10
+        effects:
+          - 'POTION:WEAKNESS:1:TARGET:10'
+  heavy:
+    name: "Heavy"
+    description:
+      - 'Decreases damage from enemy bows by 2%'
+      - 'per level, this enchantment is stackable.'
+    group: "ULTIMATE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 9
+        cooldown: 3
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'REDUCTION:2'
+      2:
+        chance: 9
+        cooldown: 3
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'REDUCTION:4'
+      3:
+        chance: 9
+        cooldown: 3
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'REDUCTION:6'
+      4:
+        chance: 9
+        cooldown: 3
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'REDUCTION:8'
+      5:
+        chance: 9
+        cooldown: 3
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'REDUCTION:10'
+  guardians:
+    name: "Guardians"
+    description:
+      - 'Chance to spawn iron golems to'
+      - 'assist you and watch over you.'
+    group: "ULTIMATE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 0.25
+        cooldown: 20
+        effects:
+          - 'SPAWN:IRON_GOLEM:20:1:10:&b&l%player%''s Guardians'
+      2:
+        chance: 0.5
+        cooldown: 20
+        effects:
+          - 'SPAWN:IRON_GOLEM:20:1:10:&b&l%player%''s Guardians'
+      3:
+        chance: 0.65
+        cooldown: 20
+        effects:
+          - 'SPAWN:IRON_GOLEM:20:1:10:&b&l%player%''s Guardians'
+      4:
+        chance: 0.85
+        cooldown: 20
+        effects:
+          - 'SPAWN:IRON_GOLEM:20:1:10:&b&l%player%''s Guardians'
+      5:
+        chance: 1
+        cooldown: 20
+        effects:
+          - 'SPAWN:IRON_GOLEM:20:1:10:&b&l%player%''s Guardians'
+      6:
+        chance: 2
+        cooldown: 20
+        effects:
+          - 'SPAWN:IRON_GOLEM:25:2:10:&b&l%player%''s Guardians'
+      7:
+        chance: 3
+        cooldown: 20
+        effects:
+          - 'SPAWN:IRON_GOLEM:25:2:10:&b&l%player%''s Guardians'
+      8:
+        chance: 4
+        cooldown: 20
+        effects:
+          - 'SPAWN:IRON_GOLEM:25:2:10:&b&l%player%''s Guardians'
+      9:
+        chance: 5
+        cooldown: 20
+        effects:
+          - 'SPAWN:IRON_GOLEM:30:2:10:&b&l%player%''s Guardians'
+      10:
+        chance: 6
+        cooldown: 20
+        effects:
+          - 'SPAWN:IRON_GOLEM:45:3:10:&b&l%player%''s Guardians'
+  dodge:
+    name: "Dodge"
+    description:
+      - 'Chance to dodge physical enemy attacks,'
+      - 'increased chance if sneaking.'
+    group: "ULTIMATE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 2.75
+        cooldown: 4
+        effects:
+          - 'DAMAGE_CANCEL'
+      2:
+        chance: 4.5
+        cooldown: 4
+        effects:
+          - 'DAMAGE_CANCEL'
+      3:
+        chance: 7.25
+        cooldown: 4
+        effects:
+          - 'DAMAGE_CANCEL'
+      4:
+        chance: 9
+        cooldown: 4
+        effects:
+          - 'DAMAGE_CANCEL'
+      5:
+        chance: 11
+        cooldown: 4
+        effects:
+          - 'DAMAGE_CANCEL'
+  obsidianshield:
+    name: "Obsidian Shield"
+    description:
+      - 'Gives permanent fire resistance.'
+    group: "ULTIMATE"
+    applies: "ARMOR"
+    type: "PASSIVE"
+    levels:
+      1:
+        effects:
+          - 'POTION:FIRE_RESISTANCE:1:PLAYER'
+  arrow-lifesteal:
+    name: "Arrow Lifesteal"
+    description:
+      - 'A chance to steal health from'
+      - 'opponent while fighting.'
+    group: "ULTIMATE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 3
+        cooldown: 4
+        effects:
+          - 'HEAL:STEAL:1:2'
+      2:
+        chance: 6
+        cooldown: 4
+        effects:
+          - 'HEAL:STEAL:1:3'
+      3:
+        chance: 9
+        cooldown: 4
+        effects:
+          - 'HEAL:STEAL:1:3'
+      4:
+        chance: 12
+        cooldown: 4
+        effects:
+          - 'HEAL:STEAL:1:4'
+      5:
+        chance: 15
+        cooldown: 4
+        effects:
+          - 'HEAL:STEAL:2:4'
+  hellfire:
+    name: "Hellfire"
+    description:
+      - 'All arrows shot by you turn'
+      - 'into explosive fireballs.'
+    group: "ULTIMATE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 3
+        cooldown: 4
+        effects:
+          - 'EXPLODE:1:false'
+      2:
+        chance: 6
+        cooldown: 4
+        effects:
+          - 'EXPLODE:1:false'
+      3:
+        chance: 9
+        cooldown: 4
+        effects:
+          - 'EXPLODE:2:false'
+      4:
+        chance: 12
+        cooldown: 4
+        effects:
+          - 'EXPLODE:2:false'
+      5:
+        chance: 15
+        cooldown: 4
+        effects:
+          - 'EXPLODE:3:false'
+  valor:
+    name: "Valor"
+    description:
+      - 'Reduces incoming damage while wielding a'
+      - 'sword by up to 22.5%. This enchantment is'
+      - 'stackable.'
+    group: "ULTIMATE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 5
+        cooldown: 5
+        condition: "isPlayerHolding SWORD"
+        effects:
+          - 'REDUCTION:4.5'
+      2:
+        chance: 7.5
+        cooldown: 5
+        condition: "isPlayerHolding SWORD"
+        effects:
+          - 'REDUCTION:9'
+      3:
+        chance: 10
+        cooldown: 5
+        condition: "isPlayerHolding SWORD"
+        effects:
+          - 'REDUCTION:13.5'
+      4:
+        chance: 12.5
+        cooldown: 5
+        condition: "isPlayerHolding SWORD"
+        effects:
+          - 'REDUCTION:18'
+      5:
+        chance: 15
+        cooldown: 5
+        condition: "isPlayerHolding SWORD"
+        effects:
+          - 'REDUCTION:22.5'
+  arrow-break:
+    name: "Arrow Break"
+    description:
+      - 'Chance for arrows to bounce off'
+      - 'and do no damage to you whenever'
+      - 'you are wielding an axe with this'
+      - 'enchantment on it.'
+    group: "ULTIMATE"
+    applies: "AXE"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 2.75
+        cooldown: 4
+        condition: "isPlayerHolding AXE"
+        effects:
+          - 'IMMUNE:PROJECTILE'
+      2:
+        chance: 4.25
+        cooldown: 4
+        condition: "isPlayerHolding AXE"
+        effects:
+          - 'IMMUNE:PROJECTILE'
+      3:
+        chance: 5.75
+        cooldown: 4
+        condition: "isPlayerHolding AXE"
+        effects:
+          - 'IMMUNE:PROJECTILE'
+      4:
+        chance: 7
+        cooldown: 4
+        condition: "isPlayerHolding AXE"
+        effects:
+          - 'IMMUNE:PROJECTILE'
+      5:
+        chance: 9.25
+        cooldown: 4
+        condition: "isPlayerHolding AXE"
+        effects:
+          - 'IMMUNE:PROJECTILE'
+      6:
+        chance: 11.25
+        cooldown: 4
+        condition: "isPlayerHolding AXE"
+        effects:
+          - 'IMMUNE:PROJECTILE'
+  lucky:
+    name: "Lucky"
+    description:
+      - 'You will find yourself more'
+      - 'lucky in all Cosmic situations.'
+    group: "ULTIMATE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 8
+        effects:
+          - 'DAMAGE_CANCEL'
+      2:
+        chance: 2.75
+        cooldown: 8
+        effects:
+          - 'DAMAGE_CANCEL'
+      3:
+        chance: 4
+        cooldown: 8
+        effects:
+          - 'DAMAGE_CANCEL'
+      4:
+        chance: 6.25
+        cooldown: 8
+        effects:
+          - 'DAMAGE_CANCEL'
+      5:
+        chance: 7
+        cooldown: 8
+        effects:
+          - 'DAMAGE_CANCEL'
+      6:
+        chance: 8
+        cooldown: 8
+        effects:
+          - 'DAMAGE_CANCEL'
+      7:
+        chance: 9
+        cooldown: 8
+        effects:
+          - 'DAMAGE_CANCEL'
+      8:
+        chance: 10
+        cooldown: 8
+        effects:
+          - 'DAMAGE_CANCEL'
+      9:
+        chance: 11
+        cooldown: 8
+        effects:
+          - 'DAMAGE_CANCEL'
+      10:
+        chance: 12
+        cooldown: 8
+        effects:
+          - 'DAMAGE_CANCEL'
+  enrage:
+    name: "Enrage"
+    description:
+      - 'The lower your HP is,'
+      - 'the more damage you deal.'
+    group: "ULTIMATE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 3.25
+        cooldown: 5
+        condition: "isPlayerHealth < 10"
+        effects:
+          - 'DAMAGE_INCREASE:playerHealth*2'
+      2:
+        chance: 5
+        cooldown: 5
+        condition: "isPlayerHealth < 10"
+        effects:
+          - 'DAMAGE_INCREASE:playerHealth*2'
+      3:
+        chance: 7.5
+        cooldown: 5
+        condition: "isPlayerHealth < 10"
+        effects:
+          - 'DAMAGE_INCREASE:playerHealth*2.5'
+  tank:
+    name: "Tank"
+    description:
+      - 'Decreases damage from enemy axes by'
+      - '1.85% per level, this enchantment'
+      - 'is stackable.'
+    group: "ULTIMATE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        cooldown: 4
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'REDUCTION:1.85'
+      2:
+        cooldown: 4
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'REDUCTION:3.7'
+      3:
+        cooldown: 4
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'REDUCTION:5.55'
+      4:
+        cooldown: 4
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'REDUCTION:7.4'
+  blessed:
+    name: "Blessed"
+    description:
+      - 'A chance of removing debuffs.'
+    group: "ULTIMATE"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 2.75
+        cooldown: 15
+        effects:
+          - 'CURE:SLOW:true'
+          - 'CURE:POISON:true'
+          - 'CURE:SLOW_DIGGING:true'
+          - 'CURE:BLINDNESS:true'
+          - 'CURE:WITHER:true'
+          - 'MESSAGE:&e&lBLESSED:PLAYER'
+          - 'SOUND:ENTITY_ENDER_DRAGON_GROWL:2:5'
+      2:
+        chance: 4.25
+        cooldown: 15
+        effects:
+          - 'CURE:SLOW:true'
+          - 'CURE:POISON:true'
+          - 'CURE:SLOW_DIGGING:true'
+          - 'CURE:BLINDNESS:true'
+          - 'CURE:WITHER:true'
+          - 'MESSAGE:&e&lBLESSED:PLAYER'
+          - 'SOUND:ENTITY_ENDER_DRAGON_GROWL:2:5'
+      3:
+        chance: 6.5
+        cooldown: 15
+        effects:
+          - 'CURE:SLOW:true'
+          - 'CURE:POISON:true'
+          - 'CURE:SLOW_DIGGING:true'
+          - 'CURE:BLINDNESS:true'
+          - 'CURE:WITHER:true'
+          - 'MESSAGE:&e&lBLESSED:PLAYER'
+          - 'SOUND:ENTITY_ENDER_DRAGON_GROWL:2:5'
+      4:
+        chance: 8.5
+        cooldown: 15
+        effects:
+          - 'CURE:SLOW:true'
+          - 'CURE:POISON:true'
+          - 'CURE:SLOW_DIGGING:true'
+          - 'CURE:BLINDNESS:true'
+          - 'CURE:WITHER:true'
+          - 'MESSAGE:&e&lBLESSED:PLAYER'
+          - 'SOUND:ENTITY_ENDER_DRAGON_GROWL:2:5'
+  cleave:
+    name: "Cleave"
+    description:
+      - 'Damages players within a radius that'
+      - 'increases with the level of enchant.'
+    group: "ULTIMATE"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.75
+        cooldown: 4
+        effects:
+          - 'DAMAGE_ARC:2'
+      2:
+        chance: 3
+        cooldown: 4
+        effects:
+          - 'DAMAGE_ARC:2'
+      3:
+        chance: 4.5
+        cooldown: 4
+        effects:
+          - 'DAMAGE_ARC:3'
+      4:
+        chance: 6
+        cooldown: 4
+        effects:
+          - 'DAMAGE_ARC:3'
+      5:
+        chance: 7.25
+        cooldown: 4
+        effects:
+          - 'DAMAGE_ARC:4'
+      6:
+        chance: 8
+        cooldown: 4
+        effects:
+          - 'DAMAGE_ARC:4'
+      7:
+        chance: 9
+        cooldown: 4
+        effects:
+          - 'DAMAGE_ARC:4'
+  metaphysical:
+    name: "Metaphysical"
+    description:
+      - 'A chance to resist the slowness given by'
+      - 'enemy Trap, Snare, and Pummel enchantments.'
+      - 'At max level, you will only be affected'
+      - 'approx. 10% of the time.'
+    group: "ULTIMATE"
+    applies: "BOOTS"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 5
+        cooldown: 3
+        effects:
+          - 'CURE:SLOW:false'
+      2:
+        chance: 7
+        cooldown: 3
+        effects:
+          - 'CURE:SLOW:false'
+      3:
+        chance: 9
+        cooldown: 3
+        effects:
+          - 'CURE:SLOW:false'
+      4:
+        chance: 10
+        cooldown: 3
+        effects:
+          - 'CURE:SLOW:false'
+  arrow-deflect:
+    name: "Arrow Deflect"
+    description:
+      - 'Prevents you from being damaged by enemy'
+      - 'arrows more often than once every level'
+      - 'x 400 milliseconds.'
+    group: "ULTIMATE"
+    applies: "ARMOR"
+    type: "BOW_DAMAGE"
+    levels:
+      1:
+        chance: 3.25
+        cooldown: 3
+        effects:
+          - 'DAMAGE_CANCEL'
+      2:
+        chance: 5
+        cooldown: 3
+        effects:
+          - 'DAMAGE_CANCEL'
+      3:
+        chance: 7.5
+        cooldown: 3
+        effects:
+          - 'DAMAGE_CANCEL'
+      4:
+        chance: 9
+        cooldown: 3
+        effects:
+          - 'DAMAGE_CANCEL'
+  pacify:
+    name: "Pacify"
+    description:
+      - 'A chance to pacify your target, preventing'
+      - 'them from building rage stacks for 1-3'
+      - 'seconds depending on level.'
+    group: "ULTIMATE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 3
+        effects:
+          - 'DISABLE_ENCHANTMENT:rage:1'
+      2:
+        chance: 3.75
+        cooldown: 3
+        effects:
+          - 'DISABLE_ENCHANTMENT:rage:2'
+      3:
+        chance: 6.25
+        cooldown: 3
+        effects:
+          - 'DISABLE_ENCHANTMENT:rage:2'
+      4:
+        chance: 9
+        cooldown: 3
+        effects:
+          - 'DISABLE_ENCHANTMENT:rage:3'
+  disintegrate:
+    name: "Disintegrate"
+    description:
+      - 'Chance to deal double durability damage'
+      - 'to all enemy armor with every attack.'
+    group: "ULTIMATE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.25
+        cooldown: 6
+        effects:
+          - 'DAMAGE_ARMOR:1'
+      2:
+        chance: 2.75
+        cooldown: 6
+        effects:
+          - 'DAMAGE_ARMOR:2'
+      3:
+        chance: 4
+        cooldown: 6
+        effects:
+          - 'DAMAGE_ARMOR:2'
+      4:
+        chance: 5
+        cooldown: 6
+        effects:
+          - 'DAMAGE_ARMOR:3'
+  spirits:
+    name: "Spirits"
+    description:
+      - 'Chance to spawn blazes that heal'
+      - 'yourself and your allies in combat.'
+    group: "ULTIMATE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 0.25
+        cooldown: 15
+        effects:
+          - 'SPAWN:BLAZE:10:1:10:&e&l%player%''s Spirits'
+          - 'POTION:REGENERATION:1:PLAYER:3'
+      2:
+        chance: 0.5
+        cooldown: 15
+        effects:
+          - 'SPAWN:BLAZE:10:1:10:&e&l%player%''s Spirits'
+          - 'POTION:REGENERATION:1:PLAYER:3'
+      3:
+        chance: 0.75
+        cooldown: 15
+        effects:
+          - 'SPAWN:BLAZE:10:1:10:&e&l%player%''s Spirits'
+          - 'POTION:REGENERATION:1:PLAYER:3'
+      4:
+        chance: 0.85
+        cooldown: 15
+        effects:
+          - 'SPAWN:BLAZE:10:1:10:&e&l%player%''s Spirits'
+          - 'POTION:REGENERATION:1:PLAYER:3'
+      5:
+        chance: 1
+        cooldown: 15
+        effects:
+          - 'SPAWN:BLAZE:10:1:10:&e&l%player%''s Spirits'
+          - 'POTION:REGENERATION:1:PLAYER:3'
+      6:
+        chance: 2
+        cooldown: 15
+        effects:
+          - 'SPAWN:BLAZE:10:1:10:&e&l%player%''s Spirits'
+          - 'POTION:REGENERATION:1:PLAYER:3'
+      7:
+        chance: 3
+        cooldown: 15
+        effects:
+          - 'SPAWN:BLAZE:10:1:10:&e&l%player%''s Spirits'
+          - 'POTION:REGENERATION:1:PLAYER:3'
+      8:
+        chance: 4
+        cooldown: 15
+        effects:
+          - 'SPAWN:BLAZE:10:1:10:&e&l%player%''s Spirits'
+          - 'POTION:REGENERATION:1:PLAYER:3'
+      9:
+        chance: 5
+        cooldown: 15
+        effects:
+          - 'SPAWN:BLAZE:10:1:10:&e&l%player%''s Spirits'
+          - 'POTION:REGENERATION:1:PLAYER:3' 
+      10:
+        chance: 6
+        cooldown: 15
+        effects:
+          - 'SPAWN:BLAZE:10:1:10:&e&l%player%''s Spirits'
+          - 'POTION:REGENERATION:1:PLAYER:3'
+  implants:
+    name: "Implants"
+    description:
+      - 'Passively heals +1 health and'
+      - 'restores +1 hunger every few seconds.'
+    group: "ULTIMATE"
+    applies: "HELMET"
+    type: "REPEATING-5"
+    levels:
+      1:
+        chance: 15
+        effects:
+          - 'HEAL:ADD:1:1'
+          - 'FEED:2'
+      2:
+        chance: 20
+        effects:
+          - 'HEAL:ADD:1:1'
+          - 'FEED:2'
+      3:
+        chance: 25
+        effects:
+          - 'HEAL:ADD:1:1'
+          - 'FEED:2'
+  dominate:
+    name: "Dominate"
+    description:
+      - 'Chance to weaken enemy players on hit,'
+      - 'causing them to deal (level x 5%) less'
+      - 'damage for (level x 2) seconds.'
+    group: "ULTIMATE"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 5
+        cooldown: 6
+        effects:
+          - 'REDUCTION:5'
+      2:
+        chance: 7.5
+        cooldown: 6
+        effects:
+          - 'REDUCTION:10'
+      3:
+        chance: 10
+        cooldown: 6
+        effects:
+          - 'REDUCTION:15'
+      4:
+        chance: 12.5
+        cooldown: 6
+        effects:
+          - 'REDUCTION:20'
+  longbow:
+    name: "Longbow"
+    description:
+      - 'Greatly increases damage dealt'
+      - 'to enemy players that have a bow'
+      - 'in their hands.'
+    group: "ULTIMATE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 4.5
+        cooldown: 4
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'DAMAGE_INCREASE:30'
+      2:
+        chance: 7
+        cooldown: 4
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'DAMAGE_INCREASE:30'
+      3:
+        chance: 9.25
+        cooldown: 4
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'DAMAGE_INCREASE:30'
+      4:
+        chance: 11
+        cooldown: 4
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'DAMAGE_INCREASE:30'
+  angelic:
+    name: "Angelic"
+    description:
+      - 'Heals health over'
+      - 'time whenever damaged.'
+    group: "ULTIMATE"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 4
+        effects:
+          - 'HEAL:ADD:1:3'
+      2:
+        chance: 3
+        cooldown: 4
+        effects:
+          - 'HEAL:ADD:1:3'
+      3:
+        chance: 5
+        cooldown: 4
+        effects:
+          - 'HEAL:ADD:1:4'
+      4:
+        chance: 7
+        cooldown: 4
+        effects:
+          - 'HEAL:ADD:1:4'
+      5:
+        chance: 9
+        cooldown: 4
+        effects:
+          - 'HEAL:ADD:2:5'
+  piercing:
+    name: "Piercing"
+    description:
+      - 'Inflicts more damage.'
+    group: "ULTIMATE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 4.25
+        cooldown: 4
+        effects:
+          - 'DAMAGE_INCREASE:7'
+      2:
+        chance: 6.5
+        cooldown: 4
+        effects:
+          - 'DAMAGE_INCREASE:7'
+      3:
+        chance: 9
+        cooldown: 4
+        effects:
+          - 'DAMAGE_INCREASE:7'
+      4:
+        chance: 11.25
+        cooldown: 4
+        effects:
+          - 'DAMAGE_INCREASE:7'
+      5:
+        chance: 14
+        cooldown: 4
+        effects:
+          - 'DAMAGE_INCREASE:7'
+  eagle-eye:
+    name: "Eagle Eye"
+    description:
+      - 'Chance to deal 1-4 durability damage to ALL'
+      - 'armor pieces of enemy player. The # of durability'
+      - 'damage dealt is based on how far of a bow shot'
+      - 'you hit them with. The further away, the more'
+      - 'durability damage.'
+    group: "ULTIMATE"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 3.25
+        cooldown: 5
+        effects:
+          - 'DAMAGE_ARMOR:1'
+      2:
+        chance: 5.25
+        cooldown: 5
+        effects:
+          - 'DAMAGE_ARMOR:1'
+      3:
+        chance: 7.25
+        cooldown: 5
+        effects:
+          - 'DAMAGE_ARMOR:2'
+      4:
+        chance: 9.25
+        cooldown: 5
+        effects:
+          - 'DAMAGE_ARMOR:2'
+      5:
+        chance: 11.25
+        cooldown: 5
+        effects:
+          - 'DAMAGE_ARMOR:3'
+  bleed:
+    name: "Bleed"
+    description:
+      - 'Applies bleed stacks to enemies that decrease'
+      - 'their movement speed.'
+    group: "ULTIMATE"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.25
+        cooldown: 5
+        effects:
+          - 'DAMAGE:1:2:TARGET'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'PARTICLE:BLEED:TARGET'
+      2:
+        chance: 2.5
+        cooldown: 5
+        effects:
+          - 'DAMAGE:1:2:TARGET'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'PARTICLE:BLEED:TARGET'
+      3:
+        chance: 3.75
+        cooldown: 5
+        effects:
+          - 'DAMAGE:1:2:TARGET'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'PARTICLE:BLEED:TARGET'
+      4:
+        chance: 5
+        cooldown: 5
+        effects:
+          - 'DAMAGE:1:3:TARGET'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'PARTICLE:BLEED:TARGET'
+      5:
+        chance: 7.25
+        cooldown: 5
+        effects:
+          - 'DAMAGE:1:3:TARGET'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'PARTICLE:BLEED:TARGET'
+      6:
+        chance: 9
+        cooldown: 5
+        effects:
+          - 'DAMAGE:1:4:TARGET'
+          - 'POTION:SLOW:1:TARGET:3'
+          - 'PARTICLE:BLEED:TARGET'
+  fuse:
+    name: "Fuse"
+    description:
+      - 'Allows Auto Smelt to apply to blocks'
+      - 'destroyed by the Detonate enchantment.'
+    group: "ULTIMATE"
+    applies: "PICKAXE"
+    type: "MINE"
+    levels:
+      1:
+        effects:
+          - 'SMELT'
+  corrupt:
+    name: "Corrupt"
+    description:
+      - 'Deals damage overtime to enemy'
+      - 'players, unless enemy player has'
+      - 'Inversion. If enemy player has'
+      - 'Inversion, strikes that would'
+      - 'normally heal them from Inversion'
+      - 'will damage them instead.'
+    group: "ULTIMATE"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.75
+        cooldown: 4
+        effects:
+          - 'DAMAGE:1:2:TARGET'
+          - 'DAMAGE:1:2:TARGET'
+          - 'DISABLE_ENCHANTMENT:inversion:3'
+      2:
+        chance: 3
+        cooldown: 4
+        effects:
+          - 'DAMAGE:1:2:TARGET'
+          - 'DAMAGE:1:2:TARGET'
+          - 'DISABLE_ENCHANTMENT:inversion:3'
+      3:
+        chance: 4
+        cooldown: 4
+        effects:
+          - 'DAMAGE:1:2:TARGET'
+          - 'DAMAGE:1:2:TARGET'
+          - 'DISABLE_ENCHANTMENT:inversion:3'
+      4:
+        chance: 5
+        cooldown: 4
+        effects:
+          - 'DAMAGE:1:2:TARGET'
+          - 'DAMAGE:1:2:TARGET'
+          - 'DISABLE_ENCHANTMENT:inversion:3'
+  slayer:
+    name: "Slayer"
+    description:
+      - 'A chance to instantly kill mobs.'
+    group: "ULTIMATE"
+    applies: "WEAPON"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 9.25
+        cooldown: 5
+        effects:
+          - 'KILL'
+      2:
+        chance: 12.5
+        cooldown: 5
+        effects:
+          - 'KILL'
+      3:
+        chance: 18.75
+        cooldown: 5
+        effects:
+          - 'KILL'
+      4:
+        chance: 22.5
+        cooldown: 5
+        effects:
+          - 'KILL'  
+  ################################################################################################
+  #                                       Legendary                                              #
+  ################################################################################################
+  guided-arrow:
+    name: "Guided Arrow"
+    description:
+      - 'Make your arrows automatically target nearby players'
+      - 'and entities.'
+    group: "LEGENDARY"
+    applies: "BOW"
+    type: "BOW_FIRE"
+    levels:
+      1:
+        chance: 7.5
+        cooldown: 5
+        effects:
+          - 'PARTICLE:NOTE:PLAYER:10'
+          - 'SOUND:BLOCK_BEACON_POWER_SELECT:5'
+          - 'AUTO_LOCK'
+      2:
+        chance: 10
+        cooldown: 5
+        effects:
+          - 'PARTICLE:NOTE:PLAYER:10'
+          - 'SOUND:BLOCK_BEACON_POWER_SELECT:5'
+          - 'AUTO_LOCK'
+      3:
+        chance: 13
+        cooldown: 5
+        effects:
+          - 'PARTICLE:NOTE:PLAYER:10'
+          - 'SOUND:BLOCK_BEACON_POWER_SELECT:5'
+          - 'AUTO_LOCK'
+  death-god:
+    name: "Death God"
+    description:
+      - 'Attacks that bring your HP to (level+4) hearts'
+      - 'or lower have a chance to heal you for (level+5)'
+      - 'hearts instead.'
+    group: "LEGENDARY"
+    applies: "HELMET"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 6
+        condition: "isPlayerHealth <= 5"
+        effects:
+          - 'HEAL:ADD:3:5'
+      2:
+        chance: 3
+        cooldown: 6
+        condition: "isPlayerHealth <= 5"
+        effects:
+          - 'HEAL:ADD:3:5'
+      3:
+        chance: 4.5
+        cooldown: 6
+        condition: "isPlayerHealth <= 5"
+        effects:
+          - 'HEAL:ADD:3:5'
+  hex:
+    name: "Hex"
+    description:
+      - 'Once a target is affected by Hex, a portion'
+      - 'of all their outgoing damage is reflected'
+      - 'back onto them for up to 4 seconds.'
+    group: "LEGENDARY"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 2.25
+        cooldown: 3
+        effects:
+          - 'REDUCTION:10'
+          - 'DAMAGE:1:3:TARGET'
+      2:
+        chance: 3.75
+        cooldown: 3
+        effects:
+          - 'REDUCTION:10'
+          - 'DAMAGE:1:3:TARGET'
+      3:
+        chance: 5
+        cooldown: 3
+        effects:
+          - 'REDUCTION:10'
+          - 'DAMAGE:1:3:TARGET'
+      4:
+        chance: 6
+        cooldown: 3
+        effects:
+          - 'REDUCTION:10'
+          - 'DAMAGE:1:3:TARGET'
+      5:
+        chance: 7.5
+        cooldown: 3
+        effects:
+          - 'REDUCTION:10'
+          - 'DAMAGE:1:3:TARGET'
+  blacksmith:
+    name: "Blacksmith"
+    description:
+      - 'Chance to heal your most damaged piece of armor'
+      - 'by 1-2 durability whenever you hit a player,'
+      - 'but when it procs your attack will only deal'
+      - '50% of the normal damage.'
+    group: "LEGENDARY"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 2.75
+        cooldown: 5
+        effects:
+          - 'ADD_DURABILITY:10'
+          - 'DAMAGE_INCREASE:-50'
+      2:
+        chance: 4
+        cooldown: 5
+        effects:
+          - 'ADD_DURABILITY:10'
+          - 'DAMAGE_INCREASE:-50'
+      3:
+        chance: 6
+        cooldown: 5
+        effects:
+          - 'ADD_DURABILITY:10'
+          - 'DAMAGE_INCREASE:-50'
+      4:
+        chance: 9
+        cooldown: 5
+        effects:
+          - 'ADD_DURABILITY:20'
+          - 'DAMAGE_INCREASE:-50'
+      5:
+        chance: 11.25
+        cooldown: 5
+        effects:
+          - 'ADD_DURABILITY:20'
+          - 'DAMAGE_INCREASE:-50'
+  double-strike:
+    name: "Double Strike"
+    description:
+      - 'A chance to attack twice in one swing.'
+      - 'All your enchantments can re-proc on'
+      - 'this second attack, and it occurs instantly.'
+    group: "LEGENDARY"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 2.75
+        cooldown: 8
+        effects:
+          - 'DAMAGE_INCREASE:15'
+      2:
+        chance: 4
+        cooldown: 8
+        effects:
+          - 'DAMAGE_INCREASE:15'
+      3:
+        chance: 6
+        cooldown: 8
+        effects:
+          - 'DAMAGE_INCREASE:15'
+  barbarian:
+    name: "Barbarian"
+    description:
+      - 'Multiplies damage against players who'
+      - 'are wielding an AXE at the time they'
+      - 'are hit.'
+    group: "LEGENDARY"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.75
+        cooldown: 4
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'DAMAGE_INCREASE:8'
+      2:
+        chance: 3
+        cooldown: 4
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'DAMAGE_INCREASE:8'
+      3:
+        chance: 5
+        cooldown: 4
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'DAMAGE_INCREASE:8'
+      4:
+        chance: 7.5
+        cooldown: 4
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'DAMAGE_INCREASE:8'
+  blood-lust:
+    name: "Blood Lust"
+    description:
+      - 'A chance to heal you whenever an enemy'
+      - 'player within 7x7 blocks is damaged by'
+      - 'the Bleed enchantment.'
+    group: "LEGENDARY"
+    applies: "CHESTPLATE"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:1:3'
+      2:
+        chance: 2
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:1:3'
+      3:
+        chance: 4
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:1:3'
+      4:
+        chance: 6
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:1:3'
+      5:
+        chance: 8
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:1:3'
+      6:
+        chance: 10
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:1:3'
+  lifesteal:
+    name: "Lifesteal"
+    description:
+      - 'A chance to regain health when attacking.'
+    group: "LEGENDARY"
+    applies: "WEAPON"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 2
+        cooldown: 5
+        effects:
+          - 'HEAL:ADD:1'
+      2:
+        chance: 4
+        cooldown: 5
+        effects:
+          - 'HEAL:ADD:2'
+      3:
+        chance: 6
+        cooldown: 5
+        effects:
+          - 'HEAL:ADD:3'
+      4:
+        chance: 8
+        cooldown: 5
+        effects:
+          - 'HEAL:ADD:4'
+      5:
+        chance: 10
+        cooldown: 5
+        effects:
+          - 'HEAL:ADD:5'
+  enlighted:
+    name: "Enlighted"
+    description:
+      - 'Can heal hearts while taking damage.'
+    group: "LEGENDARY"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 8
+        cooldown: 3
+        effects:
+          - 'HEAL:ADD:1'
+      2:
+        chance: 14
+        cooldown: 3
+        effects:
+          - 'HEAL:ADD:1:2'
+      3:
+        chance: 19
+        cooldown: 3
+        effects:
+          - 'HEAL:ADD:1:3'
+  silence:
+    name: "Silence"
+    description:
+      - 'Chance to stop activation of your'
+      - 'enemy''s custom enchants.'
+    group: "LEGENDARY"
+    applies: "WEAPON"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1
+        cooldown: 20
+        effects:
+          - 'DISABLE_ENCHANTMENT_GROUP:SIMPLE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:UNIQUE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:ELITE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:ULTIMATE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:LEGENDARY:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:SOUL:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:HEROIC:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:MASTERY:5'
+          - 'MESSAGE:&5&l* Silenced [5s] *:TARGET'
+      2:
+        chance: 2.5
+        cooldown: 20
+        effects:
+          - 'DISABLE_ENCHANTMENT_GROUP:SIMPLE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:UNIQUE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:ELITE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:ULTIMATE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:LEGENDARY:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:SOUL:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:HEROIC:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:MASTERY:5'
+          - 'MESSAGE:&5&l* Silenced [5s] *:TARGET'
+      3:
+        chance: 4
+        cooldown: 20
+        effects:
+          - 'DISABLE_ENCHANTMENT_GROUP:SIMPLE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:UNIQUE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:ELITE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:ULTIMATE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:LEGENDARY:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:SOUL:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:HEROIC:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:MASTERY:5'
+          - 'MESSAGE:&5&l* Silenced [5s] *:TARGET'
+      4:
+        chance: 6
+        cooldown: 20
+        effects:
+          - 'DISABLE_ENCHANTMENT_GROUP:SIMPLE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:UNIQUE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:ELITE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:ULTIMATE:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:LEGENDARY:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:SOUL:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:HEROIC:5'
+          - 'DISABLE_ENCHANTMENT_GROUP:MASTERY:5'
+          - 'MESSAGE:&5&l* Silenced [5s] *:TARGET'
+  inversion:
+    name: "Inversion"
+    description:
+      - 'Damage dealt to you has a % chance to'
+      - 'be blocked and heal you for 1-3 HP'
+      - 'instead.'
+    group: "LEGENDARY"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.75
+        cooldown: 5
+        effects:
+          - 'DAMAGE_CANCEL'
+          - 'HEAL:ADD:1:2'
+      2:
+        chance: 2.5
+        cooldown: 5
+        effects:
+          - 'DAMAGE_CANCEL'
+          - 'HEAL:ADD:1:2'
+      3:
+        chance: 4
+        cooldown: 5
+        effects:
+          - 'DAMAGE_CANCEL'
+          - 'HEAL:ADD:1:2'
+      4:
+        chance: 6
+        cooldown: 5
+        effects:
+          - 'DAMAGE_CANCEL'
+          - 'HEAL:ADD:1:2'
+  anti-gank:
+    name: "Anti Gank"
+    description:
+      - 'If more than (6-level) enemies hit you in a short'
+      - 'period, your outgoing damage will be multiplied'
+      - 'by up to 1.5x depending on the amount of enemies'
+      - 'nearby.'
+    group: "LEGENDARY"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 4.25
+        cooldown: 5
+        effects:
+          - 'GANK'
+      2:
+        chance: 6.25
+        cooldown: 5
+        effects:
+          - 'GANK'
+      3:
+        chance: 8.25
+        cooldown: 5
+        effects:
+          - 'GANK'
+      4:
+        chance: 10
+        cooldown: 5
+        effects:
+          - 'GANK'
+  overload:
+    name: "Overload"
+    description:
+      - 'Permanent increase in hearts.'
+    group: "LEGENDARY"
+    applies: "ARMOR"
+    type: "PASSIVE"
+    levels:
+      1:
+        effects:
+          - 'POTION:HEALTH_BOOST:1:PLAYER'
+      2:
+        effects:
+          - 'POTION:HEALTH_BOOST:2:PLAYER'
+      3:
+        effects:
+          - 'POTION:HEALTH_BOOST:3:PLAYER'
+  aegis:
+    name: "Aegis"
+    description:
+      - 'If you are taking damage from more than'
+      - '(8-level) enemies in a short period,'
+      - 'the damage from any additional players'
+      - 'beyond that initial group will be halved.'
+    group: "LEGENDARY"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 5
+        cooldown: 2
+        effects:
+          - 'REDUCTION:15'
+      2:
+        chance: 6
+        cooldown: 2
+        effects:
+          - 'REDUCTION:15'
+      3:
+        chance: 7
+        cooldown: 2
+        effects:
+          - 'REDUCTION:15'
+      4:
+        chance: 8
+        cooldown: 2
+        effects:
+          - 'REDUCTION:15'
+      5:
+        chance: 9
+        cooldown: 2
+        effects:
+          - 'REDUCTION:15'
+      6:
+        chance: 10
+        cooldown: 2
+        effects:
+          - 'REDUCTION:15'
+  clarity:
+    name: "Clarity"
+    description:
+      - 'Immune to Blindness up to level'
+      - 'of clarity enchantment.'
+    group: "LEGENDARY"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 50
+        effects:
+          - 'CURE:BLINDNESS:true'
+      2:
+        chance: 80
+        effects:
+          - 'CURE:BLINDNESS:true'
+      3:
+        effects:
+          - 'CURE:BLINDNESS:true'
+  devour:
+    name: "Devour"
+    description:
+      - 'Multiplies damage dealt to players'
+      - 'with active bleed stacks from the'
+      - 'Bleed enchantment.'
+    group: "LEGENDARY"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.75
+        cooldown: 5
+        effects:
+          - 'DAMAGE_INCREASE:5'
+      2:
+        chance: 3.25
+        cooldown: 5
+        effects:
+          - 'DAMAGE_INCREASE:5'
+      3:
+        chance: 5
+        cooldown: 5
+        effects:
+          - 'DAMAGE_INCREASE:5'
+      4:
+        chance: 7.75
+        cooldown: 5
+        effects:
+          - 'DAMAGE_INCREASE:5'
+  inquisitive:
+    name: "Inquisitive"
+    description:
+      - 'Increases EXP drops from mobs.'
+    group: "LEGENDARY"
+    applies: "SWORDS"
+    type: "KILL"
+    levels:
+      1:
+        chance: 7.5
+        effects:
+          - 'EXP:10'
+      2:
+        chance: 15
+        effects:
+          - 'EXP:15'
+      3:
+        chance: 22.5
+        effects:
+          - 'EXP:20'
+      4:
+        chance: 30
+        effects:
+          - 'EXP:25'
+  armored:
+    name: "Armored"
+    description:
+      - 'Decreases damage from enemy swords by 1.85%'
+      - 'per level, this enchantment is stackable.'
+    group: "LEGENDARY"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        cooldown: 2
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'REDUCTION:1.85'
+      2:
+        cooldown: 2
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'REDUCTION:3.7'
+      3:
+        cooldown: 2
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'REDUCTION:5.55'
+      4:
+        cooldown: 2
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'REDUCTION:7.4'
+  blood-link:
+    name: "Blood Link"
+    description:
+      - 'A chance to heal you for 1-2hp'
+      - 'whenever your Guardians take damage.'
+    group: "LEGENDARY"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 2
+        cooldown: 3
+        effects:
+          - 'HEAL:ADD:1:4'
+      2:
+        chance: 3.75
+        cooldown: 3
+        effects:
+          - 'HEAL:ADD:1:4'
+      3:
+        chance: 5
+        cooldown: 3
+        effects:
+          - 'HEAL:ADD:1:4'
+      4:
+        chance: 6.5
+        cooldown: 3
+        effects:
+          - 'HEAL:ADD:1:4'
+      5:
+        chance: 7.5
+        cooldown: 3
+        effects:
+          - 'HEAL:ADD:1:4'
+  sniper:
+    name: "Sniper"
+    description:
+      - 'Headshots with projectile deal up to 3.5x damage.'
+    group: "LEGENDARY"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 3.25
+        cooldown: 3
+        effects:
+          - 'SNIPER'
+      2:
+        chance: 5
+        cooldown: 3
+        effects:
+          - 'SNIPER'
+      3:
+        chance: 7
+        cooldown: 3
+        effects:
+          - 'SNIPER'
+      4:
+        chance: 9
+        cooldown: 3
+        effects:
+          - 'SNIPER'
+      5:
+        chance: 12
+        cooldown: 3
+        effects:
+          - 'SNIPER'
+  rage:
+    name: "Rage"
+    description:
+      - 'For every combo hit you land,'
+      - 'your damage is multiplied by 1.1x.'
+    group: "LEGENDARY"
+    applies: "WEAPON"
+    type: "ATTACK"
+    levels:
+      1:
+        effects:
+          - 'RAGE:0.1'
+      2:
+        effects:
+          - 'RAGE:0.15'
+      3:
+        effects:
+          - 'RAGE:0.25'
+      4:
+        effects:
+          - 'RAGE:0.3'
+      5:
+        effects:
+          - 'RAGE:0.35'
+      6:
+        effects:
+          - 'RAGE:0.4'
+  drunk:
+    name: "Drunk"
+    description:
+      - 'Slowness and slow swinging with a chance to give buffed strength.'
+    group: "LEGENDARY"
+    applies: "HELMET"
+    type: "PASSIVE"
+    levels:
+      1:
+        effects:
+          - 'POTION:SLOW:1:PLAYER'
+          - 'POTION:SLOW_DIGGING:1:PLAYER'
+          - 'DAMAGE_INCREASE:15'
+      2:
+        effects:
+          - 'POTION:SLOW:1:PLAYER'
+          - 'POTION:SLOW_DIGGING:1:PLAYER'
+          - 'DAMAGE_INCREASE:20'
+      3:
+        effects:
+          - 'POTION:SLOW:2:PLAYER'
+          - 'POTION:SLOW_DIGGING:2:PLAYER'
+          - 'DAMAGE_INCREASE:25'
+      4:
+        effects:
+          - 'POTION:SLOW:2:PLAYER'
+          - 'POTION:SLOW_DIGGING:2:PLAYER'
+          - 'DAMAGE_INCREASE:35'
+  deathbringer:
+    name: "Deathbringer"
+    description:
+      - 'Chance to deal double damage.'
+    group: "LEGENDARY"
+    applies: "ARMOR"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.75
+        cooldown: 7
+        effects:
+          - 'DAMAGE_INCREASE:50'
+      2:
+        chance: 3
+        cooldown: 7
+        effects:
+          - 'DAMAGE_INCREASE:50'
+      3:
+        chance: 5
+        cooldown: 7
+        effects:
+          - 'DAMAGE_INCREASE:50'
+  diminish:
+    name: "Diminish"
+    description:
+      - 'When this effect procs, the next attack dealt'
+      - 'to you cannot deal more than the'
+      - '(total amount of damage / 2) you took from the'
+      - 'previous attack. (i.e. if you''re damaged for 2HP,'
+      - 'the next attack cannot deal more than 1HP of damage.)'
+    group: "LEGENDARY"
+    applies: "CHESTPLATE"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 1.75
+        cooldown: 4
+        effects:
+          - 'REDUCTION:50'
+      2:
+        chance: 3
+        cooldown: 4
+        effects:
+          - 'REDUCTION:50'
+      3:
+        chance: 4.5
+        cooldown: 4
+        effects:
+          - 'REDUCTION:50'
+      4:
+        chance: 6
+        cooldown: 4
+        effects:
+          - 'REDUCTION:50'
+      5:
+        chance: 7.5
+        cooldown: 4
+        effects:
+          - 'REDUCTION:50'
+      6:
+        chance: 10
+        cooldown: 4
+        effects:
+          - 'REDUCTION:50'
+  gears:
+    name: "Gears"
+    description:
+      - 'Added speed when equipped.'
+    group: "LEGENDARY"
+    applies: "BOOTS"
+    type: "PASSIVE"
+    levels:
+      1:
+        effects:
+          - 'POTION:SPEED:1:PLAYER'
+      2:
+        effects:
+          - 'POTION:SPEED:2:PLAYER'
+      3:
+        effects:
+          - 'POTION:SPEED:3:PLAYER'
+  insanity:
+    name: "Insanity"
+    description:
+      - 'You swing your axe like a maniac. Multiplies'
+      - 'damage against players who are wielding a'
+      - 'SWORD at the time they are hit.'
+    group: "LEGENDARY"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 4
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:8'
+      2:
+        chance: 2.75
+        cooldown: 4
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:8'
+      3:
+        chance: 4
+        cooldown: 4
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:8'
+      4:
+        chance: 5
+        cooldown: 4
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:8'
+      5:
+        chance: 6
+        cooldown: 4
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:8'
+      6:
+        chance: 7
+        cooldown: 4
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:8'
+      7:
+        chance: 8
+        cooldown: 4
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:8'
+      8:
+        chance: 9
+        cooldown: 4
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:8'
+  destruction:
+    name: "Destruction"
+    description:
+      - 'Automatically damages and debuffs all nearby enemies.'
+    group: "LEGENDARY"
+    applies: "HELMET"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 3.5
+        cooldown: 3
+        effects:
+          - 'DAMAGE:1:1:TARGET'
+          - 'POTION:POISON:1:TARGET:5'
+          - 'POTION:WEAKNESS:1:TARGET:5'
+      2:
+        chance: 5
+        cooldown: 3
+        effects:
+          - 'DAMAGE:1:1:TARGET'
+          - 'POTION:POISON:1:TARGET:5'
+          - 'POTION:WEAKNESS:1:TARGET:5'
+      3:
+        chance: 7.5
+        cooldown: 3
+        effects:
+          - 'DAMAGE:1:1:TARGET'
+          - 'POTION:POISON:1:TARGET:5'
+          - 'POTION:WEAKNESS:1:TARGET:5'
+      4:
+        chance: 9.75
+        cooldown: 3
+        effects:
+          - 'DAMAGE:1:1:TARGET'
+          - 'POTION:POISON:1:TARGET:5'
+          - 'POTION:WEAKNESS:1:TARGET:5'
+      5:
+        chance: 11.5
+        cooldown: 3
+        effects:
+          - 'DAMAGE:1:1:TARGET'
+          - 'POTION:POISON:1:TARGET:5'
+          - 'POTION:WEAKNESS:1:TARGET:5'
+  exterminator:
+    name: "Exterminator"
+    description:
+      - 'Temporarily disables enemy ability to'
+      - 'use Undead Ruse, Guardians, and Spirits.'
+    group: "LEGENDARY"
+    applies: "LEGGINGS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 4.25
+        cooldown: 3
+        effects:
+          - 'DISABLE_ENCHANTMENT:undead-ruse:3'
+          - 'DISABLE_ENCHANTMENT:guardians:3'
+          - 'DISABLE_ENCHANTMENT:spirits:3'
+      2:
+        chance: 7.25
+        cooldown: 3
+        effects:
+          - 'DISABLE_ENCHANTMENT:undead-ruse:3'
+          - 'DISABLE_ENCHANTMENT:guardians:3'
+          - 'DISABLE_ENCHANTMENT:spirits:3'
+      3:
+        chance: 9.25
+        cooldown: 3
+        effects:
+          - 'DISABLE_ENCHANTMENT:undead-ruse:3'
+          - 'DISABLE_ENCHANTMENT:guardians:3'
+          - 'DISABLE_ENCHANTMENT:spirits:3'
+  disarmor:
+    name: "Disarmor"
+    description:
+      - 'A slight chance of removing one'
+      - 'piece of armor from your enemy'
+      - 'when they are low health.'
+    group: "LEGENDARY"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 0.5
+        cooldown: 4
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'REMOVE_ARMOR'
+      2:
+        chance: 1
+        cooldown: 4
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'REMOVE_ARMOR'
+      3:
+        chance: 1.5
+        cooldown: 4
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'REMOVE_ARMOR'
+      4:
+        chance: 2
+        cooldown: 4
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'REMOVE_ARMOR'
+      5:
+        chance: 2.75
+        cooldown: 4
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'REMOVE_ARMOR'
+      6:
+        chance: 3.5
+        cooldown: 4
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'REMOVE_ARMOR'
+      7:
+        chance: 4.5
+        cooldown: 4
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'REMOVE_ARMOR'
+      8:
+        chance: 5.25
+        cooldown: 4
+        condition: "isTargetHealth <= 5"
+        effects:
+          - 'REMOVE_ARMOR'
+  overwhelm:
+    name: "Overwhelm"
+    description:
+      - 'Chance to disable enemy''s ability to'
+      - 'inflict Reflective Block on you for'
+      - '6s with every hit.'
+    group: "LEGENDARY"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 2.5
+        effects:
+          - 'DISABLE_ENCHANTMENT:reflective-block:6'
+      2:
+        chance: 4.5
+        effects:
+          - 'DISABLE_ENCHANTMENT:reflective-block:6'
+      3:
+        chance: 6.5
+        effects:
+          - 'DISABLE_ENCHANTMENT:reflective-block:6'
+      4:
+        chance: 8
+        effects:
+          - 'DISABLE_ENCHANTMENT:reflective-block:6'
+  cloak:
+    name: "Cloak"
+    description:
+      - 'A chance to become invisible'
+      - 'for a short time while'
+      - 'at low health.'
+    group: "LEGENDARY"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 2.5
+        cooldown: 3
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'POTION:INVISIBILITY:1:PLAYER:3'
+      2:
+        chance: 3.5
+        cooldown: 3
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'POTION:INVISIBILITY:1:PLAYER:5'
+      3:
+        chance: 4.5
+        cooldown: 3
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'POTION:INVISIBILITY:1:PLAYER:5'
+      4:
+        chance: 5.5
+        cooldown: 3
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'POTION:INVISIBILITY:1:PLAYER:5'
+      5:
+        chance: 6.5
+        cooldown: 3
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'POTION:INVISIBILITY:1:PLAYER:7'
+  ################################################################################################
+  #                                            SOUL                                              #
+  ################################################################################################
+  autolock:
+    name: "Auto Lock"
+    description:
+      - 'Active soul enchant.'
+      - 'Automatically lock on arrows to nearby targets.'
+    group: "SOUL"
+    applies: "BOW"
+    type: "BOW_FIRE"
+    levels:
+      1:
+        cooldown: 9
+        souls: 10
+        effects:
+          - 'AUTO_LOCK'
+      2:
+        cooldown: 8
+        souls: 10
+        effects:
+          - 'AUTO_LOCK'
+      3:
+        cooldown: 7
+        souls: 7
+        effects:
+          - 'AUTO_LOCK'
+      4:
+        cooldown: 5
+        souls: 7
+        effects:
+          - 'AUTO_LOCK'
+      5:
+        cooldown: 3
+        souls: 5
+        effects:
+          - 'AUTO_LOCK'
+  teleblock:
+    name: "Teleblock"
+    description:
+      - 'Active soul enchant.'
+      - 'Your bow is enchanted'
+      - 'with enderpearl blocking magic, damaged'
+      - 'players will be unable to use enderpearls'
+      - 'for up to 20 seconds, and will lose up to'
+      - '15 enderpearls from their inventory.'
+    group: "SOUL"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        cooldown: 25
+        souls: 6
+        effects:
+          - 'TELEBLOCK:20'
+      2:
+        cooldown: 25
+        souls: 12
+        effects:
+          - 'TELEBLOCK:20'
+      3:
+        cooldown: 25
+        souls: 18
+        effects:
+          - 'TELEBLOCK:20'
+      4:
+        cooldown: 25
+        souls: 24
+        effects:
+          - 'TELEBLOCK:20'
+      5:
+        cooldown: 25
+        souls: 30
+        effects:
+          - 'TELEBLOCK:20'
+  immortal:
+    name: "Immortal"
+    description:
+      - 'Passive soul enchant.'
+      - 'Prevents your armor from taking durability'
+      - 'damage in exchange for souls.'
+    group: "SOUL"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 12
+        souls: 5
+        effects:
+          - 'ARMOR_CANCEL'
+      2:
+        chance: 19
+        souls: 9
+        effects:
+          - 'ARMOR_CANCEL'
+      3:
+        chance: 25
+        souls: 13
+        effects:
+          - 'ARMOR_CANCEL'
+      4:
+        chance: 31
+        souls: 20
+        effects:
+          - 'ARMOR_CANCEL'
+  divine-immolation:
+    name: "Divine Immolation"
+    description:
+      - 'Active soul enchant.'
+      - 'Your weapons are imbued with divine fire, '
+      - 'turning all your physical attacks into Area'
+      - 'of CustomEffect spells and igniting divine fire upon'
+      - 'all nearby enemies.'
+    group: "SOUL"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        souls: 20
+        cooldown: 2
+        effects:
+          - 'PARTICLE:FLAME'
+          - 'SOUND:ENTITY_GENERIC_EXPLODE:15'
+          - 'FLAME:3:TARGET'
+          - 'DAMAGE_INCREASE:10'
+          - 'POTION:WITHER:1:TARGET:3'
+          - 'MESSAGE:&c&l** DIVINE IMMOLATION **:TARGET'
+          - 'DRAIN_SOULS_CONSTANT:1:20'
+      2:
+        souls: 20
+        cooldown: 2
+        effects:
+          - 'PARTICLE:FLAME'
+          - 'SOUND:ENTITY_GENERIC_EXPLODE:15'
+          - 'FLAME:3:TARGET'
+          - 'DAMAGE_INCREASE:15'
+          - 'POTION:WITHER:1:TARGET:3'
+          - 'MESSAGE:&c&l** DIVINE IMMOLATION **:TARGET'
+          - 'DRAIN_SOULS_CONSTANT:1:20'
+      3:
+        souls: 20
+        cooldown: 2
+        effects:
+          - 'PARTICLE:FLAME'
+          - 'SOUND:ENTITY_GENERIC_EXPLODE:15'
+          - 'FLAME:3:TARGET'
+          - 'DAMAGE_INCREASE:20'
+          - 'POTION:WITHER:2:TARGET:1'
+          - 'MESSAGE:&c&l** DIVINE IMMOLATION **:TARGET'
+          - 'DRAIN_SOULS_CONSTANT:1:20'
+      4:
+        souls: 20
+        cooldown: 2
+        effects:
+          - 'PARTICLE:FLAME'
+          - 'SOUND:ENTITY_GENERIC_EXPLODE:15'
+          - 'FLAME:3:TARGET'
+          - 'DAMAGE_INCREASE:25'
+          - 'POTION:WITHER:2:TARGET:3'
+          - 'MESSAGE:&c&l** DIVINE IMMOLATION **:TARGET'
+          - 'DRAIN_SOULS_CONSTANT:1:20'
+  sabotage:
+    name: "Sabotage"
+    description:
+      - 'An active soul enchantment that gives'
+      - 'a change to block an enemy players'
+      - 'Rocket Escape and Guided Rocket Escape'
+      - 'from activating.'
+    group: "SOUL"
+    applies: "SWORDS"
+    type: "ATTACK"
+    levels:
+      1:
+        cooldown: 10
+        souls: 4
+        effects:
+          - 'DISABLE_ENCHANTMENT:rocket-escape:3'
+          - 'DISABLE_ENCHANTMENT:guided-rocket-escape:3'
+          - 'MESSAGE:&c&l** SABOTAGE [&46s&c&l] **:TARGET'
+          - 'DRAIN_SOULS_CONSTANT:1:4'
+      2:
+        cooldown: 10
+        souls: 4
+        effects:
+          - 'DISABLE_ENCHANTMENT:rocket-escape:3'
+          - 'DISABLE_ENCHANTMENT:guided-rocket-escape:3'
+          - 'MESSAGE:&c&l** SABOTAGE [&46s&c&l] **:TARGET'
+          - 'DRAIN_SOULS_CONSTANT:1:4'
+      3:
+        cooldown: 10
+        souls: 4
+        effects:
+          - 'DISABLE_ENCHANTMENT:rocket-escape:3'
+          - 'DISABLE_ENCHANTMENT:guided-rocket-escape:3'
+          - 'MESSAGE:&c&l** SABOTAGE [&46s&c&l] **:TARGET'
+          - 'DRAIN_SOULS_CONSTANT:1:4'
+      4:
+        cooldown: 10
+        souls: 4
+        effects:
+          - 'DISABLE_ENCHANTMENT:rocket-escape:3'
+          - 'DISABLE_ENCHANTMENT:guided-rocket-escape:3'
+          - 'MESSAGE:&c&l** SABOTAGE [&46s&c&l] **:TARGET'
+          - 'DRAIN_SOULS_CONSTANT:1:4'
+      5:
+        cooldown: 10
+        souls: 4
+        effects:
+          - 'DISABLE_ENCHANTMENT:rocket-escape:3'
+          - 'DISABLE_ENCHANTMENT:guided-rocket-escape:3'
+          - 'MESSAGE:&c&l** SABOTAGE [&46s&c&l] **:TARGET'
+          - 'DRAIN_SOULS_CONSTANT:1:4'
+  soul-trap:
+    name: "Soul Trap"
+    description:
+      - 'Active soul enchant.'
+      - 'Your axe is imbued with sealing magic'
+      - 'and has a chance to disable/negate all'
+      - 'soul enchantments of your enemies on hit'
+      - 'for (level x 4) seconds.'
+    group: "SOUL"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 7
+        cooldown: 15
+        souls: 2
+        effects:
+          - 'DISABLE_ENCHANTMENT:divine-immolation:1'
+          - 'DISABLE_ENCHANTMENT:nature-wrath:1'
+          - 'DISABLE_ENCHANTMENT:phoenix:1'
+          - 'DISABLE_ENCHANTMENT:immortal:1'
+          - 'MESSAGE:&c&l** SOUL TRAP **:TARGET'
+          - 'DRAIN_SOULS_CONSTANT:1:2'
+      2:
+        chance: 14
+        cooldown: 15
+        souls: 2
+        effects:
+          - 'DISABLE_ENCHANTMENT:divine-immolation:3'
+          - 'DISABLE_ENCHANTMENT:nature-wrath:3'
+          - 'DISABLE_ENCHANTMENT:phoenix:3'
+          - 'DISABLE_ENCHANTMENT:immortal:3'
+          - 'MESSAGE:&c&l** SOUL TRAP **:TARGET'
+          - 'DRAIN_SOULS_CONSTANT:1:2'
+      3:
+        chance: 21
+        cooldown: 15
+        souls: 2
+        effects:
+          - 'DISABLE_ENCHANTMENT:divine-immolation:5'
+          - 'DISABLE_ENCHANTMENT:nature-wrath:5'
+          - 'DISABLE_ENCHANTMENT:phoenix:5'
+          - 'DISABLE_ENCHANTMENT:immortal:5'
+          - 'MESSAGE:&c&l** SOUL TRAP **:TARGET'
+          - 'DRAIN_SOULS_CONSTANT:1:2'
+  phoenix:
+    name: "Phoenix"
+    description:
+      - 'Passive soul enchantment.'
+      - 'An attack that would normally kill you will instead'
+      - 'heal you to full HP. Can only be activated once'
+      - 'once every couple minutes.'
+    group: "SOUL"
+    applies: "BOOTS"
+    type: "DEFENSE"
+    levels:
+      1:
+        cooldown: 120
+        condition: "isPlayerHealth <= 4"
+        souls: 500
+        effects:
+          - 'HEAL:ADD:40:50:PLAYER'
+          - 'MESSAGE:&c&l** PHOENIX **:PLAYER'
+      2:
+        cooldown: 120
+        condition: "isPlayerHealth <= 4"
+        souls: 500
+        effects:
+          - 'HEAL:ADD:40:50:PLAYER'
+          - 'MESSAGE:&c&l** PHOENIX **:PLAYER'
+      3:
+        cooldown: 120
+        condition: "isPlayerHealth <= 4"
+        souls: 500
+        effects:
+          - 'HEAL:ADD:40:50:PLAYER'
+          - 'MESSAGE:&c&l** PHOENIX **:PLAYER'
+  nature-wrath:
+    name: "Nature Wrath"
+    description:
+      - 'Passive Soul Enchantment.'
+      - 'Temporarily freeze all enemies in a massive area'
+      - 'around you, pushing them back and dealing'
+      - 'massive nature damage.'
+    group: "SOUL"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 4
+        cooldown: 10
+        souls: 75
+        effects:
+          - 'WRATH:3:1:2:&c&l*** Natures Wrath ***'
+      2:
+        chance: 8
+        cooldown: 10
+        souls: 75
+        effects:
+          - 'WRATH:5:2:3:&c&l*** Natures Wrath ***'
+      3:
+        chance: 12
+        cooldown: 10
+        souls: 75
+        effects:
+          - 'WRATH:7:2:4:&c&l*** Natures Wrath ***'
+      4:
+        chance: 16
+        cooldown: 10
+        souls: 75
+        effects:
+          - 'WRATH:10:2:4:&c&l*** Natures Wrath ***'
+  rogue:
+    name: "Rogue"
+    description:
+      - 'Active Soul Enchantment.'
+      - 'Deal up to 2.0x damage if'
+      - 'hitting your enemy from behind.'
+    group: "SOUL"
+    applies: "AXE"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 3.25
+        cooldown: 5
+        souls: 100
+        effects:
+          - 'DAMAGE_INCREASE:50'
+      2:
+        chance: 6.5
+        cooldown: 5
+        souls: 100
+        effects:
+          - 'DAMAGE_INCREASE:50'
+      3:
+        chance: 8.5
+        cooldown: 5
+        souls: 100
+        effects:
+          - 'DAMAGE_INCREASE:50'
+  ################################################################################################
+  #                                          Heroic                                              #
+  ################################################################################################
+  godly-overload:
+    name: "Godly Overload"
+    description:
+      - 'A very large permanent increase in hearts.'
+      - 'Requires Overload III enchant on item to apply.'
+      - 'Cannot be black-scrolled.'
+    group: "HEROIC"
+    applies: "ARMOR"
+    type: "PASSIVE"
+    requires: "overload"
+    levels:
+      1:
+        effects:
+          - 'POTION:HEALTH_BOOST:4:PLAYER'
+      2:
+        effects:
+          - 'POTION:HEALTH_BOOST:5:PLAYER'
+      3:
+        effects:
+          - 'POTION:HEALTH_BOOST:6:PLAYER'
+  master-inquisitive:
+    name: "Master Inquisitive"
+    description:
+      - 'Massively increases EXP drops from mobs.'
+      - 'Requires Inquisitive IV enchant on item to apply.'
+      - 'Cannot be black-scrolled.'
+    group: "HEROIC"
+    applies: "SWORDS"
+    type: "ATTACK"
+    requires: "inquisitive"
+    levels:
+      1:
+        chance: 15
+        cooldown: 4
+        effects:
+          - 'EXP:50'
+      2:
+        chance: 15
+        cooldown: 4
+        effects:
+          - 'EXP:75'
+      3:
+        chance: 15
+        cooldown: 4
+        effects:
+          - 'EXP:100'
+      4:
+        chance: 15
+        cooldown: 4
+        effects:
+          - 'EXP:125'
+  shadow-assassin:
+    name: "Shadow Assassin"
+    description:
+      - 'The closer you are to your enemy, the'
+      - 'more damage you deal (up to 1.875x).'
+      - 'However, if you are more than 2 blocks away,'
+      - 'you will deal LESS damage than normal.'
+      - 'Requires Assassin V enchant on item to apply.'
+      - 'Cannot be black-scrolled'
+    group: "HEROIC"
+    applies: "SWORDS"
+    type: "ATTACK"
+    requires: "assassin"
+    levels:
+      1:
+        chance: 4.25
+        cooldown: 3
+        effects:
+          - 'DAMAGE_DISTANCE'
+      2:
+        chance: 7
+        cooldown: 3
+        effects:
+          - 'DAMAGE_DISTANCE'
+      3:
+        chance: 9.5
+        cooldown: 2
+        effects:
+          - 'DAMAGE_DISTANCE'
+      4:
+        chance: 11
+        cooldown: 2
+        effects:
+          - 'DAMAGE_DISTANCE'
+      5:
+        chance: 13
+        cooldown: 1
+        effects:
+          - 'DAMAGE_DISTANCE'
+  alien-implants:
+    name: "Alien Implants"
+    description:
+      - 'Automatically heal 2x the HP of normal Implants'
+      - 'at 2x the rate, and at max level all hunger loss'
+      - 'is disabled. Once applied, this enchantment can only'
+      - 'be extracted from items with heroic black scrolls.'
+    group: "HEROIC"
+    applies: "HELMET"
+    type: "DEFENSE"
+    requires: "implants"
+    levels:
+      1:
+        chance: 30
+        cooldown: 5
+        effects:
+          - 'HEAL:ADD:2:2'
+          - 'FEED:2'
+      2:
+        chance: 60
+        effects:
+          - 'HEAL:ADD:2:2'
+          - 'FEED:2'
+      3:
+        chance: 90
+        effects:
+          - 'HEAL:ADD:2:2'
+          - 'FEED:2'
+  ethereal-dodge:
+    name: "Ethereal Dodge"
+    description:
+      - 'Increased proc rate over normal Dodge,'
+      - 'with a small chance to gain Speed V for'
+      - 'a few seconds on successful dodge. All fall'
+      - 'damage is disabled.'
+    group: "HEROIC"
+    applies: "BOOTS"
+    type: "DEFENSE"
+    requires: "dodge"
+    levels:
+      1:
+        chance: 2.75
+        cooldown: 5
+        effects:
+          - 'DAMAGE_CANCEL'
+          - 'MESSAGE:&d&l** ETHEREAL DODGE**:PLAYER'
+          - 'POTION:SPEED:5:PLAYER:6'
+      2:
+        chance: 4.25
+        cooldown: 5
+        effects:
+          - 'DAMAGE_CANCEL'
+          - 'MESSAGE:&d&l** ETHEREAL DODGE**:PLAYER'
+          - 'POTION:SPEED:5:PLAYER:6'
+      3:
+        chance: 6.25
+        cooldown: 5
+        effects:
+          - 'DAMAGE_CANCEL'
+          - 'MESSAGE:&d&l** ETHEREAL DODGE**:PLAYER'
+          - 'POTION:SPEED:5:PLAYER:6'
+      4:
+        chance: 8.25
+        cooldown: 5
+        effects:
+          - 'DAMAGE_CANCEL'
+          - 'MESSAGE:&d&l** ETHEREAL DODGE**:PLAYER'
+          - 'POTION:SPEED:5:PLAYER:6'
+      5:
+        chance: 10
+        cooldown: 5
+        effects:
+          - 'DAMAGE_CANCEL'
+          - 'MESSAGE:&d&l** ETHEREAL DODGE**:PLAYER'
+          - 'POTION:SPEED:5:PLAYER:6'
+  planetary-deathbringer:
+    name: "Planetary Deathbringer"
+    description:
+      - 'An increased chance to deal 2.5x damage.'
+      - 'Requires Deathbringer III enchant on item'
+      - 'to apply.'
+      - 'Cannot be black-scrolled.'
+    group: "HEROIC"
+    applies: "ARMOR"
+    type: "ATTACK"
+    requires: "deathbringer"
+    levels:
+      1:
+        chance: 4.25
+        cooldown: 4
+        effects:
+          - 'DAMAGE_INCREASE:75'
+      2:
+        chance: 6.75
+        cooldown: 4
+        effects:
+          - 'DAMAGE_INCREASE:75'
+      3:
+        chance: 9
+        cooldown: 4
+        effects:
+          - 'DAMAGE_INCREASE:75'
+  divine-enlighted:
+    name: "Divine Enlighted"
+    description:
+      - 'High chance of healing lots of HP while'
+      - 'taking damage. Requires Enlighted III on'
+      - 'item to apply. Cannot be black-scrolled.'
+    group: "HEROIC"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    requires: "enlighted"
+    levels:
+      1:
+        chance: 7.5
+        cooldown: 5
+        effects:
+          - 'HEAL:ADD:2:4'
+      2:
+        chance: 15
+        cooldown: 5
+        effects:
+          - 'HEAL:ADD:2:4'
+      3:
+        chance: 22.5
+        cooldown: 5
+        effects:
+          - 'HEAL:ADD:2:4'
+  atomic-detonate:
+    name: "Atomic Detonate"
+    description:
+      - 'Summons up to a 7x7x7 explosion'
+      - 'around any block you break.'
+    group: "HEROIC"
+    applies: "TOOLS"
+    type: "MINE"
+    requires: "detonate"
+    levels:
+      1:
+        chance: 70
+        effects:
+          - 'TRENCH:2'
+      2:
+        chance: 80
+        effects:
+          - 'TRENCH:2'
+      3:
+        chance: 90
+        effects:
+          - 'TRENCH:2'
+      4:
+        effects:
+          - 'TRENCH:2'
+  demonic-lifesteal:
+    name: "Demonic Lifesteal"
+    description:
+      - 'Heals much more HP at a greatly increased rate'
+      - 'compared to normal Lifesteal.'
+    group: "HEROIC"
+    applies: "WEAPON"
+    type: "ATTACK"
+    requires: "lifesteal"
+    levels:
+      1:
+        chance: 4.5
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:8:8'
+      2:
+        chance: 6.75
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:12:12'
+      3:
+        chance: 9
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:15:15'
+  master-blacksmith:
+    name: "Master Blacksmith"
+    description:
+      - 'Chance to heal your most damaged piece of armor'
+      - 'by 2-3 durability whenever you hit a player,'
+      - 'but when it procs your attack will only deal'
+      - '75-100% of the normal damage. Requires'
+      - 'Blacksmith V enchant on item to apply.'
+      - 'Cannot be black-scrolled.'
+    group: "HEROIC"
+    applies: "AXE"
+    type: "ATTACK"
+    requires: "blacksmith"
+    levels:
+      1:
+        chance: 4.5
+        cooldown: 3
+        effects:
+          - 'ADD_DURABILITY:25'
+          - 'REDUCTION:25'
+      2:
+        chance: 7.5
+        cooldown: 3
+        effects:
+          - 'ADD_DURABILITY:25'
+          - 'REDUCTION:25'
+      3:
+        chance: 9.5
+        cooldown: 3
+        effects:
+          - 'ADD_DURABILITY:25'
+          - 'REDUCTION:15'
+      4:
+        chance: 11
+        cooldown: 3
+        effects:
+          - 'ADD_DURABILITY:35'
+          - 'REDUCTION:10'
+      5:
+        chance: 13
+        cooldown: 3
+        effects:
+          - 'ADD_DURABILITY:35'
+  paladin-armored:
+    name: "Paladin Armored"
+    description:
+      - 'Negates 150% more enemy sword damage than normal'
+      - 'Armored per level. A chance to be Blessed every'
+      - 'time you are struck by an enemy sword.'
+    group: "HEROIC"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    requires: "armored"
+    levels:
+      1:
+        condition: "isTargetHolding SWORD"
+        chance: 10
+        cooldown: 4
+        effects:
+          - 'REDUCTION:50'
+          - 'CURE:SLOW'
+          - 'CURE:POISON'
+          - 'CURE:SLOW_DIGGING'
+          - 'CURE:BLINDNESS'
+          - 'CURE:WITHER'
+          - 'CURE:SLOW:true'
+          - 'CURE:POISON:true'
+          - 'CURE:SLOW_DIGGING:true'
+          - 'CURE:BLINDNESS:true'
+          - 'CURE:WITHER:true'
+      2:
+        condition: "isTargetHolding SWORD"
+        chance: 20
+        cooldown: 4
+        effects:
+          - 'REDUCTION:50'
+          - 'CURE:SLOW'
+          - 'CURE:POISON'
+          - 'CURE:SLOW_DIGGING'
+          - 'CURE:BLINDNESS'
+          - 'CURE:WITHER'
+          - 'CURE:SLOW:true'
+          - 'CURE:POISON:true'
+          - 'CURE:SLOW_DIGGING:true'
+          - 'CURE:BLINDNESS:true'
+          - 'CURE:WITHER:true'
+      3:
+        condition: "isTargetHolding SWORD"
+        chance: 30
+        cooldown: 4
+        effects:
+          - 'REDUCTION:50'
+          - 'CURE:SLOW'
+          - 'CURE:POISON'
+          - 'CURE:SLOW_DIGGING'
+          - 'CURE:BLINDNESS'
+          - 'CURE:SLOW:true'
+          - 'CURE:POISON:true'
+          - 'CURE:SLOW_DIGGING:true'
+          - 'CURE:BLINDNESS:true'
+          - 'CURE:WITHER:true'
+      4:
+        condition: "isTargetHolding SWORD"
+        chance: 40
+        cooldown: 4
+        effects:
+          - 'REDUCTION:50'
+          - 'CURE:SLOW'
+          - 'CURE:POISON'
+          - 'CURE:SLOW_DIGGING'
+          - 'CURE:BLINDNESS'
+          - 'CURE:WITHER'
+          - 'CURE:SLOW:true'
+          - 'CURE:POISON:true'
+          - 'CURE:SLOW_DIGGING:true'
+          - 'CURE:BLINDNESS:true'
+          - 'CURE:WITHER:true'
+  vengeful-diminish:
+    name: "Vengeful Diminish"
+    description:
+      - 'When this effect procs, the next attack dealt to you cannot'
+      - 'deal more than the (took amount of damage / 2) you took'
+      - 'from the previous attack any damage above this limit'
+      - 'will be dealt to the attacker. Requires Diminish VI enchant'
+      - 'on item to apply. Cannot be black-scrolled.'
+    group: "HEROIC"
+    applies: "CHESTPLATE"
+    type: "DEFENSE"
+    requires: "diminish"
+    levels:
+      1:
+        chance: 3.75
+        cooldown: 3
+        effects:
+          - 'REDUCTION:50'
+      2:
+        chance: 6
+        cooldown: 3
+        effects:
+          - 'REDUCTION:50'
+      3:
+        chance: 8.5
+        cooldown: 3
+        effects:
+          - 'REDUCTION:50'
+      4:
+        chance: 10
+        cooldown: 3
+        effects:
+          - 'REDUCTION:50'
+      5:
+        chance: 11.5
+        cooldown: 3
+        effects:
+          - 'REDUCTION:50'
+      6:
+        chance: 13
+        cooldown: 3
+        effects:
+          - 'REDUCTION:50'
+  bidirectional-teleportation:
+    name: "Bidirectional Teleportation"
+    description:
+      - 'Chance to repel an enemy'
+      - 'towards you, or trap them for 1-2s.'
+    group: "HEROIC"
+    applies: "BOW"
+    type: "BOW"
+    levels:
+      1:
+        chance: 2.5
+        cooldown: 4
+        effects:
+          - 'KNOCKBACK:TARGET:1'
+          - 'POTION:SLOW:3:TARGET:3'
+      2:
+        chance: 4
+        cooldown: 4
+        effects:
+          - 'KNOCKBACK:TARGET:1'
+          - 'POTION:SLOW:3:TARGET:3'
+      3:
+        chance: 6.5
+        cooldown: 4
+        effects:
+          - 'KNOCKBACK:TARGET:1'
+          - 'POTION:SLOW:3:TARGET:3'
+      4:
+        chance: 7
+        cooldown: 4
+        effects:
+          - 'KNOCKBACK:TARGET:1'
+          - 'POTION:SLOW:3:TARGET:3'
+      5:
+        chance: 8.75
+        cooldown: 4
+        effects:
+          - 'KNOCKBACK:TARGET:1'
+          - 'POTION:SLOW:3:TARGET:3'
+  deep-bleed:
+    name: "Deep Bleed"
+    description:
+      - 'Enemies affected by Deep Bleed are slowed up to 200% more,'
+      - 'take more damage, and heal allied players with Blood Lust'
+      - 'for up to 200% more.'
+    group: "HEROIC"
+    applies: "AXE"
+    type: "ATTACK"
+    requires: "bleed"
+    levels:
+      1:
+        chance: 2.25
+        cooldown: 4
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'DAMAGE_INCREASE:3'
+          - 'POTION:SLOW:3:TARGET:5'
+      2:
+        chance: 4
+        cooldown: 4
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'DAMAGE_INCREASE:5'
+          - 'POTION:SLOW:3:TARGET:5'
+      3:
+        chance: 5.5
+        cooldown: 4
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'DAMAGE_INCREASE:8'
+          - 'POTION:SLOW:3:TARGET:5'
+      4:
+        chance: 6.25
+        cooldown: 4
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'DAMAGE_INCREASE:10'
+          - 'POTION:SLOW:3:TARGET:5'
+      5:
+        chance: 7
+        cooldown: 4
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'DAMAGE_INCREASE:12'
+          - 'POTION:SLOW:3:TARGET:5'
+      6:
+        chance: 8.25
+        cooldown: 4
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'DAMAGE_INCREASE:15'
+          - 'POTION:SLOW:3:TARGET:5'
+  guided-rocket-escape:
+    name: "Guided Rocket Escape"
+    description:
+      - 'Blast off into the air and breifly'
+      - 'gain flight for (level x 1s).'
+    group: "HEROIC"
+    applies: "BOOTS"
+    type: "DEFENSE"
+    requires: "rocket-escape"
+    levels:
+      1:
+        chance: 25
+        cooldown: 12
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'THROW:0:5:0:PLAYER'
+      2:
+        chance: 50
+        cooldown: 12
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'THROW:0:5:0:PLAYER'
+      3:
+        chance: 75
+        cooldown: 12
+        condition: "isPlayerHealth <= 4"
+        effects:
+          - 'THROW:0:5:0:PLAYER'
+  mighty-cactus:
+    name: "Mighty Cactus"
+    description:
+      - 'Chance to negate all Thorns enchantment damage.'
+    group: "HEROIC"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    requires: "cactus"
+    levels:
+      1:
+        chance: 6
+        cooldown: 5
+        effects:
+          - 'DAMAGE:1:1:TARGET'
+      2:
+        chance: 9
+        cooldown: 5
+        effects:
+          - 'DAMAGE:1:1:TARGET'
+  mighty-cleave:
+    name: "Mighty Cleave"
+    description:
+      - 'The heroic version of Cleave. Deals up to 8'
+      - 'damage in up to a 4.25 block radius.'
+    group: "HEROIC"
+    applies: "AXE"
+    type: "ATTACK"
+    requires: "cleave"
+    levels:
+      1:
+        chance: 3.25
+        cooldown: 4
+        effects:
+          - 'DAMAGE_DISTANCE'
+      2:
+        chance: 4.75
+        cooldown: 4
+        effects:
+          - 'DAMAGE_DISTANCE'
+      3:
+        chance: 6
+        cooldown: 4
+        effects:
+          - 'DAMAGE_DISTANCE'
+      4:
+        chance: 7.5
+        cooldown: 4
+        effects:
+          - 'DAMAGE_DISTANCE'
+      5:
+        chance: 9
+        cooldown: 4
+        effects:
+          - 'DAMAGE_DISTANCE'
+  polymorphic-metaphysical:
+    name: "Polymorphic Metaphysical"
+    description:
+      - 'A chance to resist the slowness given by enemy Trap,'
+      - 'Snare, Pummel, and Ice Aspect enchantments.'
+    group: "HEROIC"
+    applies: "BOOTS"
+    type: "DEFENSE"
+    requires: "metaphysical"
+    levels:
+      1:
+        chance: 4
+        cooldown: 3
+        effects:
+          - 'CURE:SLOW'
+      2:
+        chance: 6
+        cooldown: 3
+        effects:
+          - 'CURE:SLOW'
+      3:
+        chance: 8
+        cooldown: 3
+        effects:
+          - 'CURE:SLOW'
+      4:
+        chance: 10
+        cooldown: 3
+        effects:
+          - 'CURE:SLOW'
+  reflective-block:
+    name: "Reflective Block"
+    description:
+      - 'A high chance to greatly decrease or completely negate'
+      - 'incoming damage while blocking, and to reflect an incoming'
+      - 'attack back on the attacker whether you are blocking or not.'
+    group: "HEROIC"
+    applies: "SWORDS"
+    type: "DEFENSE"
+    requires: "block"
+    levels:
+      1:
+        chance: 45
+        cooldown: 5
+        condition: "isPlayerBlocking"
+        effects:
+          - 'REDUCTION:80'
+      2:
+        chance: 65
+        cooldown: 5
+        condition: "isPlayerBlocking"
+        effects:
+          - 'REDUCTION:90'
+      3:
+        chance: 80
+        cooldown: 5
+        condition: "isPlayerBlocking"
+        effects:
+          - 'REDUCTION:100'
+  reinforced-tank:
+    name: "Reinforced Tank"
+    description:
+      - 'Decreases Damage from enemy axes by 2.25% per level,'
+      - 'this enchantment is stackable.'
+    group: "HEROIC"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    requires: "tank"
+    levels:
+      1:
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'REDUCTION:2.25'
+      2:
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'REDUCTION:4.5'
+      3:
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'REDUCTION:6.75'
+      4:
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'REDUCTION:9.95'
+  titan-trap:
+    name: "Titan Trap"
+    description:
+      - 'A chance to give a longer lasting buffed slowness'
+      - 'effect. More resilient against metaphysical.'
+    group: "HEROIC"
+    applies: "SWORDS"
+    type: "ATTACK"
+    requires: "trap"
+    levels:
+      1:
+        chance: 2.25
+        cooldown: 7
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'POTION:SLOW:3:TARGET:7'
+      2:
+        chance: 4
+        cooldown: 7
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'POTION:SLOW:3:TARGET:7'
+      3:
+        chance: 6
+        cooldown: 7
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'POTION:SLOW:3:TARGET:7'
+  bewitched-hex:
+    name: "Bewitched Hex"
+    description:
+      - 'Once a target is affected by Bewitched Hex, a'
+      - 'portion of all their outgoing damage is'
+      - 'reflected back onto them for up to 8 seconds.'
+    group: "HEROIC"
+    applies: "AXE"
+    type: "ATTACK"
+    requires: "hex"
+    levels:
+      1:
+        chance: 3.5
+        cooldown: 5
+        effects:
+          - 'REDUCTION:15'
+          - 'DAMAGE:1:6:TARGET'
+      2:
+        chance: 4.5
+        cooldown: 5
+        effects:
+          - 'REDUCTION:15'
+          - 'DAMAGE:1:6:TARGET'
+      3:
+        chance: 5.5
+        cooldown: 5
+        effects:
+          - 'REDUCTION:15'
+          - 'DAMAGE:1:6:TARGET'
+      4:
+        chance: 6.5
+        cooldown: 5
+        effects:
+          - 'REDUCTION:15'
+          - 'DAMAGE:1:6:TARGET'
+      5:
+        chance: 7.5
+        cooldown: 5
+        effects:
+          - 'REDUCTION:15'
+          - 'DAMAGE:1:6:TARGET'
+  extreme-insanity:
+    name: "Extreme Insanity"
+    description:
+      - 'You swing your axe like an extreme maniac.'
+      - 'Multiplies damage against players who are wielding'
+      - 'a SWORD at the time they are hit.'
+    group: "HEROIC"
+    applies: "AXE"
+    type: "ATTACK"
+    requires: "insanity"
+    levels:
+      1:
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:4'
+      2:
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:6'
+      3:
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:8'
+      4:
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:10'
+      5:
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:12'
+      6:
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:14'
+      7:
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:16'
+      8:
+        condition: "isTargetHolding SWORD"
+        effects:
+          - 'DAMAGE_INCREASE:18'
+  mega-heavy:
+    name: "Mega-Heavy"
+    description:
+      - 'Decreases damage from enemy bows by 10%'
+      - 'plus an additional 2% per level! '
+      - 'This enchantment is stackable.'
+    group: "HEROIC"
+    applies: "ARMOR"
+    type: "ATTACK"
+    requires: "heavy"
+    levels:
+      1:
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'REDUCTION:12'
+      2:
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'REDUCTION:14'
+      3:
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'REDUCTION:16'
+      4:
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'REDUCTION:18'
+      5:
+        condition: "isTargetHolding BOW"
+        effects:
+          - 'REDUCTION:20'
+  epidemic-carrier:
+    name: "Epidemic Carrier"
+    description:
+      - 'When near death summons powerful'
+      - 'Stun Creeprs to avenge you.'
+      - 'Requires Plague Carrier VIII enchant'
+      - 'on item to apply. Cannot be black-scrolled.'
+    group: "HEROIC"
+    applies: "LEGGINGS"
+    type: "DEFENSE"
+    requires: "plague-carrier"
+    levels:
+      1:
+        chance: 3.25
+        cooldown: 15
+        condition: "isPlayerHealth <= 3"
+        effects:
+          - 'SPAWN:CREEPER:20:1:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:1:TARGET:5'
+          - 'LIGHTNING:PLAYER:REAL'
+          - 'EXTINGUISH:PLAYER'
+          - 'HEAL:ADD:1:2'
+      2:
+        chance: 5
+        cooldown: 15
+        condition: "isPlayerHealth <= 3"
+        effects:
+          - 'SPAWN:CREEPER:20:1:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:1:TARGET:5'
+          - 'LIGHTNING:PLAYER:REAL'
+          - 'EXTINGUISH:PLAYER'
+          - 'HEAL:ADD:1:2'
+      3:
+        chance: 6.5
+        cooldown: 15
+        condition: "isPlayerHealth <= 3"
+        effects:
+          - 'SPAWN:CREEPER:20:1:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:1:TARGET:5'
+          - 'LIGHTNING:PLAYER:REAL'
+          - 'EXTINGUISH:PLAYER'
+          - 'HEAL:ADD:1:2'
+      4:
+        chance: 8
+        cooldown: 15
+        condition: "isPlayerHealth <= 3"
+        effects:
+          - 'SPAWN:CREEPER:20:2:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:2:TARGET:5'
+          - 'LIGHTNING:PLAYER:REAL'
+          - 'EXTINGUISH:PLAYER'
+          - 'HEAL:ADD:1:2'
+      5:
+        chance: 10
+        cooldown: 15
+        condition: "isPlayerHealth <= 3"
+        effects:
+          - 'SPAWN:CREEPER:20:2:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:2:TARGET:5'
+          - 'LIGHTNING:PLAYER:REAL'
+          - 'EXTINGUISH:PLAYER'
+          - 'HEAL:ADD:1:2'
+      6:
+        chance: 12.25
+        cooldown: 15
+        condition: "isPlayerHealth <= 3"
+        effects:
+          - 'SPAWN:CREEPER:20:2:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:2:TARGET:5'
+          - 'LIGHTNING:PLAYER:REAL'
+          - 'EXTINGUISH:PLAYER'
+          - 'HEAL:ADD:1:2'
+      7:
+        chance: 13.75
+        cooldown: 15
+        condition: "isPlayerHealth <= 3"
+        effects:
+          - 'SPAWN:CREEPER:20:2:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:2:TARGET:5'
+          - 'LIGHTNING:PLAYER:REAL'
+          - 'EXTINGUISH:PLAYER'
+          - 'HEAL:ADD:1:2'
+      8:
+        chance: 15
+        cooldown: 15
+        effects:
+          - 'SPAWN:CREEPER:20:2:4:&a&l%player%''s Creepers'
+          - 'POTION:BLINDNESS:3:TARGET:5'
+          - 'LIGHTNING:PLAYER:REAL'
+          - 'EXTINGUISH:PLAYER'
+          - 'HEAL:ADD:1:2'
+  soul-hardened:
+    name: "Soul Hardened"
+    description:
+      - 'Chance to block enemy soul trap,'
+      - 'armor takes less durability damage.'
+    group: "HEROIC"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    requires: "hardened"
+    levels:
+      1:
+        chance: 5.25
+        cooldown: 3
+        effects:
+          - 'ADD_DURABILITY:2'
+          - 'DISABLE_ENCHANTMENT:soul-trap:5'
+      2:
+        chance: 7.5
+        cooldown: 3
+        effects:
+          - 'ADD_DURABILITY:2'
+          - 'DISABLE_ENCHANTMENT:soul-trap:5'
+      3:
+        chance: 10
+        cooldown: 3
+        effects:
+          - 'ADD_DURABILITY:2'
+          - 'DISABLE_ENCHANTMENT:soul-trap:5'
+  lethal-sniper:
+    name: "Lethal Sniper"
+    description:
+      - 'High chance of headshots to deal'
+      - 'atleast 3.5x damage up to 4.0x.'
+      - 'Requires Sniper V enchant on item'
+      - 'to apply. Cannot be black-scrolled.'
+    group: "HEROIC"
+    applies: "BOW"
+    type: "BOW"
+    requires: "sniper"
+    levels:
+      1:
+        chance: 5
+        cooldown: 3
+        effects:
+          - 'SNIPER'
+          - 'DAMAGE_INCREASE:5'
+      2:
+        chance: 7.5
+        cooldown: 3
+        effects:
+          - 'SNIPER'
+          - 'DAMAGE_INCREASE:5'
+      3:
+        chance: 10
+        cooldown: 3
+        effects:
+          - 'SNIPER'
+          - 'DAMAGE_INCREASE:5'
+      4:
+        chance: 12.5
+        cooldown: 3
+        effects:
+          - 'SNIPER'
+          - 'DAMAGE_INCREASE:5'
+      5:
+        chance: 15
+        cooldown: 3
+        effects:
+          - 'SNIPER'
+          - 'DAMAGE_INCREASE:5'
+  vampiric-devour:
+    name: "Vampiric Devour"
+    description:
+      - 'Normal Devour mechanics plus a chance'
+      - 'to regain health when attacking.'
+    group: "HEROIC"
+    applies: "AXE"
+    type: "ATTACK"
+    requires: "devour"
+    levels:
+      1:
+        chance: 1.75
+        cooldown: 5
+        effects:
+          - 'DAMAGE_INCREASE:5'
+          - 'HEAL:ADD:1:2'
+      2:
+        chance: 3.25
+        cooldown: 5
+        effects:
+          - 'DAMAGE_INCREASE:5'
+          - 'HEAL:ADD:1:2'
+      3:
+        chance: 5
+        cooldown: 5
+        effects:
+          - 'DAMAGE_INCREASE:5'
+          - 'HEAL:ADD:1:3'
+      4:
+        chance: 7.75
+        cooldown: 5
+        effects:
+          - 'DAMAGE_INCREASE:5'
+          - 'HEAL:ADD:1:4'
+  perfect-solitude:
+    name: "Perfect Solitude"
+    description:
+      - 'Increases chance and length of the'
+      - 'Silence enchantment procing on enemy'
+      - 'players by up to 6X.'
+    group: "HEROIC"
+    applies: "WEAPON"
+    type: "ATTACK"
+    requires: "solitude"
+    levels:
+      1:
+        chance: 4
+        cooldown: 6
+        effects:
+          - 'DISABLE_ENCHANTMENT_GROUP:SIMPLE:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:UNIQUE:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:ELITE:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:ULTIMATE:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:LEGENDARY:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:SOUL:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:HEROIC:15'
+          - 'DISABLE_ENCHANTMENT_GROUP:MASTERY:15'
+      2:
+        chance: 6
+        cooldown: 6
+        effects:
+          - 'DISABLE_ENCHANTMENT_GROUP:SIMPLE:20'
+          - 'DISABLE_ENCHANTMENT_GROUP:UNIQUE:20'
+          - 'DISABLE_ENCHANTMENT_GROUP:ELITE:20'
+          - 'DISABLE_ENCHANTMENT_GROUP:ULTIMATE:20'
+          - 'DISABLE_ENCHANTMENT_GROUP:LEGENDARY:20'
+          - 'DISABLE_ENCHANTMENT_GROUP:SOUL:20'
+          - 'DISABLE_ENCHANTMENT_GROUP:HEROIC:20'
+          - 'DISABLE_ENCHANTMENT_GROUP:MASTERY:20'
+      3:
+        chance: 9.25
+        cooldown: 6
+        effects:
+          - 'DISABLE_ENCHANTMENT_GROUP:SIMPLE:25'
+          - 'DISABLE_ENCHANTMENT_GROUP:UNIQUE:25'
+          - 'DISABLE_ENCHANTMENT_GROUP:ELITE:25'
+          - 'DISABLE_ENCHANTMENT_GROUP:ULTIMATE:25'
+          - 'DISABLE_ENCHANTMENT_GROUP:LEGENDARY:25'
+          - 'DISABLE_ENCHANTMENT_GROUP:SOUL:25'
+          - 'DISABLE_ENCHANTMENT_GROUP:HEROIC:25'
+          - 'DISABLE_ENCHANTMENT_GROUP:MASTERY:25'
+      4:
+        chance: 11
+        cooldown: 6
+        effects:
+          - 'DISABLE_ENCHANTMENT_GROUP:SIMPLE:30'
+          - 'DISABLE_ENCHANTMENT_GROUP:UNIQUE:30'
+          - 'DISABLE_ENCHANTMENT_GROUP:ELITE:30'
+          - 'DISABLE_ENCHANTMENT_GROUP:ULTIMATE:30'
+          - 'DISABLE_ENCHANTMENT_GROUP:LEGENDARY:30'
+          - 'DISABLE_ENCHANTMENT_GROUP:SOUL:30'
+          - 'DISABLE_ENCHANTMENT_GROUP:HEROIC:30'
+          - 'DISABLE_ENCHANTMENT_GROUP:MASTERY:30'
+  bloody-deep-wounds:
+    name: "Bloody Deep Wounds"
+    description:
+      - 'Increases the chance of you'
+      - 'giving the bleed effect, and'
+      - 'significantly increases'
+      - 'outgoing damage.'
+    group: "HEROIC"
+    applies: "WEAPON"
+    type: "ATTACK"
+    requires: "deep-wounds"
+    levels:
+      1:
+        chance: 2.25
+        cooldown: 4
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'DAMAGE_INCREASE:15'
+      2:
+        chance: 3.75
+        cooldown: 4
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'DAMAGE_INCREASE:15'
+      3:
+        chance: 5.5
+        cooldown: 4
+        effects:
+          - 'PARTICLE:BLEED:TARGET'
+          - 'DAMAGE_INCREASE:15'
+  brutal-barbarian:
+    name: "Brutal Barbarian"
+    description:
+      - 'Significantly multiplies damage against'
+      - 'players who are wielding an AXE at the'
+      - 'time they are hit.'
+    group: "HEROIC"
+    applies: "AXE"
+    type: "ATTACK"
+    requires: "barbarian"
+    levels:
+      1:
+        chance: 2
+        cooldown: 4
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'DAMAGE_INCREASE:15'
+      2:
+        chance: 3.5
+        cooldown: 4
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'DAMAGE_INCREASE:15'
+      3:
+        chance: 5.25
+        cooldown: 4
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'DAMAGE_INCREASE:15'
+      4:
+        chance: 7.75
+        cooldown: 4
+        condition: "isTargetHolding AXE"
+        effects:
+          - 'DAMAGE_INCREASE:15'
+  unrestrained-enrage:
+    name: "Unrestrained Enrage"
+    description:
+      - 'Dealing stacking amounts of bonus'
+      - 'damage when your HP is less than'
+      - '100%, 75%, 50%, and 25%.'
+    group: "HEROIC"
+    applies: "SWORDS"
+    type: "ATTACK"
+    requires: "enrage"
+    levels:
+      1:
+        chance: 4.5
+        cooldown: 5
+        condition: "isPlayerHealth < 10"
+        effects:
+          - 'DAMAGE_INCREASE:playerHealth*2.5'
+      2:
+        chance: 6.25
+        cooldown: 5
+        condition: "isPlayerHealth < 10"
+        effects:
+          - 'DAMAGE_INCREASE:playerHealth*2.5'
+      3:
+        chance: 8.25
+        cooldown: 5
+        condition: "isPlayerHealth < 10"
+        effects:
+          - 'DAMAGE_INCREASE:playerHealth*3'
+  holy-aegis:
+    name: "Holy Aegis"
+    description:
+      - 'If you are taking damage from more than'
+      - '1 enemy in a short period, the'
+      - 'damage from any additional players'
+      - 'beyond that initial group will be decreased.'
+    group: "HEROIC"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    requires: "aegis"
+    levels:
+      1:
+        chance: 4
+        cooldown: 3
+        effects:
+          - 'REDUCTION:25'
+      2:
+        chance: 5
+        cooldown: 3
+        effects:
+          - 'REDUCTION:25'
+      3:
+        chance: 6
+        cooldown: 3
+        effects:
+          - 'REDUCTION:25'
+      4:
+        chance: 7
+        cooldown: 3
+        effects:
+          - 'REDUCTION:25'
+      5:
+        chance: 8
+        cooldown: 3
+        effects:
+          - 'REDUCTION:25'
+      6:
+        chance: 9
+        cooldown: 3
+        effects:
+          - 'REDUCTION:25'
+  martyr-valor:
+    name: "Martyr Valor"
+    description:
+      - 'Reduces incoming damage while wielding a'
+      - 'sword by up to 28%. This enchantment is'
+      - 'stackable.'
+    group: "HEROIC"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    requires: "valor"
+    levels:
+      1:
+        chance: 5
+        cooldown: 5
+        condition: "isPlayerHolding SWORD"
+        effects:
+          - 'REDUCTION:6.5'
+      2:
+        chance: 7.5
+        cooldown: 5
+        condition: "isPlayerHolding SWORD"
+        effects:
+          - 'REDUCTION:12'
+      3:
+        chance: 10
+        cooldown: 5
+        condition: "isPlayerHolding SWORD"
+        effects:
+          - 'REDUCTION:16'
+      4:
+        chance: 12.5
+        cooldown: 5
+        condition: "isPlayerHolding SWORD"
+        effects:
+          - 'REDUCTION:22'
+      5:
+        chance: 15
+        cooldown: 5
+        condition: "isPlayerHolding SWORD"
+        effects:
+          - 'REDUCTION:28'
+  nocturnal-insomnia:
+    name: "Nocturnal Insomnia"
+    description:
+      - 'Gives self slow digging, but in'
+      - 'exchange has a chance to deal'
+      - 'bonus damage while afflicted.'
+    group: "HEROIC"
+    applies: "SWORDS"
+    type: "ATTACK"
+    requires: "insomnia"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 5
+        effects:
+          - 'POTION:SLOW_DIGGING:1:PLAYER:3'
+          - 'DAMAGE_INCREASE:15'
+      2:
+        chance: 3
+        cooldown: 5
+        effects:
+          - 'POTION:SLOW_DIGGING:1:PLAYER:3'
+          - 'DAMAGE_INCREASE:15'
+      3:
+        chance: 4
+        cooldown: 5
+        effects:
+          - 'POTION:SLOW_DIGGING:1:PLAYER:3'
+          - 'DAMAGE_INCREASE:15'
+      4:
+        chance: 5
+        cooldown: 5
+        effects:
+          - 'POTION:SLOW_DIGGING:1:PLAYER:3'
+          - 'DAMAGE_INCREASE:15'
+      5:
+        chance: 7
+        cooldown: 5
+        effects:
+          - 'POTION:SLOW_DIGGING:2:PLAYER:3'
+          - 'DAMAGE_INCREASE:15'
+      6:
+        chance: 9
+        cooldown: 5
+        effects:
+          - 'POTION:SLOW_DIGGING:2:PLAYER:3'
+          - 'DAMAGE_INCREASE:15'
+      7:
+        chance: 12
+        cooldown: 5
+        effects:
+          - 'POTION:SLOW_DIGGING:2:PLAYER:5'
+          - 'DAMAGE_INCREASE:15'
+  reality-inversion:
+    name: "Reality Inversion"
+    description:
+      - 'In addition to an amplified version'
+      - 'of the effects of Invesrion, up to 28%'
+      - 'chance when hit to remove 1 Bleed stack.'
+    group: "HEROIC"
+    applies: "SWORDS"
+    type: "ATTACK"
+    requires: "inversion"
+    levels:
+      1:
+        chance: 1.75
+        cooldown: 5
+        effects:
+          - 'DAMAGE_CANCEL'
+          - 'HEAL:ADD:2:4'
+      2:
+        chance: 2.5
+        cooldown: 5
+        effects:
+          - 'DAMAGE_CANCEL'
+          - 'HEAL:ADD:2:4'
+      3:
+        chance: 4
+        cooldown: 5
+        effects:
+          - 'DAMAGE_CANCEL'
+          - 'HEAL:ADD:2:4'
+      4:
+        chance: 6
+        cooldown: 5
+        effects:
+          - 'DAMAGE_CANCEL'
+          - 'HEAL:ADD:2:4'
+  permanent-execute:
+    name: "Permanent Execute"
+    description:
+      - 'Amplified version of Execute,'
+      - 'deal even more bonus damage when'
+      - 'your target is <6 HP.'
+    group: "HEROIC"
+    applies: "SWORDS"
+    type: "ATTACK"
+    requires: "execute"
+    levels:
+      1:
+        chance: 1.25
+        cooldown: 6
+        condition: "isTargetHealth <= 6"
+        effects:
+          - 'DAMAGE_INCREASE:35'
+      2:
+        chance: 2.5
+        cooldown: 6
+        condition: "isTargetHealth <= 6"
+        effects:
+          - 'DAMAGE_INCREASE:35'
+      3:
+        chance: 3.75
+        cooldown: 6
+        condition: "isTargetHealth <= 6"
+        effects:
+          - 'DAMAGE_INCREASE:35'
+      4:
+        chance: 5
+        cooldown: 6
+        condition: "isTargetHealth <= 6"
+        effects:
+          - 'DAMAGE_INCREASE:35'
+      5:
+        chance: 6.75
+        cooldown: 6
+        condition: "isTargetHealth <= 6"
+        effects:
+          - 'DAMAGE_INCREASE:35'
+      6:
+        chance: 8
+        cooldown: 6
+        condition: "isTargetHealth <= 6"
+        effects:
+          - 'DAMAGE_INCREASE:35'
+      7:
+        chance: 10
+        cooldown: 6
+        condition: "isTargetHealth <= 6"
+        effects:
+          - 'DAMAGE_INCREASE:35'
+  righteous-anti-gank:
+    name: "Righteous Anti Gank"
+    description:
+      - 'If more than 2 enemies hit you in a large'
+      - 'period, your outgoing damage will be'
+      - 'multiplied by up to 1.6x.'
+    group: "HEROIC"
+    applies: "AXE"
+    type: "ATTACK"
+    requires: "anti-gank"
+    levels:
+      1:
+        chance: 5
+        cooldown: 5
+        effects:
+          - 'GANK'
+      2:
+        chance: 7.25
+        cooldown: 5
+        effects:
+          - 'GANK'
+      3:
+        chance: 9
+        cooldown: 5
+        effects:
+          - 'GANK'
+      4:
+        chance: 11.5
+        cooldown: 5
+        effects:
+          - 'GANK'
+  maliciously-corrupt:
+    name: "Maliciously Corrupt"
+    description:
+      - 'Amplified version of the'
+      - 'effects of Corrupt.'
+    group: "HEROIUC"
+    applies: "AXE"
+    type: "ATTACK"
+    requires: "corrupt"
+    levels:
+      1:
+        chance: 1.75
+        cooldown: 4
+        effects:
+          - 'DAMAGE:2:4:TARGET'
+          - 'DAMAGE:2:4:TARGET'
+          - 'DISABLE_ENCHANTMENT:inversion:5'
+      2:
+        chance: 3
+        cooldown: 4
+        effects:
+          - 'DAMAGE:2:4:TARGET'
+          - 'DAMAGE:2:4:TARGET'
+          - 'DISABLE_ENCHANTMENT:inversion:5'
+      3:
+        chance: 4
+        cooldown: 4
+        effects:
+          - 'DAMAGE:2:4:TARGET'
+          - 'DAMAGE:2:4:TARGET'
+          - 'DISABLE_ENCHANTMENT:inversion:5'
+      4:
+        chance: 5
+        cooldown: 4
+        effects:
+          - 'DAMAGE:2:4:TARGET'
+          - 'DAMAGE:2:4:TARGET'
+          - 'DISABLE_ENCHANTMENT:inversion:5'
+  bitter-overwhelm:
+    name: "Bitter Overwhelm"
+    description:
+      - 'Chance to disable enemy''s ability to'
+      - 'inflict Reflective Block on you for'
+      - '6s with every hit. Upon disabling,'
+      - 'you will deal +level% Outgoing Damage.'
+    group: "HEROIC"
+    applies: "AXE"
+    type: "ATTACK"
+    requires: "overwhelm"
+    levels:
+      1:
+        chance: 2.5
+        effects:
+          - 'DISABLE_ENCHANTMENT:reflective-block:6'
+          - 'DAMAGE_INCREASE:1'
+      2:
+        chance: 4.5
+        effects:
+          - 'DISABLE_ENCHANTMENT:reflective-block:6'
+          - 'DAMAGE_INCREASE:2'
+      3:
+        chance: 6.5
+        effects:
+          - 'DISABLE_ENCHANTMENT:reflective-block:6'
+          - 'DAMAGE_INCREASE:3'
+      4:
+        chance: 8
+        effects:
+          - 'DISABLE_ENCHANTMENT:reflective-block:6'
+          - 'DAMAGE_INCREASE:4'
+  endless-pummel:
+    name: "Endless Pummel"
+    description:
+      - 'Tears Earth out of the ground and'
+      - 'thrusts it at your enemy causing'
+      - 'damage and slowness.'
+    group: "HEROIC"
+    applies: "AXE"
+    type: "ATTACK"
+    requires: "pummel"
+    levels:
+      1:
+        chance: 3
+        cooldown: 5
+        effects:
+          - 'POTION:SLOW:3:TARGET:4'
+          - 'DAMAGE:2:6:TARGET'
+      2:
+        chance: 6
+        cooldown: 5
+        effects:
+          - 'POTION:SLOW:3:TARGET:4'
+          - 'DAMAGE:2:6:TARGET'
+      3:
+        chance: 9
+        cooldown: 5
+        effects:
+          - 'POTION:SLOW:3:TARGET:4'
+          - 'DAMAGE:2:6:TARGET'
+  dragonforged:
+    name: "Dragon Forged"
+    description:
+      - 'Cause MASSIVE durability damage'
+      - 'to your enemies gear and'
+      - 'deal extra damage.'
+    group: "HEROIC"
+    applies: "SWORDS"
+    type: "ATTACK"
+    requires: "demonforged"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 7
+        effects:
+          - 'DAMAGE_ARMOR:3'
+          - 'DAMAGE_INCREASE:4'
+      2:
+        chance: 2.75
+        cooldown: 7
+        effects:
+          - 'DAMAGE_ARMOR:3'
+          - 'DAMAGE_INCREASE:4'
+      3:
+        chance: 4
+        cooldown: 7
+        effects:
+          - 'DAMAGE_ARMOR:3'
+          - 'DAMAGE_INCREASE:4'
+      4:
+        chance: 6
+        cooldown: 7
+        effects:
+          - 'DAMAGE_ARMOR:3'
+          - 'DAMAGE_INCREASE:4'
+  ################################################################################################
+  #                                          Mastery                                             #
+  ################################################################################################
+  neutralize:
+    name: "Neutralize"
+    description:
+      - 'Negate all enemy defensive enchantment''s for on the damage event'
+      - 'that neutralize activates for.'
+      - 'This effect can stack with silence'
+    group: "MASTERY"
+    applies: "ARMOR"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.25
+        cooldown: 50
+        effects:
+          - 'DISABLE_ENCHANTMENT_TYPE:DEFENSE:3'
+          - 'MESSAGE:&a&l*** &2&lNEUTRALIZED (&7{TARGET}&2&l) &a&l***:PLAYER'
+          - 'MESSAGE:&c&l*** &4&lNEUTRALIZED (&7By {PLAYER}&4&l) &c&l***:TARGET'
+      2:
+        chance: 2.95
+        cooldown: 50
+        effects:
+          - 'DISABLE_ENCHANTMENT_TYPE:DEFENSE:5'
+          - 'MESSAGE:&a&l*** &2&lNEUTRALIZED (&7{TARGET}&2&l) &a&l***:PLAYER'
+          - 'MESSAGE:&c&l*** &4&lNEUTRALIZED (&7By {PLAYER}&4&l) &c&l***:TARGET'
+      3:
+        chance: 4.25
+        cooldown: 45
+        effects:
+          - 'DISABLE_ENCHANTMENT_TYPE:DEFENSE:7'
+          - 'MESSAGE:&a&l*** &2&lNEUTRALIZED (&7{TARGET}&2&l) &a&l***:PLAYER'
+          - 'MESSAGE:&c&l*** &4&lNEUTRALIZED (&7By {PLAYER}&4&l) &c&l***:TARGET'
+      4:
+        chance: 6
+        cooldown: 40
+        effects:
+          - 'DISABLE_ENCHANTMENT_TYPE:DEFENSE:8'
+          - 'MESSAGE:&a&l*** &2&lNEUTRALIZED (&7{TARGET}&2&l) &a&l***:PLAYER'
+          - 'MESSAGE:&c&l*** &4&lNEUTRALIZED (&7By {PLAYER}&4&l) &c&l***:TARGET'
+      5:
+        chance: 7.5
+        cooldown: 35
+        effects:
+          - 'DISABLE_ENCHANTMENT_TYPE:DEFENSE:10'
+          - 'MESSAGE:&a&l*** &2&lNEUTRALIZED (&7{TARGET}&2&l) &a&l***:PLAYER'
+          - 'MESSAGE:&c&l*** &4&lNEUTRALIZED (&7By {PLAYER}&4&l) &c&l***:TARGET'
+  mortal-coil:
+    name: "Mortal Coil"
+    description:
+      - 'This armor enchant procs on outgoing damage (you damaging another player)'
+      - 'and causes players overload hearts to be reduced up to 6 for a duration'
+      - 'of 5.8 seconds.'
+    group: "MASTERY"
+    applies: "ARMOR"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 30
+        effects:
+          - 'REDUCE_HEARTS:12:5'
+          - 'DAMAGE_INCREASE:10'
+      2:
+        chance: 3
+        cooldown: 30
+        effects:
+          - 'REDUCE_HEARTS:12:5'
+          - 'DAMAGE_INCREASE:10'
+      3:
+        chance: 4.5
+        cooldown: 30
+        effects:
+          - 'REDUCE_HEARTS:12:5'
+          - 'DAMAGE_INCREASE:10'
+      4:
+        chance: 6
+        cooldown: 30
+        effects:
+          - 'REDUCE_HEARTS:12:5'
+          - 'DAMAGE_INCREASE:10'
+      5:
+        chance: 7.5
+        cooldown: 30
+        effects:
+          - 'REDUCE_HEARTS:12:5'
+          - 'DAMAGE_INCREASE:10'
+  soul-siphone:
+    name: "Soul Siphone"
+    description:
+      - 'Proc''ing on outgoing damage events this enchant siphons'
+      - 'souls and durability from enemies in large quantities!'
+    group: "MASTERY"
+    applies: "ARMOR"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 3
+        cooldown: 3
+        effects:
+          - 'DAMAGE_ARMOR:1'
+          - 'ADD_DURABILITY:1'
+      2:
+        chance: 5
+        cooldown: 3
+        effects:
+          - 'DAMAGE_ARMOR:1'
+          - 'ADD_DURABILITY:2'
+      3:
+        chance: 7
+        cooldown: 3
+        effects:
+          - 'DAMAGE_ARMOR:1'
+          - 'ADD_DURABILITY:3'
+      4:
+        chance: 10
+        cooldown: 3
+        effects:
+          - 'DAMAGE_ARMOR:2'
+          - 'ADD_DURABILITY:5'
+  rot-and-decay:
+    name: "Rot and Decay"
+    description:
+      - 'The ultimate AOE Enchantment! On proc the ground surrounding you changes'
+      - 'as your Rot and Decay festers upon your foes. Demons from below, Zombies,'
+      - 'will rise up, and on impact deal durability damage all while an increasing'
+      - 'and multiplying damage is applied to your enemies (within the area of effect)'
+      - 'forcing them to evacuate or succumb!'
+    group: "MASTERY"
+    applies: "ARMOR"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1
+        cooldown: 10
+        effects:
+          - 'ROT_DECAY'
+      2:
+        chance: 2
+        cooldown: 10
+        effects:
+          - 'ROT_DECAY'
+      3:
+        chance: 3
+        cooldown: 10
+        effects:
+          - 'ROT_DECAY'
+      4:
+        chance: 4
+        cooldown: 10
+        effects:
+          - 'ROT_DECAY'
+      5:
+        chance: 5
+        cooldown: 10
+        effects:
+          - 'ROT_DECAY'
+      6:
+        chance: 6
+        cooldown: 10
+        effects:
+          - 'ROT_DECAY'
+      7:
+        chance: 7
+        cooldown: 10
+        effects:
+          - 'ROT_DECAY'
+      8:
+        chance: 8
+        cooldown: 10
+        effects:
+          - 'ROT_DECAY'
+      9:
+        chance: 9
+        cooldown: 10
+        effects:
+          - 'ROT_DECAY'
+      10:
+        chance: 10
+        cooldown: 10
+        effects:
+          - 'ROT_DECAY'
+  feign-death:
+    name: "Feign Death"
+    description:
+      - 'Chance to fake death and vanish for up to'
+      - '6 seconds, or until you have damaged a'
+      - 'player (levelx) times'
+    group: "MASTERY"
+    applies: "ARMOR"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 6
+        cooldown: 30
+        effects:
+          - 'HIDE_PLAYER'
+      2:
+        chance: 8
+        cooldown: 30
+        effects:
+          - 'HIDE_PLAYER'
+      3:
+        chance: 10
+        cooldown: 30
+        effects:
+          - 'HIDE_PLAYER'
+      4:
+        chance: 12
+        cooldown: 30
+        effects:
+          - 'HIDE_PLAYER'
+  mark-of-the-beast:
+    name: "Mark Of The Beast"
+    description:
+      - 'Once an enemy is afflicted with the mark,'
+      - 'all incoming damage is increased by 2x for'
+      - 'up to 5 seconds.'
+    group: "MASTERY"
+    applies: "ARMOR"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 10
+        effects:
+          - 'DAMAGE_INCREASE:100'
+      2:
+        chance: 3
+        cooldown: 10
+        effects:
+          - 'DAMAGE_INCREASE:100'
+      3:
+        chance: 4.5
+        cooldown: 10
+        effects:
+          - 'DAMAGE_INCREASE:100'
+      4:
+        chance: 6
+        cooldown: 10
+        effects:
+          - 'DAMAGE_INCREASE:100'
+      5:
+        chance: 7.5
+        cooldown: 10
+        effects:
+          - 'DAMAGE_INCREASE:100'
+      6:
+        chance: 9
+        cooldown: 10
+        effects:
+          - 'DAMAGE_INCREASE:100'
+  permafrost:
+    name: "PermaFrost"
+    description:
+      - 'A chance to transform nearby blocks into snow and'
+      - 'ice when damaged, reducing your incoming damage'
+      - 'while standing on the blocks and causing fatigue'
+      - 'in the attacker (based on level).'
+    group: "MASTERY"
+    applies: "BOOTS"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 1.5
+        cooldown: 20
+        effects:
+          - 'FROST'
+      2:
+        chance: 3.75
+        cooldown: 20
+        effects:
+          - 'FROST'
+      3:
+        chance: 5
+        cooldown: 20
+        effects:
+          - 'FROST'
+      4:
+        chance: 8
+        cooldown: 20
+        effects:
+          - 'FROST'
+      5:
+        chance: 11.25
+        cooldown: 20
+        effects:
+          - 'FROST'
+      6:
+        chance: 14
+        cooldown: 20
+        effects:
+          - 'FROST'
+  chain-lifesteal:
+    name: "Chain Lifesteal"
+    description:
+      - 'A chance to regain health from multiple'
+      - 'enemies near you damaged target based on level'
+    group: "MASTERY"
+    applies: "ARMOR"
+    type: "ATTACK"
+    levels:
+      1:
+        chance: 3.25
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:2:4'
+      2:
+        chance: 5
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:2:4'
+      3:
+        chance: 7.5
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:3:4'
+      4:
+        chance: 9
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:5:6'
+      5:
+        chance: 12
+        cooldown: 6
+        effects:
+          - 'HEAL:ADD:5:6'
+  death-pact:
+    name: "Death Pact"
+    description:
+      - 'Take less damage for every 10% of missing HP,'
+      - 'while also dealing slightly less damage'
+      - '(based on level)'
+    group: "MASTERY"
+    applies: "ARMOR"
+    type: "DEFENSE"
+    levels:
+      1:
+        chance: 12.25
+        cooldown: 4
+        effects:
+          - 'REDUCTION:10'
+      2:
+        chance: 15
+        cooldown: 4
+        effects:
+          - 'REDUCTION:20'
+      3:
+        chance: 18.5
+        cooldown: 4
+        effects:
+          - 'REDUCTION:30'

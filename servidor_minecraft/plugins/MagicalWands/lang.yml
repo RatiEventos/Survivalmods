@@ -1,0 +1,54 @@
+# Translation for GUIS
+Menus:
+
+  # Placeholder: {Position} - Charm's position
+  CharmPositioned: "Charm is at {Position}"
+
+  # Shows in placeholder when charm is not selected in order!
+  CharmNotPositioned: "Charm is not set in order!"
+
+# Translation for messages
+Message:
+
+  # Message when wand is not player's
+  # NOTE: Works only if function OwnerCondition is enabled
+  # Placeholder: {OriginalOwner}
+  NotOwner: "&7This wand belongs to {OriginalOwner}!"
+
+  # Message between actions (When player is delayed)
+  Delay: "&7Wait before doing another action!"
+
+  # Message when player don't have permission to perform action/command
+  NoPermission: "&cYou don't have permissions for this!"
+
+  # Message while using owner command
+  # Placeholder: {Owner} - Wand's owner name
+  WandOwner: "&7This wand belongs to {Owner}!"
+
+  # Message while checking owner but item is not a Wand
+  WrongWandItem: "&7This item is not wand!"
+
+  # Message while wand is not configurable, but player is trying to do it
+  WandNotConfigurable: "&7This wand can not be edited!"
+
+  # Message when charm is saved into ItemStack
+  WandSetConfiguration: "&7Charm has been saved to wand in your hand!"
+
+  # Bedrock selected charm message
+  BedrockSelectedCharm: "&7Charm {CharmName} &7is selected! Now choose the slot..."
+
+# Translation for InfoBar
+InfoBar:
+
+  # Message while Charm is not selected
+  None: "&7(None)"
+
+  # Message while Wand limiting selection
+  Over: "&c(Locked)"
+
+  # Placeholder: {Delay} - Remaining delay
+  Delay: "&c{Delay}"
+
+  # Message when charm is available to use
+  # Placeholder: {CharmName} - Charm name
+  Normal: "{CharmName}"

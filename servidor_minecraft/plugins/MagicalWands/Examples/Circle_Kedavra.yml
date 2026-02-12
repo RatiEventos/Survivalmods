@@ -1,0 +1,99 @@
+# Turn off/on charm
+Enabled: true
+
+# What permission is required to see this charm as available?
+# NOTE: Without permission player is not available to use this charm
+Permission: "magicwands.charm.circlekedavra"
+
+# What skull will they see in GUI?
+# NOTE: Open https://minecraft-heads.com/, select head and paste here Value
+Skull: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWRjZjJjMTk4ZjYxZGY1YTZkMGJhOTdkYmY5MGMzMzc5OTU0MDVjMTczOTZjMDE2Yzg1ZjZmM2ZlYTUyYzkwNiJ9fX0="
+
+# Define raw name for Charm
+# NOTE: Don't use colors there
+Name: "circlekedavra"
+
+# Define description, a little lore what charm does
+Description: "Killing curse!"
+
+# Define display name for Charm
+# NOTE: You can use colors now!
+DisplayName: "&{#2ca33c}Circle Kedavra"
+
+# Full number with delay (In seconds)
+# NOTE: Configure this properly, spamming can affect CPU performance
+Delay: 50
+
+# Select and configure damages for charm
+Damages:
+
+  # Damage all in radius and kill randomly
+  AllInRadiusAndKillRandomly:
+
+    # Number of blocks (Radius limitation)
+    # NOTE: Don't set this value too high, it can affect server performance
+    Radius: 15
+
+    # Damage
+    # NOTE: Wand amplifier will be included here!
+    Damage: 100000.0
+
+# Select and configure particle effects to Charm
+# NOTE: Be careful and configure Arguments carefully
+# NOTE: This is just an example, if you don't want to use some effect, just remove section...
+Effects:
+
+  # Spawn static circle around target
+  Circle:
+
+    # Define where should particle spawn
+    # Values:
+    #   > DEALER - Entity who used charm
+    #   > DAMAGED - Primary damaged entity
+    #   > ALL - Every entity (Can be used only if effect contains Radius parameter)
+    Target: DEALER
+
+    # Define color for particle
+    # NOTE: This animation supports Gradient and Multiple color particles
+    # Examples:
+    #
+    #  > Multiple colors -> #ffffff,#000000,...
+    #    - Insert how many colors do you like to have
+    #
+    #  > Gradient effect -> Gradient(#ffffff,#000000,10)
+    #    - Insert first color, second color and number of colors in transition
+    Color: "#2ca33c"
+
+    # Difference between particles
+    # NOTE: Don't set this value too low, can affect server performance
+    Density: 0.04
+
+    # Define size of circle around the target
+    # NOTE: Don't set this value too high, can affect server performance
+    Radius: 15
+
+    # Define size of particle
+    # NOTE: Default = 1.0
+    Size: 6.0
+
+    # Amount of particles
+    # NOTE: Default = 1
+    Amount: 10
+
+    # Offset for Y
+    # NOTE: Starting on target's location
+    Y_Offset: 0.3
+
+  Lightning:
+
+    # Define where should particle spawn
+    # Values:
+    #   > DEALER - Entity who used charm
+    #   > DAMAGED - Primary damaged entity
+    #   > ALL - Every entity (Can be used only if effect contains Radius parameter)
+    Target: DEALER
+
+# Configure sounds of charm
+# FORMAT: "SOUND_NAME"
+# List of sounds you can find on https://m3ii0.gitbook.io/magicalwands/
+Sounds: []

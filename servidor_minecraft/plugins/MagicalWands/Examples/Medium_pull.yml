@@ -1,0 +1,90 @@
+# Turn off/on charm
+Enabled: true
+
+# What permission is required to see this charm as available?
+# NOTE: Without permission player is not available to use this charm
+Permission: "magicwands.charm.mediumpull"
+
+# What skull will they see in GUI?
+# NOTE: Open https://minecraft-heads.com/, select head and paste here Value
+Skull: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmNhOWRjNjZhNTQ5NjJmNGVkMDRiMjQ1NWFhOTk0YjQ4NDg4OTZlYTZjZTlkYzVlNDUwY2NkY2Y5NWY2YjUyYyJ9fX0="
+
+# Define raw name for Charm
+# NOTE: Don't use colors there
+Name: "mediumpull"
+
+# Define description, a little lore what charm does
+Description: "Pulling charm!"
+
+# Define display name for Charm
+# NOTE: You can use colors now!
+DisplayName: "&{#ffbc47}Pull 2"
+
+# Full number with delay (In seconds)
+# NOTE: Configure this properly, spamming can affect CPU performance
+Delay: 5
+
+# Configure functions of Wand
+Functions:
+
+  # Send message to looking target if it is player! (Fully supports HEX, Gradient & PAPI)
+  # NOTE: Placeholders will be applied for DAMAGED entity
+  MessageLookingEntity: "&fYou've been pulled :P"
+
+# Select and configure damages for charm
+Damages:
+
+  # Push out/in targeted entity
+  PushLookingEntity:
+
+    # Power of punch
+    Power: 0.4
+
+    # If reverse = true, entity will be pushed INTO player's location
+    Reverse: false
+
+# Select and configure particle effects to Charm
+# NOTE: Be careful and configure Arguments carefully
+# NOTE: This is just an example, if you don't want to use some effect, just remove section...
+Effects:
+
+  # Create straight line in front of player
+  PointingLine:
+
+    # Define where should particle spawn
+    # Values:
+    #   > DEALER - Entity who used charm
+    Target: DEALER
+
+    # Define color for particle
+    # NOTE: This animation supports Gradient and Multiple color particles
+    # Examples:
+    #
+    #  > Multiple colors -> #ffffff,#000000,...
+    #    - Insert how many colors do you like to have
+    #
+    #  > Gradient effect -> Gradient(#ffffff,#000000,10)
+    #    - Insert first color, second color and number of colors in transition
+    Color: "#ffbc47"
+
+    # Number of blocks (Length of the line)
+    # NOTE: Don't set this value too high, can affect server performance
+    Length: 15
+
+    # Define size of particle
+    # NOTE: Default = 1.0
+    Size: 3.0
+
+    # Amount of particles
+    # NOTE: Default = 1
+    Amount: 10
+
+    # Offset for Y
+    # NOTE: Starting on target's location
+    Y_Offset: 0.8
+
+# Configure sounds of charm
+# FORMAT: "SOUND_NAME"
+# List of sounds you can find on https://m3ii0.gitbook.io/magicalwands/
+Sounds: []
+#U0ZJJFR4kzQEhFc29kbZh2YFBTU00EVNBTTq5kMJRlT4BTRahmd5VTSaRHZE1GbytmeYR3M

@@ -1,0 +1,92 @@
+PREFIX: '&f&l(&6&lElite&e&lEnchantments&f&l)&e'
+ENCHANTMENT:
+  ABOVE_MAX: '{PREFIX} That is above the max level for that enchantment!'
+  ALREADY_ENCHANTED: '{PREFIX} You already have the same/higher level of enchant on
+    this item!'
+  BOOK:
+    CANNOT_APPLY: '{PREFIX} You cannot apply this enchant to this item!'
+    BLACKLISTED_ENCHANTS: '{PREFIX} You cannot apply this enchantment to this item,
+      you need to remove the follow enchants from the item to apply this: &7{ENCHANTS}'
+    DESTROY: |-
+      {PREFIX} &cYou have &4failed &cto apply {ENCHANTMENT} to your item! As a result your item has been destroyed.
+      &7&oYou can protect your item from being destroyed next time by using a &7whitescroll &e&owhich you can purchase on the server store @ &ebuy.server.net
+    FAILED: '{PREFIX} &cYou have &4failed &cto apply {ENCHANTMENT} to your item!'
+    NOT_ENOUGH_SLOTS: '{PREFIX} You do not have enough enchantment slots to enchant
+      this item, you can upgrade the slots on your item using a &7&nArmor/Weapon Orb&e!'
+    RANK_SUCCESS_INCREASE: '{PREFIX} &a+{AMOUNT}% &eSuccess rate increase since you
+      have the top rank!'
+    REQUIRE_ENCHANTS: '{PREFIX} You cannot apply this enchantment to this item, you
+      need to have the following enchantments applied to this item to apply this enchant:
+      &7{ENCHANTS}'
+    SUCCESS: '{PREFIX} You have &asuccessfully &eapplied {ENCHANTMENT} to your item!'
+    REVEAL: |-
+      &e&l(!) &eYou examine the {GROUP-NAME} Enchantment Book...
+      &eand discover '{GROUP-COLOR}{ENCHANTMENT} {ENCHANTMENT-LEVEL}&e'
+    MORE_THAN_ONE_ITEM: '{PREFIX} You cannot apply enchants to stacked items'
+  INVALID: '{PREFIX} That is not a valid enchantment!'
+  INVALID_ITEM: '{PREFIX} You cannot enchant air!'
+  INVALID_GROUP: '{PREFIX} This group is an invalid group!'
+ITEMS:
+  CANT_APPLY: '{PREFIX} You cannot apply this item to that item type!'
+  WHITESCROLL:
+    APPLIED: '{PREFIX} You have successfully applied a whitescroll to your item!'
+    SAVED: '{PREFIX} Your enchant failed and your item would have been destroyed but
+      your whitescroll protected it!'
+  BLACKSCROLL:
+    NO_ENCHANTS: '{PREFIX} You cannot apply this blackscroll to this item as there
+      are no enchantments present!'
+  TRANSMOG:
+    NO_ENCHANTS: '{PREFIX} You cannot apply this transmog scroll to this item as there
+      are no enchantments present!'
+  RANDOMIZER:
+    INCORRECT_GROUP: '{PREFIX} This randomizer cannot be applied to this enchantment,
+      as it is not the right group!'
+  ITEM_NAMETAG:
+    ACTIVATION: |2
+
+      &6&lItemtag Usage
+      &61. &7Hold the ITEM you''d like to rename
+      &62. &7Send the new name as a chat message with & color codes
+      &63. &7Confirm the preview of the new name that is displayed
+    INVALID: |-
+      &cHold the ITEM you''d like to rename.
+      &7Type ''&ccancel&7'' &7to unqueue this operation
+    SUCCESS: '{PREFIX} You have successfully renamed your item to ''''{NAME}&a''''!'
+    CANCELLED: '{PREFIX} You have successfully cancelled renaming your item!'
+    BLACKLISTED: '{PREFIX} You cannot contain blacklisted words!'
+  UPGRADE_ORB:
+    INVALID_TYPE: '{PREFIX} You have not given a valid upgrade orb type!'
+    INVALID_TYPE_APPLY: '{PREFIX} That is not the correct item this orb applies to'
+    ALREADY_HAS_SLOTS: '{PREFIX} You already have this many slots or more!'
+  SLOT_GEM:
+    ALREADY_HAVE_MAX: '{PREFIX} You already have the max amount of slots!'
+  SOUL:
+    ACTIVATED: |-
+      &a&l** SOUL MODE: &nON&a&l **
+      &7Active soul enchantments will now drain soul gems.
+    DEACTIVATED: |-
+      &c&l** SOUL MODE: &nOFF&c&l **
+      &7Soul enchantments will no longer drain soul gems.
+    AMOUNT: '&e&l** SOULS: &n%amount%&e&l **'
+    REQUIRED_GEM: '{PREFIX} You need to have a soul gem in your hand to execute that
+      command!'
+    NUMBER_LOW: '{PREFIX} You need to have a higher value to split souls'
+MENUS:
+  ALCHEMIST:
+    NOT_ENOUGH_XP: '{PREFIX} You do not have enough EXP to combine these items!'
+    SLOTS_FULL: '{PREFIX} All slots are full!'
+  ENCHANTER:
+    CANNOT_AFFORD: '{PREFIX} You cannot afford this item!'
+    INVALID_GROUP: '{PREFIX} That is not a valid enchant group!'
+  TINKERER:
+    EXP_BOTTLE_REDEEM: '&a&l+ {AMOUNT} XP'
+BLESS:
+  BLESSED: '&e&l ** BLESSED **'
+  COOLDOWN: '{PREFIX} You cannot bless for another &6{TIME}&e!'
+ERROR:
+  PLAYER:
+    INVENTORY_FULL: '{PREFIX} Your inventory is too full to do this action!'
+  INVENTORY_FULL: '{PREFIX} This players inventory is too full!'
+  MISSING_ARGS: '{PREFIX} You are missing some arguments for this command! &8Missing
+    Argument: &7{ARGS}'
+  INVALID_GROUP: '{PREFIX} That is not a valid enchantment group!'

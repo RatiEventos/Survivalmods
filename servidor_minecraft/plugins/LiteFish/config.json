@@ -1,0 +1,7 @@
+{
+  "version": "3.9.6",
+  "settings": {
+    "plugin_prefix": "{#337DFF}[LiteFish]§7 %msg%",
+    "auto_update_customization": "true"
+  }
+}

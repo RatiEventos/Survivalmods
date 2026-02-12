@@ -1,0 +1,7 @@
+name: '&6Repair Vehicle'
+material: RABBIT_HIDE
+lore:
+- '&7Use this item to repair your vehicle'
+data: 0
+shouldBeInShop: true
+cost: 50

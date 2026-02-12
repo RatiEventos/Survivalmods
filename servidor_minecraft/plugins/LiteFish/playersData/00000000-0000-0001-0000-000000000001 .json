@@ -1,0 +1,10 @@
+{
+  "uuid": "00000000-0000-0001-0000-000000000001",
+  "disableCustomDrop": false,
+  "monsterCatch": 0,
+  "bigLootCatch": 0,
+  "failedFish": 0,
+  "goodFish": 0,
+  "tournamentsWin": 0,
+  "dropsMap": {}
+}

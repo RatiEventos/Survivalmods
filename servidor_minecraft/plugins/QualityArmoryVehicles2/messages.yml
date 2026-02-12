@@ -1,0 +1,109 @@
+Commands:
+  givevehicle: ' <car> <?:player>: Gives you or another player a car'
+  spawnvehicle: ' <car> : Spawns a car at your location'
+  removenearby: ' <distance> : Removes all cars nearby'
+  removeVehicle: ' <car> : Removes all vehicles of a type'
+  setAsPassagers: ' <id> : Sets the player as a passenger for the closest car. (Seats
+    start at 0)'
+  Shop: ' : Opens the vehicle shop'
+  garage: ' : Opens the player''s garage'
+  callbackAll: ' <radius> : Callback all vehicles you own in the world'
+  callback: ' <radius> : Callback all vehicles you own within a radius'
+  addToWhitelist: ' <player>: Adds the player to the vehicle''s whitelist'
+  removeFromWhitelist: ' <player>: Removes the player to the vehicle''s whitelist'
+  RegisterFuels: ' <ticks of fuel>: Registers the item in the player''s main hand
+    as a fuel'
+  debug: ' : ADMIN ONLY: Starts the debug messages.'
+  TexturePack: ' Click here to download the resource pack'
+  NoVehicle: '&c You have to ride a vehicle to perform this command.'
+  WhitelistOverride: ' You have toggled whitelist override.'
+  NoPermission: '&c You do not have permission to use this command.'
+  OnlyPlayers: '&c Only players can use this command.'
+Menu:
+  Overview:
+    Title: '&6%cartype%:&f Overview'
+  Add_Whitelist:
+    Title: '&6%cartype%:&f Add To Whitelist'
+  Remove_Whitelist:
+    Title: '&6%cartype%:&f Remove From Whitelist'
+  Check_FuelTank:
+    Title: '&6%cartype%:&f Check Fuel'
+  Shop:
+    Title: '&6Vehicle shop'
+  Garage:
+    Title: '&6Your vehicles'
+    TitleOther: '&6%s''s vehicles'
+  setAsPassager:
+    Title: '&6%cartype%:&f Empty Seats'
+Icon:
+  Add_Whitelist:
+    Title: '&7Add player to whitelist'
+    Lore: '&7Currently whitelisted:'
+  Remove_Whitelist:
+    Title: '&7Remove player from whitelist'
+  CheckFueltank:
+    Title: '&7Check Fueltank'
+  Public_Status:
+    Title: '&7Open to the public [%public%&7]'
+    Lore_Format: '&7Public vehicles allow all players to ride as passengers.'
+  Trunk:
+    Title: '&7Open Trunk'
+    Lore_Contains: '&fContains:'
+  Pickup:
+    Title: '&7Pickup Vehicle'
+    Lore_Owner: '&7Only available for owner'
+    Lore_Trunk: '&7All items in trunk will be given to the player or dropped'
+  Health:
+    Title: '&7Vehicle''s Health:'
+    Lore_Format: '&c%health% &7/ &c%maxhealth%'
+  Remove_Ownership:
+    Title: '&7Remove Ownership'
+    Lore: '&7Current owner: &6&n%owner%'
+  SetAsPassager:
+    Title: '&7Enter a seat'
+  PASSAGER:
+    EMPTY:
+      Title: '&aEmpty'
+    TAKEN:
+      Title: '&7Seat taken by &6&n%name%'
+    DRIVERSEAT:
+      Lore_Format: '&aDriver Seat'
+  Check_FuelTank:
+    Lore: '&fFuel In tank: '
+  Shop:
+    Cost: '&7Cost: '
+  Next: '&aNext Page'
+  Previous: '&cPrevious Page'
+Messages:
+  addplayertowhitelist: ' Added player &6&n%name%&7 to whitelist'
+  removeplayerfromwhitelist: ' Removed player &6&n%name%&7 from whitelist'
+  pickup:
+    dropped: ' There were too many items in the trunk. Some items have been dropped
+      to the floor.'
+  Not_enough_money: '&c You do not have enough money!'
+  Ownership_Removed: ' This vehicle is now public. Anyone can drive it or pick it
+    up.'
+  Cannot_Pickup_Vehicle_While_Driving: '&c You cannot pickup vehicles that are being
+    driven.'
+  NewOwnerMessage: ' You are now the owner of this &6&n%car%'
+  ToManyVehicles: '&c You have too many vehicles spawned! Pick up some of your vehicles
+    to use this one.'
+  ToManyVehiclesType: '&c You have spawned too many vehicles!'
+  BlacklistedWorld_StopPlace: '&c You are not allowed to place vehicles in this world.'
+  BlacklistedPlace_StopPlace: '&c You are not allowed to place vehicles in this place.'
+  NoPermissionToDrive: '&c You do not have permission to drive this vehicle.'
+  removeBugged: ' Removed all bugged vehicles from your world.'
+  callbackAll: ' &7All &6&n%count%&7 vehicles have been returned to their owners.'
+  callback: ' Called back all vehicles within a &6&n%radius%&7 radius of the player.'
+  repair: ' Your vehicle has been repaired successfully.'
+  actionBar: '&6Vehicle: &f%type% | &6Fuel: &f%fuel% | &6Speed: &f%speed%km/h'
+  reload: ' Reloaded config and vehicle files in &6&n%time%ms'
+  cooldown: ' You have to wait &6&n%time%ms&7 before performing this action again.'
+  Resourcepack:
+    Title: '&a&lDownloading Resourcepack...'
+    Subtitle: '&fAccept the resourcepack to see the custom items'
+    Crash: ' In case the resourcepack crashes your client, reject the request and
+      use &6&n/qa getResourcepack&7 to get the resourcepack.'
+MessagesHotbar:
+  OutOfFuel: ' Your vehicle is out of fuel. Find coal and Shift-click the car'
+  Bought_car: ' You have bought &6%car%&7 for &6$%price%'

@@ -1,0 +1,49 @@
+enabled: true
+
+title: "You                 Tinkerer"
+
+exp-bottle:
+  material: "EXPERIENCE_BOTTLE"
+  name: "&a&lExperience Bottle &7(Throw)"
+  lore:
+    - '&dValue &f{AMOUNT} XP'
+    - '&dEnchanter &fCosmic PvP'
+  message: "&a&l+ {AMOUNT} EXP"
+
+panes:
+  divider:
+    material: "GLASS_PANE"
+    name: ""
+    lore: []
+  confirm:
+    material: "RED_STAINED_GLASS_PANE"
+    name: "&eClick to ACCEPT trade"
+    lore: []
+  trade-inventory:
+    material: "RED_STAINED_GLASS_PANE"
+    name: "&eClick to ACCEPT trade"
+    lore: []
+
+blacklist:
+  - 'SOUL'
+  - 'HEROIC'
+  - 'MASTERY'
+
+exp-per-enchant: 100
+
+dust:
+  SIMPLE:
+    min-percent: 1
+    max-percent: 20
+  UNIQUE:
+    min-percent: 1
+    max-percent: 20
+  ELITE:
+    min-percent: 1
+    max-percent: 20
+  ULTIMATE:
+    min-percent: 1
+    max-percent: 20
+  LEGENDARY:
+    min-percent: 1
+    max-percent: 20

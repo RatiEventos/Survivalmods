@@ -1,0 +1,23 @@
+slimefun:
+  oil:
+    enabled: true
+  nether_ice:
+    enabled: true
+  uranium:
+    enabled: true
+  salt:
+    enabled: true
+litexpansion:
+  thorium:
+    enabled: true
+infinityexpansion:
+  ender_essence:
+    enabled: true
+dynatech:
+  stardust_meteor:
+    enabled: true
+slimefunwarfare:
+  arsenic:
+    enabled: true
+  mozanite:
+    enabled: true

@@ -1,0 +1,41 @@
+Groups:
+  SIMPLE:
+    color: "&7"
+    display-name: "&fSimple"
+    material: "BOOK"
+    customModelData: 0
+  UNIQUE:
+    color: "&a"
+    display-name: "&aUnique"
+    material: "BOOK"
+    customModelData: 0
+  ELITE:
+    color: "&b"
+    display-name: "&bElite"
+    material: "BOOK"
+    customModelData: 0
+  ULTIMATE:
+    color: "&e"
+    display-name: "&eUltimate"
+    material: "BOOK"
+    customModelData: 0
+  LEGENDARY:
+    color: "&6"
+    display-name: "&6Legendary"
+    material: "BOOK"
+    customModelData: 0
+  SOUL:
+    color: "&c"
+    display-name: "&cSoul"
+    material: "BOOK"
+    customModelData: 0
+  HEROIC:
+    color: "&d"
+    display-name: "&dHeroic"
+    material: "BOOK"
+    customModelData: 0
+  MASTERY:
+    color: "&4"
+    display-name: "&4Mastery"
+    material: "BOOK"
+    customModelData: 0

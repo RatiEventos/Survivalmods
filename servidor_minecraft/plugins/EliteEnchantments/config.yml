@@ -1,0 +1,38 @@
+settings:
+  format:
+    type: "DEFAULT" # DEFAULT or HYPIXEL
+    style: "{GROUP-COLOR}{ENCHANTMENT} {ENCHANTMENT-LEVEL}"
+  slots: 9 # Max slots without upgrade orb
+  slots-settings:
+    randomise:
+      enabled: false
+      slots-min: 1
+      slots-max: 6
+    remove-slot-when-fail: false
+    show-lore: false
+    applied-lore: "&6{SLOTS} slots"
+  lore-line: 0 # Line where the enchants are appended to (0 = first line after minecraft enchants)
+  math-random: false # Use Math.random() which is out of 1 instead of default which is out of 100
+  # Do not change this unless you know what you are doing.
+
+bless-command:
+  enabled: true
+  cooldown: 30
+  potions:
+    - 'SLOW'
+    - 'SLOW_DIGGING'
+    - 'BLINDNESS'
+    - 'POISON'
+    - 'WITHER'
+    - 'CONFUSION'
+    - 'HUNGER'
+
+support:
+  worldguard:
+    enabled: true
+    execute-commands: true
+    blacklisted-regions:
+      - 'exmaple'
+  factions: true
+  skyblock: true
+  towny: true

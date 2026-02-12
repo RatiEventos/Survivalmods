@@ -1,0 +1,234 @@
+Upgrades:
+  Fortune: #Receive more gems per drop
+    enabled: true
+    maxLevel: 3
+    levels:
+      '1':
+        price: 5000
+        multiplier: 2
+      '2':
+        price: 25000
+        multiplier: 3
+      '3':
+        price: 100000
+        multiplier: 4
+
+  Luck: #Increases the chance to receive gems
+    enabled: true
+    maxLevel: 3
+    levels:
+      '1':
+        price: 5000
+        multiplier: 2.0
+      '2':
+        price: 25000
+        multiplier: 3.0
+      '3':
+        price: 100000
+        multiplier: 4.0
+
+  Discount: #Receive a percentage discount on all items in the Gem Shop
+    enabled: true
+    maxLevel: 3
+    levels:
+      '1':
+        price: 5000
+        percent: 10
+      '2':
+        price: 25000
+        percent: 20
+      '3':
+        price: 100000
+        percent: 30
+
+  Charity: #When a player receives the gem(s), everyone on the server also receives the gem(s) depending on the multiplier
+    enabled: true
+    maxLevel: 3
+    levels:
+      '1':
+        price: 5000
+        amount: 1
+        chance: 1
+        randomAmount: true
+      '2':
+        price: 25000
+        amount: 2
+        chance: 2
+        randomAmount: true
+      '3':
+        price: 100000
+        amount: 3
+        chance: 3
+        randomAmount: true
+
+  Execution: #When a player receives a gem, they have a chance for some specific command(s) to be ran
+    enabled: true
+    maxLevel: 3
+    levels:
+      '1':
+        price: 25000
+        chance: 2.5 #Chance for it to activate
+        randomExecuted:
+          enabled: true #Set to true for some random command from the following list, when a player receives a gem. (Set to 'false' for all the commands to be ran)
+          amount: 1 #If random is enabled, this will run 'X' amount of random commands from the following list.
+        commands:
+          - 'msg {player} &aCongrats! You received some extra rewards with your gems!'
+          - 'gem give {player} 8'
+          - 'give {player} diamond 64'
+      '2':
+        price: 100000
+        chance: 5
+        randomExecuted:
+          enabled: true
+          amount: 2
+        commands:
+          - 'msg {player} &aCongrats! You received some extra rewards with your gems!'
+          - 'gem give {player} 16'
+          - 'give {player} diamond 128'
+      '3':
+        price: 500000
+        chance: 10
+        randomExecuted:
+          enabled: true #When set to false, all commands will be ran
+          amount: 3
+        commands:
+          - 'msg {player} &aCongrats! You received some extra rewards with your gems!'
+          - 'gem give {player} 32'
+          - 'ss give {player} blaze 1'
+    
+
+
+
+#Gem Upgrades Menu Customization
+UpgradesMenu:
+  Size: 36
+  Title: '&f&k::&a&lGem Upgrades&f&k::'
+  UseFiller: true
+  Decorations:
+    - 'balance:27'
+    - 'information:35'
+  Upgrades:
+    '10':
+      upgradeType: fortune
+      material: NETHER_STAR
+      damage: 0
+      amount: 1
+      glow: true
+      displayName: '&a&l&nFortune'
+      lore:
+        - ''
+        - '&aPurchase this upgrade to increase the'
+        - '&aamount of gems you receive!'
+        - ''
+        - '&aCurrent Level: &f{level}'
+        - ''
+        - '&aLevel 1: &f5,000 gems &7(x2)'
+        - '&aLevel 2: &f25,000 gems &7(x3)'
+        - '&aLevel 3: &f100,000 gems &7(x4)'
+    '12':
+      upgradeType: luck
+      material: NETHER_STAR
+      damage: 0
+      amount: 1
+      glow: true
+      displayName: '&a&l&nLuck'
+      lore:
+        - ''
+        - '&aPurchase this upgrade to increase the'
+        - '&achances of receiving a gem!'
+        - ''
+        - '&aCurrent Level: &f{level}'
+        - ''
+        - '&aLevel 1: &f5,000 gems &7(x2.0%)'
+        - '&aLevel 2: &f25,000 gems &7(x3.0%)'
+        - '&aLevel 3: &f100,000 gems &7(x4.0%)'
+    '14':
+      upgradeType: discount
+      material: NETHER_STAR
+      damage: 0
+      amount: 1
+      glow: true
+      displayName: '&a&l&nDiscount'
+      lore:
+        - ''
+        - '&aPurchase this upgrade to receive discounted'
+        - '&aprices in the Gem Shop on all items!'
+        - ''
+        - '&aCurrent Level: &f{level}'
+        - ''
+        - '&aLevel 1: &f5,000 gems &7(-10%)'
+        - '&aLevel 2: &f25,000 gems &7(-20%)'
+        - '&aLevel 3: &f100,000 gems &7(-30%)'
+    '16':
+      upgradeType: charity
+      material: NETHER_STAR
+      damage: 0
+      amount: 1
+      glow: true
+      displayName: '&a&l&nCharity'
+      lore:
+        - ''
+        - '&aPurchase this upgrade to allow all online players'
+        - '&ato receive some gems when you do!'
+        - ''
+        - '&aCurrent Level: &f{level}'
+        - ''
+        - '&aLevel 1: &f5,000 gems &7(x1 for all)'
+        - '&aLevel 2: &f25,000 gems &7(x2 for all)'
+        - '&aLevel 3: &f100,000 gems &7(x3 for all)'
+    '20':
+      upgradeType: execution
+      material: NETHER_STAR
+      damage: 0
+      amount: 1
+      glow: true
+      displayName: '&a&l&nExecution'
+      lore:
+        - ''
+        - '&aPurchase this upgrade for a chance to'
+        - '&areceive something special with your gems! ;)'
+        - ''
+        - '&aCurrent Level: &f{level}'
+        - ''
+        - '&aLevel 1: &f25,000 gems &7(2.5%)'
+        - '&aLevel 2: &f100,000 gems &7(5%)'
+        - '&aLevel 3: &f500,000 gems &7(10%)'
+
+
+GUIFiller:
+  material: BLACK_STAINED_GLASS_PANE
+  damage: 0
+  amount: 1
+  glow: true
+  displayName: '&f'
+  lore: []
+
+Decorations:
+  'balance':
+    material: EMERALD
+    damage: 0
+    amount: 1
+    glow: false
+    displayName: '&7You currently have &a{balance} &7Gems'
+    lore: []
+  'information':
+    material: BOOK
+    damage: 0
+    amount: 1
+    glow: false
+    displayName: '&f&lWelcome to the Gem Upgrades Menu!'
+    lore:
+    - '&7&l&m------------------------------'
+    - '&aIn this menu, you are able to upgrade'
+    - '&ayour player stats for greater rewards'
+    - '&awhen receiving gems'
+    - '&7&l&m------------------------------'
+    - ''
+
+
+
+#Cooldown, in Milliseconds, between how long a player must wait to purchase another upgrade. (Cooldown resets when the server or plugin restarts) (20 milliseconds = 1 second)
+upgrade-purchase-cooldown: 10
+
+  
+

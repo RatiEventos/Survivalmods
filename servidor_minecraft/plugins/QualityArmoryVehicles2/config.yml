@@ -1,0 +1,52 @@
+QAMini:
+  resourcepackurl_override: false
+  variantPrefix: Variant
+  sendResourcepack: true
+  sendResourcepackTitleOnJoin: true
+  sendResourcepackOnJoin: true
+  kickIfRejectResourcepack: true
+  verboseItemLogging: false
+  resourcepackurl: https://github.com/ZombieStriker/QualityArmory-Resourcepack/releases/download/v2.1.9/QualityArmory.zip
+prefix: '&6&lQAVehicles &f&l»&7'
+USE_1_13_MODEL_SYSTEM: false
+enable_VehicleLimiter: false
+enable_PickupVehicles: true
+enable_UnlockableVehicles: false
+enable_GarageCallback: false
+enable_RequirePermsToDriveType: false
+enable_SetOwnerOnVehicleSpawn: true
+enable_VehicleDamage: true
+enable_Debug_RemoveFuelChecks: false
+enable_SetOwnerOfVehicleIfUnowned: false
+Enable_Creation_Of_Default_Files: true
+enable_RemoveVehiclesOnDismount: false
+enable_RemoveVehiclesOnPlayerQuit: false
+enable_DestroyVehiclesOnPlayerQuit: false
+enable_DestroyVehiclesOnWater: true
+enable_StopCreativeDuplication: false
+enable_VehiclePlayerCollision: true
+enable_CrossVehicleCollision: false
+enable_SwapEndermiteWithCheckenForLowRider: false
+enable_FuelCarsWhenSpawnedFromGarage: true
+enable_UseHeadsForGUI: true
+ENABLE_DEBUG: false
+override_debug_withCommand: false
+enable_AntiCheatHook: false
+freezeOnDestroy: false
+bypassCoalInCreative: true
+sendActionBarOnMove: true
+enableShopCooldown: false
+makeVehiclesPublic: false
+unsafe:
+  useDamageInsteadOfCustomModelData: false
+  separateModelAndDriver: false
+modernPlaneMovements: true
+enable_RequirePermToBuyVehicle: false
+enable_VehiclesHaveTrunks: true
+blockAccelerationReduction:
+  BLOCK_NAME: 1.0
+enable_RemoveVehiclesOnEmpty: false
+BlacklistedWorlds:
+- example_world_name
+maxYHeight: 256
+enable_useChatForOutOfdFuelMessage: false

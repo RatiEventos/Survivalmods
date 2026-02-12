@@ -1,0 +1,498 @@
+# This is the where you can customize the design of the Gem Shop
+ShopMenu:
+  Size: 45
+  Title: '&f&k::&a&lGem Shop Menu&f&k::'
+  UseFiller: true
+  Decorations: #Use defined name followed by the slot you want the item in. Example: 'balance:36' will return the item defined as "balance" and will place this item in the 36th slot
+    - 'balance:36'
+    - 'information:44'
+    #- 'testMessage:0'
+  Categories: # This is where you can customize the slot item for each category
+    '10':
+      'spawners': #This is what you will define as the Shop Category when adding a new shop under "Shops"
+        enabled: true
+        subPermission: ''
+        material: 'SPAWNER'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&a&lSpawners'
+        lore:
+          - '&7Click to view the spawners category'
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+    '12':
+      'keys':
+        enabled: true
+        subPermission: ''
+        material: 'TRIPWIRE_HOOK'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&a&lCrate Keys'
+        lore:
+          - '&7Click to view the keys category'
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+    '14':
+      'tags':
+        enabled: true
+        subPermission: ''
+        material: 'NAME_TAG'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&a&lTags'
+        lore:
+          - '&7Click to view the tags category'
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+    '16':
+      'enchants':
+        enabled: true
+        subPermission: ''
+        material: 'ENCHANTED_BOOK'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&a&lEnchantment Books'
+        lore:
+          - '&7Click to view the enchantments category'
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+    '31':
+      'donators':
+        enabled: true
+        subPermission: 'donators' #Set the required permission to access this shop category. For example, by entering 'donators', the required permission will be 'elementgems.shops.donators'
+        material: 'CHEST'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&a&lDonators'
+        lore:
+          - '&7Click to view the donators category'
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+
+
+
+Shops:
+  Spawners:
+    Size: 36
+    Title: '&a&lSpawners Shop &7(Gems)'
+    UseFiller: true
+    Decorations:
+      - 'balance:27'
+      - 'menuButton:31'
+    Rewards:
+      '11':
+        price: 1000
+        giveItem: false
+        material: 'SPAWNER'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&eZombie &fSpawner'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]ss give {player} zombie 1'
+        requiredPermission: 'group.vip' #Add a permission that a player is required to have in order to purchase this item
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+      '12':
+        price: 2000
+        giveItem: false
+        material: 'SPAWNER'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&eSkeleton &fSpawner'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]ss give {player} skeleton 1'
+        requiredPermission: 'group.vipplus'
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+      '13':
+        price: 3000
+        giveItem: false
+        material: 'SPAWNER'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&eBlaze &fSpawner'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]ss give {player} blaze 1'
+        requiredPermission: '' #Add a permission that a player is required to have in order to purchase this item. Leave as empty to not require any permission
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+      '14':
+        price: 4000
+        giveItem: false
+        material: 'SPAWNER'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&eCreeper &fSpawner'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]ss give {player} creeper 1'
+        requiredPermission: ''
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+      '15':
+        price: 5000
+        giveItem: false
+        material: 'SPAWNER'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&eEnderman &fSpawner'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]ss give {player} enderman 1'
+        requiredPermission: ''
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+
+  Keys:
+    Size: 36
+    Title: '&a&lKeys Shop &7(Gems)'
+    UseFiller: true
+    Decorations:
+      - 'balance:27'
+      - 'menuButton:31'
+    Rewards:
+      '11':
+        price: 1000
+        giveItem: false
+        material: 'TRIPWIRE_HOOK'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&7Common Key'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]cc give p common 1 {player}'
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+      '12':
+        price: 2000
+        giveItem: false
+        material: 'TRIPWIRE_HOOK'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&aUncommon Key'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]cc give p uncommon 1 {player}'
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+      '13':
+        price: 3000
+        giveItem: false
+        material: 'TRIPWIRE_HOOK'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&bRare Key'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]cc give p rare 1 {player}'
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+      '14':
+        price: 4000
+        giveItem: false
+        material: 'TRIPWIRE_HOOK'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&dEpic Key'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]cc give p epic 1 {player}'
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+      '15':
+        price: 5000
+        giveItem: false
+        material: 'TRIPWIRE_HOOK'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&6Legendary Key'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]cc give p legendary 1 {player}'
+        #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+
+  Tags:
+    Size: 36
+    Title: '&a&lTags Shop &7(Gems)'
+    UseFiller: true
+    Decorations:
+      - 'balance:27'
+      - 'menuButton:31'
+    Rewards:
+      '11':
+        price: 1000
+        giveItem: false
+        material: 'PAPER'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&7&nNoob&f Tag'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]tags give {player} noob 1'
+        #cancelIfHasPerm: 'tags.noob'
+      '12':
+        price: 2000
+        giveItem: false
+        material: 'PAPER'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&d&nEGirl&f Tag'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]tags give {player} egirl 1'
+        #cancelIfHasPerm: 'tags.egirl'
+      '13':
+        price: 3000
+        giveItem: false
+        material: 'PAPER'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&e&nGrinder&f Tag'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]tags give {player} grinder 1'
+        #cancelIfHasPerm: 'tags.grinder'
+      '14':
+        price: 4000
+        giveItem: false
+        material: 'PAPER'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&a&nMoneyMaker&f Tag'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]tags give {player} moneymaker 1'
+        #cancelIfHasPerm: 'tags.moneymaker'
+      '15':
+        price: 5000
+        giveItem: false
+        material: 'PAPER'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&b&nPvPGod&f Tag'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]tags give {player} pvpgod 1'
+        #cancelIfHasPerm: 'tags.pvpgod'
+
+  Enchants:
+    Size: 36
+    Title: '&a&lEnchants Shop &7(Gems)'
+    UseFiller: true
+    Decorations:
+      - 'balance:27'
+      - 'menuButton:31'
+    Rewards:
+      '11':
+        price: 1000
+        giveItem: true
+        material: 'ENCHANTED_BOOK'
+        damage: 0
+        amount: 1
+        glow: false
+        displayName: '&aSharpness V'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        enchants:
+          - 'DAMAGE_ALL:5'
+      '12':
+        price: 2000
+        giveItem: true
+        material: 'ENCHANTED_BOOK'
+        damage: 0
+        amount: 1
+        glow: false
+        displayName: '&aLooting III'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        enchants:
+          - 'LOOT_BONUS_MOBS:3'
+      '13':
+        price: 3000
+        giveItem: true
+        material: 'ENCHANTED_BOOK'
+        damage: 0
+        amount: 1
+        glow: false
+        displayName: '&aUnbreaking III'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        enchants:
+          - 'DURABILITY:3'
+      '14':
+        price: 4000
+        giveItem: true
+        material: 'ENCHANTED_BOOK'
+        damage: 0
+        amount: 1
+        glow: false
+        displayName: '&aSilk Touch I'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        enchants:
+          - 'SILK_TOUCH:1'
+      '15':
+        price: 5000
+        giveItem: true
+        material: 'ENCHANTED_BOOK'
+        damage: 0
+        amount: 1
+        glow: false
+        displayName: '&aFortune III'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        enchants:
+          - 'LOOT_BONUS_BLOCKS:3'
+
+  Donators:
+    Size: 36
+    Title: '&a&lDonators Shop &7(Gems)'
+    UseFiller: true
+    Decorations:
+      - 'balance:27'
+      - 'menuButton:31'
+    Rewards:
+      '11':
+        price: 10000
+        giveItem: false
+        material: 'END_PORTAL_FRAME'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&a&lMoney Generator &fTier 1'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]generator give {player} money 1 1'
+      '13':
+        price: 20000
+        giveItem: false
+        material: 'END_PORTAL_FRAME'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&a&lMoney Generator &fTier 2'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]generator give {player} money 2 1'
+      '15':
+        price: 30000
+        giveItem: false
+        material: 'END_PORTAL_FRAME'
+        damage: 0
+        amount: 1
+        glow: true
+        displayName: '&a&lMoney Generator &fTier 3'
+        lore:
+          - '&aPrice: &7{price} Gems'
+        commands:
+          - '[console]generator give {player} money 3 1'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GUIFiller:
+  material: 'GRAY_STAINED_GLASS_PANE'
+  damage: 0
+  amount: 1
+  glow: false
+  displayName: '&f'
+  lore: []
+
+
+
+Decorations: #These usually have no effect when clicked unless defined otherwise. Use a valid 'action' to turn these items into buttons that do certain things
+  'menuButton':
+    action: 'open_shop_menu'
+    material: 'SUNFLOWER'
+    damage: 0
+    amount: 1
+    glow: false
+    displayName: '&e> Back Button <'
+    lore:
+      - '&7Click to return to the Gem Shop menu!'
+    #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+  'balance':
+    material: 'EMERALD'
+    damage: 0
+    amount: 1
+    glow: false
+    displayName: '&7You currently have &a{balance} &7Gems'
+    lore: []
+    #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+  'information':
+    material: 'BOOK'
+    damage: 0
+    amount: 1
+    displayName: '&f&lWelcome to the Gem Shop Menu!'
+    lore:
+      - '&7&l&m-----------------------------------'
+      - '&aGems &7can be earned by killing mobs, players,'
+      - '&7mining blocks, farming, and fishing! &aGems &7can be'
+      - '&7used to purchase &bexclusive &7items from this shop!'
+      - ''
+      - '&a&nDrop chances:'
+      - ' &7* &aBlazes: &f10%'
+      - ' &7* &aSkeletons: &f5%'
+      - ' &7* &aZombies: &f5%'
+      - ' &7* &aPlayers: &f20%'
+      - '&7&l&m-----------------------------------'
+      - ''
+    #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+  'testMessage': #This is an example of how to use the decoration commands feature
+    material: 'PAPER'
+    damage: 0
+    amount: 1
+    glow: true
+    displayName: '&e> Click me! <'
+    lore:
+      - '&7Test message!'
+    commands:
+      - '[console]msg {player} &eBuy this amazing plugin at &ahttps://www.mc-market.org/resources/14920/&e! :D'
+    #customModelData: 123456789 #Replace the number with your Custom Model Data number if you wish to use this feature. (Works for all items in this plugin)
+
+
+
+
+#Cooldown, in Milliseconds, between how long a player must wait to purchase another item. (Cooldown resets when the server or plugin restarts) (20 milliseconds = 1 second)
+purchase-cooldown: 5
+
+
+
+

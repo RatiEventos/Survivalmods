@@ -1,0 +1,116 @@
+enabled: true
+
+title: "Enchanter"
+rows: 4
+
+slots:
+  fill:
+    material: "GRAY_STAINED_GLASS_PANE"
+    name: "&f"
+    lore: []
+  11:
+    material: "WHITE_STAINED_GLASS_PANE"
+    name: "&f&lSimple Enchantment &7(Right Click)"
+    lore:
+      - '&7Click to purchase a &fSimple'
+      - '&7enchantment book'
+      - ''
+      - '&b&lCOST &f400 EXP'
+    cost: "EXP:400"
+    type: "BOOK:SIMPLE"
+  12:
+    material: "LIME_STAINED_GLASS_PANE"
+    name: "&a&lUnique Enchantment &7(Right Click)"
+    lore:
+      - '&7Click to purchase a &aUnique'
+      - '&7enchantment book'
+      - ''
+      - '&b&lCOST &f800 EXP'
+    cost: "EXP:800"
+    type: "BOOK:UNIQUE"
+  13:
+    material: "LIGHT_BLUE_STAINED_GLASS_PANE"
+    name: "&b&lElite Enchantment &7(Right Click)"
+    lore:
+      - '&7Click to purchase a &bElite'
+      - '&7enchantment book'
+      - ''
+      - '&b&lCOST &f2,500 EXP'
+    cost: "EXP:2500"
+    type: "BOOK:ELITE"
+  14:
+    material: "YELLOW_STAINED_GLASS_PANE"
+    name: "&e&lUltimate Enchantment &7(Right Click)"
+    lore:
+      - '&7Click to purchase a &eUltimate'
+      - '&7enchantment book'
+      - ''
+      - '&b&lCOST &f5,000 EXP'
+    cost: "EXP:5000"
+    type: "BOOK:ULTIMATE"
+  15:
+    material: "ORANGE_STAINED_GLASS_PANE"
+    name: "&6&lLegendary Enchantment &7(Right Click)"
+    lore:
+      - '&7Click to purchase a &6Legendary'
+      - '&7enchantment book'
+      - ''
+      - '&b&lCOST &f25,000 EXP'
+    cost: "EXP:25000"
+    type: "BOOK:LEGENDARY"
+  21:
+    material: "RED_STAINED_GLASS_PANE"
+    name: "&c&lSoul Enchantment &7(Right Click)"
+    lore:
+      - '&7Click to purchase a &cSoul'
+      - '&7enchantment book'
+      - ''
+      - '&b&lCOST &f35,000 EXP'
+    cost: "EXP:35000"
+    type: "BOOK:SOUL"
+  22:
+    material: "PINK_STAINED_GLASS_PANE"
+    name: "&d&lHeroic Enchantment &7(Right Click)"
+    lore:
+      - '&7Click to purchase a &dHeroic'
+      - '&7enchantment book'
+      - ''
+      - '&b&lCOST &f50,000 EXP'
+    cost: "EXP:50000"
+    type: "BOOK:HEROIC"
+  23:
+    material: "RED_STAINED_GLASS_PANE"
+    name: "&4&lMastery Enchantment &7(Right Click)"
+    lore:
+      - '&7Click to purchase a &4Mastery'
+      - '&7enchantment book'
+      - ''
+      - '&b&lCOST &f75,000 EXP'
+    cost: "EXP:75000"
+    type: "BOOK:MASTERY"
+  20:
+    material: "EMPTY_MAP"
+    name: "&eWhite Scroll"
+    lore:
+      - '&fPrevents an item from being destroyed'
+      - '&fdue to a failed Enchantment Book.'
+      - '&ePlace scroll on item to apply.'
+      - '&7Click to purchase a &eWhite Scroll'
+      - ''
+      - '&b&lCOST &f25,000 EXP'
+    cost: "EXP:25000"
+    type: "COMMAND:ee giveitem {PLAYER} whitescroll"
+  24:
+    material: "INK_SAC"
+    name: "&f&lBlack Scroll"
+    lore:
+      - '&7Removes a random enchantment'
+      - '&7from an item and converts'
+      - '&7it into a enchantment book'
+      - '&fPlace onto item to extract'
+      - '&7Click to purchase a &f&lBlack Scroll'
+      - ''
+      - '&b&lCOST &f25,000 EXP'
+    cost: "EXP:25000"
+    type: "COMMAND:ee giveitem {PLAYER} blackscroll"
+#ImUGR3QaNGT580Q3IVSZdzSwsWT3tGVPdXR650MFRUT4NmVitUcnhGaFxUcklWWvhUSFJkM

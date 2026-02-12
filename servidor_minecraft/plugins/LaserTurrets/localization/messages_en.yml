@@ -1,0 +1,789 @@
+# !-----------------------------------------------------------------------------------------------!
+#                              Welcome to the localization file.
+# !-----------------------------------------------------------------------------------------------!
+#
+#   1) COLOR CODES are supported with the '&' character.
+#      - For usage, see http://minecraftwiki.net/wiki/Formatting_codes
+#      - When you use them, place quotes around the message like this: "Hello &cworld."
+#       - To use HEX colors, use #123456 syntax: "Hello #123456world."
+#
+#   2) TO HIDE any message, set it to 'none'.
+#
+#   3) For UNICODE CHARACTERS (smileys, symbols, ..), save the file in UTF-8 encoding. See
+#      - https://github.com/JackOUT/LaserTurrets/wiki/Use-Right-Encoding
+#
+# !-----------------------------------------------------------------------------------------------!
+
+# -------------------------------------------------------------------------------------------------
+# Messages related to commands
+# -------------------------------------------------------------------------------------------------
+Commands:
+  # true = https://i.imgur.com/us88BCT.png
+  # false = https://i.imgur.com/N7jLu7v.png
+  Simple_Help_Design: false
+  Error: '&4&lOups! &cThe command failed :( Check the console and report the error.'
+  Header_No_Subcommands: '&cThere are no arguments for this command.'
+  Header_No_Subcommands_Permission: '&cYou don''t have permissions to view any subcommands.'
+  Header_Color: GOLD
+  Header_Secondary_Color: RED
+  Reloading: reloading
+  Disabled: disabled
+  Use_While_Null: '&cCannot use this command while the plugin is {state}.'
+  Incompatible: This command requires Minecraft {0} or greater.
+  Toggled_Plugin_Part: '''&7You are '' + (ignoring ? ''&2no longer'' : ''&cnow'') + '' &7ignoring {0}.'''
+  Use_Alternative_Header: false
+  Alternative_Header: '&cLaserTurrets: &7Type ''/{0} ?'' to see all commands.'
+  No_Console: '&cYou may only use this command as a player.'
+  No_BungeeCord: You need BungeeCord enabled use this feature.
+  Console_Missing_Player_Name: When running from console, specify player name.
+  Cooldown_Wait: '&cWait {duration} second(s) before using this command again.'
+  Invalid_Argument: '&cInvalid argument. Run &6/{label} ? &cfor help.'
+  Invalid_Sub_Argument: '&cInvalid argument. Run ''/{label} {0}'' for help.'
+  Invalid_Argument_Multiline: '&cInvalid argument. Usage:'
+  Invalid_Time: 'Expected time such as ''3 hours'' or ''15 minutes'', got: ''{input}'''
+  Invalid_Number: 'The number must be a whole or a decimal number. Got: ''{input}'''
+  Invalid_String: '&cInvalid string. Got: ''{input}&c'''
+  Invalid_World: 'Invalid world ''{world}''. Available: {available}'
+  Label_Authors: Made by
+  Label_Description: '&c&lDescription:'
+  Label_Optional_Args: optional arguments
+  Label_Required_Args: required arguments
+  Label_Usages: '&c&lUsages:'
+  Label_Usage: '&c&lUsage:'
+  Label_Help_For: Help for /{label}
+  Label_Subcommand_Description: ' &f/{label} {sublabel} {usage+}{dash+}{description}'
+  Help_Tooltip_Description: '&7Description: &f{description}'
+  Help_Tooltip_Permission: '&7Permission: &f{permission}'
+  Help_Tooltip_Usage: '&7Usage: &f'
+  Reload_Description: Reload the configuration.
+  Reload_Started: Reloading plugin's data, please wait..
+  Reload_Success: '&6LaserTurrets {plugin_version} has been reloaded.'
+  Reload_Fail: '&4Oups, &creloading failed! See the console for more information. Error: {error}'
+  Reload_File_Load_Error: '&4Oups, &cthere was a problem loading files from your disk! See the console for more information. LaserTurrets has not been reloaded.'
+  Debug_Description: ZIP your settings for reporting bugs.
+  Debug_Preparing: '&6Preparing debug log...'
+  Debug_Success: '&2Successfuly copied {amount} file(s) to debug.zip. Your sensitive MySQL information has been removed from yml files. Please upload it via ufile.io and send it to us for review.'
+  Debug_Copy_Fail: '&cCopying files failed on file messages_en and it was stopped. See console for more information.'
+  Debug_Zip_Fail: '&cCreating a ZIP of your files failed, see console for more information. Please ZIP debug/ folder and send it to us via ufile.io manually.'
+  Perms_Description: List all permissions the plugin has.
+  Perms_Header: Listing All Plugin Permissions
+  Perms_Main: Main
+  Perms_Permissions: 'Permissions:'
+  Perms_True_By_Default: '&7[true by default]'
+  Perms_Info: '&7Info: &f'
+  Perms_Default: '&7Default? '
+  Perms_Applied: '&7Do you have it? '
+  Perms_Yes: '&2yes'
+  Perms_No: '&cno'
+
+# -------------------------------------------------------------------------------------------------
+# Messages related to commands
+# -------------------------------------------------------------------------------------------------
+Turret_Commands:
+  Player_Non_Existent: The player {invalidPlayer} does not exist.
+  Invalid_Number: '''{2}'' is not a valid number.'
+  Balance_Description: Get, set,  give or take from the players balance.
+  Menu_Description: This is the main menu that allows you to view all turrets and edit them specifically.
+  Settings_Description: Edit your default turret settings in a settings menu.
+  Shop_Description: Purchase a tool that has 1 use to create your own turret.
+  Turret_Description: Give a tool that can create an infinite amount of turrets or give a turret that can be once.
+  Take_Description: Take turrets back into your inventory by id or by looking at them while performing the command.
+  Remove_Description: Remove existing turrets by id or by looking at them while performing the command.
+  Give_Description: Give turrets to yourself or another player.
+  Buy_Description: Buy turrets directly from this command.
+  Tool_Description: Give a turret tool to yourself or another player.
+  Sync_Description: Sync your turret settings with your already created turrets.
+  Allies_Description: Manage your owning turrets allies via this menu.
+  Balance_Give: '&aGave {playerName} &e{amount} &a{currencyName} and now has a total of &e{totalAmount} &a{currencyName}.'
+  Balance_Take: '&aTook &e{amount} &a{currencyName} from {playerName} who now has a total of &e{totalAmount} &a{currencyName}.'
+  Balance_Set: '&Set {playerName}''s amount of {currencyName} to &e{amount}&a.'
+  Balance_Get: '&a{playerName} has &e{amount} &a{currencyName}.'
+  Remove_Turret_Message: '&aSuccessfully removed the {turretType} turret with the id of &3{turretId}&a.'
+  Take_Turret_Message: '&aSuccessfully took the {turretType} turret with the id of &3{turretId}&a.'
+  Buy_Turret_Message: '&aSuccessfully bought an {turretType} turret for {price} {currencyName}.'
+  Buy_Ammo_Message: '&aSuccessfully purchased {amount} {turretType} ammo for {price} {currencyName}.'
+  Give_Turret_Message: You have successfully given {playerName} {amount} turret(s).
+  Give_Ammo_Message: You have successfully given {playerName} {amount} ammo.
+  Sync_Message: '&aSuccessfully synced your {turretType} settings with &3{turretAmount} &a{turretType} turret(s).'
+  Balance_Cannot_Be_Negative: Balance cannot be negative
+  Error_Not_Looking_At_Turret: This block isn't a turret, you must be looking at the turrets base while using this command.
+  Turret_ID_Does_Not_Exist: '{invalidID} does not exist, you must insert a valid one.'
+
+# -------------------------------------------------------------------------------------------------
+# Messages that are displayed when interacting with the turret (damage, un/registration, destruction, etc)
+# -------------------------------------------------------------------------------------------------
+Turret_Display:
+  Action_Bar_Damage: '{health} &c❤'
+  Action_Bar_Damage_But_Broken: '&cTurret is broken!'
+  # Placeholders : {owner}, {turretType}, {level}, {health}
+  Hologram:
+  - '&6{turretType} Turret'
+  - 'Health: &c{health}'
+  - 'Level: &9{level}'
+  # Placeholders : {owner}, {turretType}, {level}
+  Broken_Turret_Hologram:
+  - '&c{turretType} Turret'
+  - '&cis broken!'
+  - '&6Owner: {owner}'
+  # Placeholders : {owner}, {turretType}, {victim}
+  Turret_Player_Kill_Message: '&6{owner}''s {turretType} turret has killed &c{victim}&6!'
+
+# -------------------------------------------------------------------------------------------------
+# Messages that are displayed in the Manage Turret Allies menu
+# -------------------------------------------------------------------------------------------------
+Manage_Turret_Allies_Menu:
+  Main_Title: Manage Turret Allies
+  Mob_Allies_Title: Mob {listType}
+  Mob_Allies_Lore: Edit your mob {listType}
+  Player_Allies_Title: Player {listType}
+  Player_Allies_Lore: Edit your player {listType}
+  Main_Info:
+  - '&fWhitelisted&7 players/mobs are'
+  - 'the only targets of the turret.'
+  - ''
+  - '&8Blacklisted&7 players/mobs won''t'
+  - 'get targeted by the turret.'
+  Mob_Add_Button_Title: Add Mob
+  Mob_Add_Button_Lore:
+  - 'Open this menu to add'
+  - 'mobs to the {listType}'
+  Mob_List_Type_Menu_Title: '&0Mob {listType}'
+  Mob_List_Type_Menu_Animated_Message: Changed to {listType}
+  Mob_List_Type_Button_Title: '{listType}'
+  Mob_List_Type_Button_Lore: Click to change to {listType}
+  Mob_Egg_Lore: Click to remove
+  Mob_Egg_Animated_Message: '&cRemoved {entityName}'
+  Mob_Menu_Info_Button:
+  - 'Manage your mob {listType} by'
+  - 'clicking the existing eggs'
+  - 'to remove them or clicking'
+  - 'the ''Add Mob'' button to add'
+  - 'mobs to your selection.'
+  Mob_Selection_Menu_Title: Select a Mob
+  Mob_Available_For_Selection_Lore: Click to add
+  Mob_Already_Selected_Lore: '&aAlready in the {listType}'
+  Mob_Selection_Animated_Message: '&aAdded {entityName}'
+  Player_Add_Button_Title: Add Player
+  Player_Add_Button_Lore:
+  - 'Open this menu to add'
+  - 'players to the {listType}'
+  Player_Add_Prompt_Button_Title: Type a name
+  Player_Add_Prompt_Button_Lore:
+  - 'Click this button if you'
+  - 'would like to add a player'
+  - 'to the {listType} by typing'
+  - 'his name, this means you can'
+  - 'also add offline players.'
+  Player_List_Type_Menu_Title: '&0Player {listType}'
+  Player_Menu_Info_Button:
+  - 'Edit your player {listType} by'
+  - 'clicking the existing heads'
+  - 'to remove them or clicking'
+  - 'the ''Add Player'' button to add'
+  - 'players to your {listType}.'
+  Player_List_Type_Button_Title: '{listType}'
+  Player_List_Type_Button_Lore: Click to change to {listType}
+  Player_List_Type_Menu_Animated_Message: Changed to {listType}
+  Player_Head_Lore: Click to remove
+  Player_Head_Animated_Message: '&cRemoved {playerName}'
+  Player_Selection_Menu_Title: Select a player
+  Player_Available_For_Selection_Lore: Click to add
+  Player_Already_Selected_Lore: '&aAlready in the {listType}'
+  Player_Selection_Animated_Message: '&aAdded {playerName}'
+  Player_Prompt_Message: '&6What player shouldn''t be targeted by this turret?'
+  Player_Prompt_Invalid_Text: Player '{invalidPlayer}' doesn't exist.
+  Player_Prompt_Success: You have successfully added {playerName} to the {listType}!
+
+# -------------------------------------------------------------------------------------------------
+# Messages that are displayed in the Manage Player Allies menu
+# -------------------------------------------------------------------------------------------------
+Manage_Player_Allies_Menu:
+  Main_Title: Manage Player Allies
+  Mob_Allies_Title: Mob {listType}
+  Mob_Allies_Lore: Edit your mob {listType}
+  Player_Allies_Title: Player {listType}
+  Player_Allies_Lore: Edit your player {listType}
+  Sync_Allies_Button_Title: Sync Allies
+  Sync_Allies_Button_Lore:
+  - 'Sync your allies with all'
+  - 'turrets you own.'
+  Sync_Allies_Animated_Message: '&aSynced allies with turrets'
+  Main_Info:
+  - '&fWhitelisted&7 players/mobs are'
+  - 'the only targets of the turret.'
+  - ''
+  - '&8Blacklisted&7 players/mobs won''t'
+  - 'get targeted by the turret.'
+  Mob_Add_Button_Title: Add Mob
+  Mob_Add_Button_Lore:
+  - 'Open this menu to add'
+  - 'mobs to the {listType}'
+  Mob_List_Type_Menu_Title: '&0Mob {listType}'
+  Mob_List_Type_Menu_Animated_Message: Changed to {listType}
+  Mob_List_Type_Button_Title: '{listType}'
+  Mob_List_Type_Button_Lore: Click to change to {listType}
+  Mob_Egg_Lore: Click to remove
+  Mob_Egg_Animated_Message: '&cRemoved {entityName}'
+  Mob_Menu_Info_Button:
+  - 'Manage your mob {listType} by'
+  - 'clicking the existing eggs'
+  - 'to remove them or clicking'
+  - 'the ''Add Mob'' button to add'
+  - 'mobs to your selection.'
+  Mob_Selection_Menu_Title: Select a Mob
+  Mob_Available_For_Selection_Lore: Click to add
+  Mob_Already_Selected_Lore: '&aAlready in the {listType}'
+  Mob_Selection_Animated_Message: '&aAdded {entityName}'
+  Player_Add_Button_Title: Add Player
+  Player_Add_Button_Lore:
+  - 'Open this menu to add'
+  - 'players to the {listType}'
+  Player_Add_Prompt_Button_Title: Type a name
+  Player_Add_Prompt_Button_Lore:
+  - 'Click this button if you'
+  - 'would like to add a player'
+  - 'to the {listType} by typing'
+  - 'his name, this means you can'
+  - 'also add offline players.'
+  Player_List_Type_Menu_Title: '&0Player {listType}'
+  Player_Menu_Info_Button:
+  - 'Edit your player {listType} by'
+  - 'clicking the existing heads'
+  - 'to remove them or clicking'
+  - 'the ''Add Player'' button to add'
+  - 'players to your {listType}.'
+  Player_List_Type_Button_Title: '{listType}'
+  Player_List_Type_Button_Lore: Click to change to {listType}
+  Player_List_Type_Menu_Animated_Message: Changed to {listType}
+  Player_Head_Lore: Click to remove
+  Player_Head_Animated_Message: '&cRemoved {playerName}'
+  Player_Selection_Menu_Title: Select a player
+  Player_Available_For_Selection_Lore: Click to add
+  Player_Already_Selected_Lore: '&aAlready in the {listType}'
+  Player_Selection_Animated_Message: '&aAdded {playerName}'
+  Player_Prompt_Message: '&6What player shouldn''t be targeted by this turret?'
+  Player_Prompt_Invalid_Text: Player '{invalidPlayer}' doesn't exist.
+  Player_Prompt_Success: You have successfully added {playerName} to the {listType}!
+
+# -------------------------------------------------------------------------------------------------
+# Messages that are displayed in the broken turret menu (the menu is accessed when the turret is broken and you right click it)
+# -------------------------------------------------------------------------------------------------
+Broken_Turret_Menu:
+  Menu_Title: Loot Turret
+  Menu_Title_For_Owner: Repair Turret
+  Info_Button:
+  - 'This turret is destroyed'
+  - 'and you can claim its loot.'
+  Info_Button_For_Owner:
+  - 'This turret is destroyed'
+  - 'You can claim loot from it,'
+  - 'Repair it or destroy it.'
+  - 'Balance: {balance} {currencyName}'
+  Repair_Button_Title: '&aRepair Turret'
+  Repair_Button_Lore:
+  - 'Click to repair this'
+  - 'turret.'
+  - ''
+  - 'Cost: {price} {currencyName}'
+  Repair_Button_Click_Message: '&aYou have successfully repaired this turret and it costed you {price} {currencyName}.'
+  Loot_Button_Title: Turret Loot
+  Loot_Button_Lore:
+  - 'Claim loot from this'
+  - 'destroyed turret.'
+  Destroy_Button_Title: '&cDestroy Turret'
+  Destroy_Button_Lore:
+  - 'Click to destroy turret'
+  - ''
+  - 'You''ll earn {earnings} {currencyName}.'
+  Destroy_Button_Click_Message: '&6You have successfully destroyed this turret and you have earned {earnings} {currencyName}.'
+  Loot_Menu_Title: Turret Loot
+  Loot_Menu_Info_Button:
+  - 'Claim loot from this broken'
+  - 'turret before anyone else does!'
+  Loot_All_Button_Title: '&aClaim all'
+  Loot_All_Button_Lore:
+  - 'Click this button to'
+  - 'claim all the items.'
+  Loot_All_Button_Animated_Message: '&aClaimed all turret loot'
+
+# -------------------------------------------------------------------------------------------------
+# Messages that are displayed in the settings menu (accessed when using the "/lt settings" command)
+# -------------------------------------------------------------------------------------------------
+Settings_Menu:
+  Menu_Title: Turret Settings
+  Arrow_Settings_Button_Title: Arrow Turret Settings
+  Arrow_Settings_Button_Lore:
+  - 'Edit the default settings'
+  - 'for arrow turrets.'
+  Fireball_Settings_Button_Title: Fireball Turret Settings
+  Fireball_Settings_Button_Lore:
+  - 'Edit the default settings'
+  - 'for fireball turrets.'
+  Beam_Settings_Button_Title: Beam Turret Settings
+  Beam_Settings_Button_Lore:
+  - 'Edit the default settings'
+  - 'for beam turrets.'
+  Edit_Menu_Title: '{turretType} Turrets'
+  Edit_Menu_Info_Button: Edit this turrets settings.
+  Turret_Limit_Button_Title: '&fTurret Limit'
+  Turret_Limit_Button_Lore:
+  - 'Limit the amount of {turretType} turrets'
+  - 'that can be created.'
+  - ''
+  - 'Current limit: &9{limit}'
+  Turret_Limit_Prompt_Message: 'Type in an integer value between 0 and 100 (recommended value : 10-50).'
+  Item_Tool_Title: Edit the item tool
+  Item_Tool_Button_Lore:
+  - 'This item will be used'
+  - 'to create turrets.'
+  Item_Tool_Menu_Info_Button:
+  - 'Place or replace an item '
+  - 'into the center of the'
+  - 'menu. This item will be'
+  - 'used to create turrets'
+  - 'of the specific type.'
+  Head_Texture_Button_Title: Turret Head Texture
+  Head_Texture_Button_Lore:
+  - 'Edit the base 64 head texture'
+  - 'value of this turret.'
+  Head_Texture_Prompt_Message: 'Insert a base64 head texture value for {turretType} turrets. Website: &bhttps://minecraft-heads.com/custom-heads'
+  Head_Texture_Prompt_Invalid_Text: The &e'{invalidType}' &cbase64 value is invalid.
+  Invincible_Button_Title: Enable/Disable Invincibility
+  Invincibility_Enabled_Button_Lore:
+  - 'Click to enable or disable'
+  - 'invincibility for this type of turret.'
+  - ''
+  - 'Current: {enabledOrDisabled}'
+  Invincibility_Enabled_Button_Animated_Message: '{enabledOrDisabled} invincibility'
+  Ammo_Button_Title: Configure ammo
+  Ammo_Button_Lore:
+  - 'Click to configure the ammo'
+  - '{turretType} turrets use.'
+  Level_Edit_Button_Title: Level Menu
+  Level_Edit_Button_Lore:
+  - 'Open this menu to upgrade'
+  - 'or downgrade the turret.'
+  Allies_Manager_Button_Title: Turret Allies Manager
+  Allies_Manager_Button_Lore:
+  - 'Click this button to edit'
+  - 'your turrets targets.'
+  Level_Menu_Title: Turret Level {level}
+  Level_Menu_Info_Button:
+  - 'You can edit each individual'
+  - 'level in this menu and set its'
+  - 'price.'
+  Range_Button_Title: Range
+  Range_Button_Lore:
+  - 'Set the turrets range'
+  - 'by clicking this button.'
+  - ''
+  - 'Current: &9{range}'
+  Range_Prompt_Message: 'Type in an integer value between 0 and 40 (recommended value : 15-20).'
+  Laser_Enabled_Button_Title: Enable/Disable Laser
+  Laser_Enabled_Button_Lore:
+  - 'Click to enable or disable'
+  - 'lasers for this type of turret.'
+  - ''
+  - 'Current: {enabledOrDisabled}'
+  Laser_Enabled_Button_Animated_Message: '{enabledOrDisabled} laser pointer'
+  Laser_Damage_Button_Title: Laser Damage
+  Laser_Damage_Button_Lore:
+  - 'Set the amount of damage'
+  - 'lasers deal if they''re enabled'
+  - 'by clicking this button.'
+  - ''
+  - 'Current: &9{damage}'
+  Laser_Damage_Prompt_Message: Type in an integer value between 0.0 and 500.0.
+  Loot_Drop_Button_Title: Turret Loot
+  Loot_Drop_Button_Lore:
+  - 'Open this menu to edit'
+  - 'the loot players get when'
+  - 'they destroy a turret.'
+  - 'You can also edit the drop'
+  - 'chance.'
+  Health_Button_Title: Health
+  Health_Button_Lore:
+  - 'Set the amount of health'
+  - 'the turrets will have'
+  - 'by clicking this button.'
+  - ''
+  - 'Current: &9{health}'
+  Health_Prompt_Message: Type in an integer value between 0.0 and 500.0.
+  Previous_Level_Button_Title_1: This is the first level
+  Previous_Level_Button_Title_2: Edit previous level
+  Next_Level_Button_Title_1: Create a new level
+  Next_Level_Button_Title_2: Edit next level
+  Remove_Level_Button_Title: '&cRemove this level'
+  Remove_Level_Button_Animated_Message: '&cRemoved level {level}'
+  Price_Button_Title: Edit Price
+  Price_Button_Lore:
+  - 'Current: {price} {currencyName}'
+  - ''
+  - 'Edit the price for'
+  - 'this level.'
+  Price_Prompt_Message: 'Enter the price for this level. (Current: {price} {currencyName})'
+  Turret_Loot_Menu_Title: Place turret loot here
+  Allies_Menu_Title: Turret Allies Manager
+  Allies_Menu_Info_Button:
+  - '&fWhitelisted&7 players/mobs are'
+  - 'the only targets of the turret.'
+  - ''
+  - '&8Blacklisted&7 players/mobs won''t'
+  - 'get targeted by the turret.'
+  Mob_Allies_Button_Title: Mob {listType}
+  Mob_Allies_Button_Lore: Edit your mob {listType}
+  Player_Allies_Button_Title: Player {listType}
+  Player_Allies_Button_Lore: Edit your player {listType}
+  Mob_Allies_Menu_Title: Mob {listType}
+  Mob_Allies_Info_Button:
+  - 'Edit your mob {listType} by'
+  - 'clicking the existing eggs'
+  - 'to remove them or clicking'
+  - 'the ''Add Mob'' button to add'
+  - 'mobs to your {listType}.'
+  Mob_Add_Button_Title: Add Mob
+  Mob_Add_Button_Lore:
+  - 'Open this menu to add'
+  - 'mobs to the {listType}.'
+  Mob_List_Type_Menu_Title: '&0Mob {listType}'
+  Mob_List_Type_Animated_Message: '&eChanged to {listType}'
+  Mob_List_Type_Button_Lore: Click to change to {listType}
+  Mob_Egg_Lore: Click to remove
+  Mob_Egg_Animated_Message: '&cRemoved {entityName}'
+  Mob_Selection_Menu_Title: Select a Mob
+  Mob_Available_For_Selection_Lore: Click to add
+  Mob_Already_Selected_Lore: '&aAlready in the {listType}'
+  Mob_Selection_Animated_Message: '&aAdded {entityName}'
+  Player_List_Type_Menu_Title: '&0Player {listType}'
+  Player_Menu_Info_Button:
+  - 'Edit your player {listType} by'
+  - 'clicking the existing heads'
+  - 'to remove them or clicking'
+  - 'the ''Add Player'' button to add'
+  - 'players to your {listType}.'
+  Player_Add_Button_Title: Add Players
+  Player_Add_Button_Lore:
+  - 'Open this menu to add'
+  - 'mobs to the {listType}'
+  Player_Add_Prompt_Button_Title: Type a name
+  Player_Add_Prompt_Button_Lore:
+  - 'Click this button if you'
+  - 'would like to add a player'
+  - 'to the {listType} by typing'
+  - 'his name, this means you can'
+  - 'also add offline players.'
+  Player_List_Type_Button_Title: '{listType}'
+  Player_List_Type_Button_Lore: Click to change to {listType}
+  Player_List_Type_Menu_Animated_Message: Changed to {listType}
+  Player_Head_Lore: Click to remove
+  Player_Head_Animated_Message: '&cRemoved {playerName}'
+  Player_Selection_Menu_Title: Select a player
+  Player_Available_For_Selection_Lore: Click to add
+  Player_Already_Selected_Lore: '&aAlready in the {listType}'
+  Player_Selection_Animated_Message: '&aAdded {playerName}'
+  Player_Prompt_Message: '&6What player shouldn''t be targeted by this turret? You can add more players to the {listType} by using the /turret blacklist add <player> command.'
+  Player_Prompt_Invalid_Text: Player '{invalidPlayer}' doesn't exist.
+  Player_Prompt_Success: You have successfully added {playerName} to the {listType}!
+  Ammo_Menu_Title: Ammo Settings
+  Ammo_Menu_Info_Button:
+  - 'Edit your ammo settings.'
+  - 'This ammo will be consumed'
+  - 'when the turrets shoot.'
+  Ammo_Price_Button_Title: Ammo price
+  Ammo_Price_Button_Lore:
+  - 'Enter a the price players'
+  - 'need to pay to receive ammo.'
+  - ''
+  - 'Current: {price} {currencyName}'
+  Ammo_Price_Prompt_Message: 'Type in a decimal value between 0 and 999999 (recommended value : 1-5).'
+  Ammo_Enable_Button_Title: Enable/Disable Ammo
+  Ammo_Enable_Button_Lore:
+  - 'Click to enable or disable'
+  - 'ammo for this type of turret.'
+  - ''
+  - 'Current: {enabledOrDisabled}'
+  Ammo_Enable_Button_Animated_Message: '{enabledOrDisabled} ammo'
+  Ammo_Item_Button_Title: Ammo Item
+  Ammo_Item_Button_Lore:
+  - 'Change the ammo item'
+  - '{turretType} turrets consume.'
+  Ammo_Item_Menu_Info_Button:
+  - 'Place or replace an item into'
+  - 'the center of the menu.'
+  - 'This item will be used as'
+  - 'the ammo {turretType} turrets'
+  - 'consume when shooting.'
+
+# -------------------------------------------------------------------------------------------------
+# Messages that are displayed in the turrets menu (accessed when using the "/lt menu" command)
+# -------------------------------------------------------------------------------------------------
+Turrets_Menu:
+  Menu_Title: '{turretType} Turrets'
+  Info_Button:
+  - 'In this menu, you can'
+  - 'view all turrets of a'
+  - 'specific type. You can'
+  - 'also edit each individual'
+  - 'turret by clicking them.'
+  Change_Turret_Type_Button_Title: Change View Type
+  Change_Turret_Type_Button_Lore:
+  - 'Click this button to view'
+  - 'turrets of a different type.'
+  Settings_Button_Title: Settings
+  Settings_Button_Lore:
+  - 'Click this button to edit'
+  - 'your turret settings for a'
+  - 'specific type.'
+  Turrets_Title: '&b{turretType} Turret &8{turretId}'
+  Turrets_Lore:
+  - 'Level: {level}'
+  - 'Type: {turretType}'
+  - ''
+  - 'Click to edit this turret'
+  Edit_Turret_View_Type_Prompt_Message: '&6Enter one of the following turret types (all, arrow, fireball, beam)'
+  Edit_Turret_View_Type_Prompt_Invalid_Text: Type {invalidType} does not exist, choose one of the following (all, arrow, fireball, beam).
+  Turret_Edit_Menu_Title: '{turretType} Turret &8{turretId}'
+  Turret_Edit_Menu_Info_Button: Edit this turrets settings.
+  Level_Edit_Button_Title: Level Menu
+  Level_Edit_Button_Lore:
+  - 'Open this menu to upgrade'
+  - 'or downgrade the turret.'
+  Allies_Button_Title: Turret Blacklist
+  Allies_Button_Lore:
+  - 'Click this button to edit'
+  - 'your turrets blacklist.'
+  Teleport_Button_Title: Teleport
+  Teleport_Button_Lore: Click to visit turret
+  Teleport_Success_Message: '&aYou have successfully teleported to the {turretType} turret with the id of &2{turretId}&a.'
+  Remove_Turret_Button_Title: '&cRemove Turret'
+  Remove_Turret_Button_Lore: Click to remove this turret
+  Remove_Turret_Animated_Message: '&cRemoved {turretType} turret {turretId}'
+
+# -------------------------------------------------------------------------------------------------
+# Messages that are displayed in the upgrade menu (accessed when right-clicking your own turret)
+# -------------------------------------------------------------------------------------------------
+Upgrade_Menu:
+  Menu_Title: '{turretType} Turret (lvl {level})'
+  Info_Button:
+  - 'Modify your player blacklist'
+  - 'or upgrade this turret.'
+  - ''
+  - '&eBalance: {balance} {currencyName}'
+  Upgrade_Button_Title: '&aUpgrade'
+  Upgrade_Button_Title_Max_Level: '&cMax level'
+  # Turret upgrade info placeholders: {currentRange}, {upgradedRange}, {currentDamage}, {upgradedDamage}, {currentHealth}, {upgradedHealth}
+  Upgrade_Button_Lore:
+  - 'Current level: &e{level}'
+  - ''
+  - 'Range: &9{currentRange} blocks &7&l⇨&r &9{upgradedRange} blocks'
+  - 'Laser damage: &9{currentDamage} &7&l⇨&r &9{upgradedDamage}'
+  - 'Health: &9{currentHealth} &7&l⇨&r &9{upgradedHealth}'
+  - ''
+  - 'Price: &6{price} {currencyName}'
+  Upgrade_Animated_Message: '&2Upgraded to level {nextLevel}'
+  Allies_Button_Title: Turret Allies
+  Allies_Button_Lore:
+  - 'Click this button to edit'
+  - 'your turrets allies.'
+  Take_Turret_Button_Title: Take Turret &9{turretId}
+  Take_Turret_Button_Lore:
+  - 'Click to take this turret'
+  - 'into your inventory'
+  Ammo_Button_Title: Ammo
+  Ammo_Button_Lore:
+  - 'Add ammo to your turret'
+  Ammo_Menu_Info_Button:
+  - 'Add ammo to this menu'
+  - 'to allow your turret to'
+  - 'shoot. Use the ''/lt buy'''
+  - 'command to buy ammo.'
+
+# -------------------------------------------------------------------------------------------------
+# Messages that are displayed in the shop menu (accessed when using the "/lt shop" command)
+# -------------------------------------------------------------------------------------------------
+Shop_Menu:
+  Menu_Title: Turret Shop
+  Info_Button:
+  - 'In this menu you can purchase'
+  - 'a turret tool that will allow'
+  - 'you to create a turret. You may'
+  - 'only create one turret with a tool,'
+  - 'so use it wisely.'
+  - ''
+  - '&eYou currently have {balance} {currencyName}.'
+  Arrow_Turret_Button_Title: '&aArrow Turret'
+  Arrow_Turret_Button_Lore:
+  - 'Click to purchase this tool'
+  - 'that will allow you to'
+  - 'create an arrow turret.'
+  - ''
+  - 'Price: {price}'
+  Arrow_Turret_Purchase_Animated_Message: '&aPurchased Arrow Turret'
+  Fireball_Turret_Button_Title: '&aFireball Turret'
+  Fireball_Turret_Button_Lore:
+  - 'Click to purchase this tool'
+  - 'that will allow you to'
+  - 'create an fireball turret.'
+  - ''
+  - 'Price: {price}'
+  Fireball_Turret_Purchase_Animated_Message: '&aPurchased Fireball Turret'
+  Beam_Turret_Button_Title: '&aBeam Turret'
+  Beam_Turret_Button_Lore:
+  - 'Click to purchase this tool'
+  - 'that will allow you to'
+  - 'create an beam turret.'
+  - ''
+  - 'Price: {price}'
+  Beam_Turret_Purchase_Animated_Message: '&aPurchased Beam Turret'
+
+# -------------------------------------------------------------------------------------------------
+# Messages that are displayed in the turret tools menu (accessed when using the "/lt turret" command)
+# -------------------------------------------------------------------------------------------------
+Tools_Menu:
+  Menu_Title: Turret Tools
+  Info_Button:
+  - 'Click a tool to get it!'
+  - 'You can then register turrets'
+  - 'by clicking blocks with these'
+  - 'tools.'
+
+# -------------------------------------------------------------------------------------------------
+# Messages related to paginator splitting command help into multiple pages
+# -------------------------------------------------------------------------------------------------
+Pages:
+  No_Page_Number: '&cPlease specify the page number for this command.'
+  No_Pages: '&cYou do not have any pages saved to show.'
+  No_Page: Pages do not contain the given page number.
+  Invalid_Page: '&cYour input ''{input}'' is not a valid number.'
+  Go_To_Page: '&7Go to page {page}'
+  Go_To_First_Page: '&7Go to the first page'
+  Tooltip:
+  - '&7You can also navigate using the'
+  - '&7hidden ''/#flp <page> command.'''
+
+# -------------------------------------------------------------------------------------------------
+# Messages related to players
+# -------------------------------------------------------------------------------------------------
+Player:
+  Not_Online: '&cPlayer {player} &cis not online on this server.'
+  Not_Played_Before: '&cPlayer {player} &chas not played before or we could not locate his disk data.'
+  Invalid_UUID: '&cCould not find a player from UUID {uuid}.'
+
+# -------------------------------------------------------------------------------------------------
+# Messages related to menus
+# -------------------------------------------------------------------------------------------------
+Menu:
+  Cannot_Open_During_Conversation: '&cType ''exit'' to quit your conversation before opening menu.'
+  Item_Deleted: '&2The {item} has been deleted.'
+  Error: '&cOups! There was a problem with this menu! Please contact the administrator to review the console for details.'
+  Page_Previous: '&8<< &fPage {page}'
+  Page_Next: Page {page} &8>>
+  Page_First: '&7First Page'
+  Page_Last: '&7Last Page'
+  Title_Tools: Tools Menu
+  Tooltip_Info: '&fMenu Information'
+  Button_Return_Title: '&4&lReturn'
+  Button_Return_Lore:
+  - ''
+  - 'Return back.'
+  Not_Enough_Money_Animated_Message: '&cYou lack {moneyNeeded} {currencyName}.'
+
+# -------------------------------------------------------------------------------------------------
+# Messages related to player conversation where server is waiting for his chat input
+# -------------------------------------------------------------------------------------------------
+Conversation:
+  Not_Conversing: '&cYou can only use this command when you are asked to type something in the chat.'
+  Requires_Player: Only players may enter this conversation.
+  Error: '&cOups! There was a problem in this conversation! Please contact the administrator to review the console for details.'
+  Conversation_Cancelled: Your pending chat answer has been canceled.
+  Conversation_Cancelled_Inactive: Your pending chat answer has been canceled because you were inactive.
+
+# -------------------------------------------------------------------------------------------------
+# Messages related to tools
+#
+# ! WARNING !
+# If you modify the turret tools lore or title all existing tools will no longer work.
+# -------------------------------------------------------------------------------------------------
+Tool:
+  Error: '&cOups! There was a problem with this tool! Please contact the administrator to review the console for details.'
+  Already_Registered: '{location} has already been registered'
+  Title_Infinite_Use_Tool: '&a{turretType} Turret Tool'
+  Lore_Infinite_Use_Tool:
+  - '&7Click blocks to'
+  - '&7un/register turrets.'
+  Title_1_Use_Tool: '&a{turretType} Turret Tool'
+  Lore_1_Use_Tool:
+  - '&7Click a block to'
+  - '&7place this turret.'
+  - '&61 use'
+  Turret_Limit_Reached: 'You cannot create anymore turrets because the limit of {turretType} turrets has been reached. You can increase this limit in your turret settings. (Limit: {turretLimit})'
+  Turret_Cannot_Be_Placed: Turrets can only be created on solid blocks and there cannot be any block above it.
+  Turret_Min_Distance_Breached: 'Turrets must be further apart (minimum distance: {distance} blocks).'
+  Block_Is_Already_Turret: This block is already a turret.
+  Blacklisted_World: You cannot place turrets in this world because it has been blacklisted.
+  Not_Permitted_In_Region: You cannot place turrets in this region.
+  Wait_Before_Place: Please wait before placing another turret.
+  Registered_Turret_Message: Successfully &aregistered &7the {turretType} turret at {location}.
+  Registered_Turret_Hologram: '&aRegistered {turretType} Turret'
+  Unregistered_Turret_Message: Successfully &cunregistered &7the {turretType} turret at {location}.
+  Unplaced_Turret_Title: '&b{turretType} Turret &8{turretId}'
+  Unplaced_Turret_Lore:
+  - 'Level: {level}'
+  - 'Owner: {owner}'
+
+# -------------------------------------------------------------------------------------------------
+# Edit message values from the placeholders used in this plugin (the placeholders are capitalized in titles so no need to capitalize the words here)
+# -------------------------------------------------------------------------------------------------
+Placeholders:
+  Whitelist: whitelist
+  Blacklist: blacklist
+  Whitelist_Coloured: '&fwhitelist'
+  Blacklist_Coloured: '&8blacklist'
+  Enabled: '&aenabled'
+  Disabled: '&cdisabled'
+  Arrow: arrow
+  Fireball: fireball
+  Beam: beam
+  All: all
+
+# -------------------------------------------------------------------------------------------------
+# Words for both singular and plural form. Separate these two forms with ", "
+# -------------------------------------------------------------------------------------------------
+Cases:
+  Second: second, seconds
+  Message: message, messages
+  Command: command, commands
+
+# -------------------------------------------------------------------------------------------------
+# Different prefixes you can use by calling {prefix_<type>} such as {prefix_info}
+# -------------------------------------------------------------------------------------------------
+Prefix:
+  Info: '&8&l[&9&li&8&l]&7 '
+  Success: '&8&l[&2&l!&8&l]&7 '
+  Warn: '&8&l[&6&l!&8&l]&6 '
+  Error: '&8&l[&4&lX&8&l]&c '
+  Question: '&8&l[&a&l?&l&8]&7 '
+  Announce: '&8&l[&5&l!&l&8]&d '
+
+# -------------------------------------------------------------------------------------------------
+# Miscellaneous
+# -------------------------------------------------------------------------------------------------
+None: None
+Server_Prefix: '[Server]'
+Console_Name: Console
+
+# -------------------------------------------------------------------------------------------------
+# Database related messages
+# -------------------------------------------------------------------------------------------------
+Data_Missing: '&c{name} lacks database information! Please only create {type} in-game! Skipping..'
+Data_Loading: Database is currently loading data, please wait...
+
+# -------------------------------------------------------------------------------------------------
+# Messages shown when player runs a command he lacks permission for
+# -------------------------------------------------------------------------------------------------
+No_Permission: '&cNo permission: {permission}'
+
+# -------------------------------------------------------------------------------------------------
+# Internal versioning number
+# -------------------------------------------------------------------------------------------------
+Version: 1

@@ -1,0 +1,206 @@
+# Seconds between plugin actions
+# NOTE: Commands, CharmSelector open...
+# NOTE: Use this value properly, no delay can affect server performance
+# REMINDER: This will not affect charm delay
+ActionDelay: 2
+
+# List of entities, that will be ignored by Wand
+IgnoredEntities:
+  - "ARMOR_STAND"
+  - "ITEM_FRAME"
+  - "DROPPED_ITEM"
+
+# Enable this function when you're supporting Bedrock edition
+BedrockSupport: false
+
+# You can configure here your Wands functionality
+# NOTE: Read comments to understand function
+Wands:
+
+  # Opens CharmsEditor when player holding shift + wand in hand for 5 seconds
+  CharmEditorShiftHold: true
+
+  # Player has to be owner of the wand to use it
+  # NOTE: Owner is selected with giving command
+  OwnerCondition: true
+
+  # What happens with wand, if owner has been killed?
+  # NOTE: Configure this value properly!
+  # Values:
+  #   > NEW_OWNER (Killer will be new owner & wand will drop)
+  #   > KEEP (Wand keeps to owner's inventory after death)
+  #   > LOOSE (Wand won't drop, but won't be saved... It means wand will be lost)
+  # Handler: If you don't set this value correctly, default value is: NEW_OWNER
+  OwnerDeath: NEW_OWNER
+
+  # If you are not using PotionEffects in your wands, change value to 'false' and disable this feature
+  # NOTE: By disabling you'll not receive configured potion effects, but also safe some performance for your server
+  PotionEffects: true
+
+  # Disable or Enable info bar located in ActionBar
+  # NOTE: It's active when you're holding the wand
+  InfoBar: true
+
+  # Enable & disable wand functionality in second hand
+  # NOTE: Some charms slot won't work because of Minecraft
+  Offhand: true
+
+# Configure GUIs to your own design, and texts!
+# NOTE: Feel free to use HEX colors or Gradient
+#   Using HEX color -> &{#ffffff}Text
+#   Using Gradient -> <#ffffff>{TextModifier}Text</#000000>
+#   {TextModifier} -> Could be &l/&o/&n/&k/&m
+Menus:
+
+  # Configure look of CharmSelector GUI!
+  # REMINDER: This menu is pageable
+  CharmSelector:
+
+    # Title of menu
+    # NOTE: Feel free to use PlaceholderAPI placeholders here!
+    Title: "&7Charms for %player_name%"
+
+    # Menu layout
+    # NOTE: Minimum is 1 line and maximum is 6
+    # REMINDER: Every line must have 9 characters
+    # LOCKED VALUES: (These characters are locked!)
+    #   > '<' = Prev page
+    #   > '>' = Next page
+    #   > 'x' = Close menu
+    Layout:
+      - "-o-w-234-"
+      - "---------"
+      - "         "
+      - "         "
+      - "         "
+      - "<---x--->"
+
+    # Character replaced for Charms...
+    CharmChar: ' '
+
+    # Symbol 'w' is reserved for the Wand Item! (Editing/selected wand)
+
+    # !! IMPORTANT !!
+    # Keys 1,2 and 3 are reserved for charm configuration
+
+    # This function has to be enabled at the top of the configuration!
+    # (Created for Bedrock players)
+    CharmConfiguration:
+
+      # When the slot is locked
+      Locked_Material: "Skull=eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJmNDZiZjM5ZGZjNzE4ZTdlYTMxZGI0MzQ3N2ZjNmI3ZGNhNTg4ZmUwYTc4OTFkNDgxYzVkZGE5ZTE2ZjUyMCJ9fX0="
+      Locked_Name: "&cLocked"
+      Locked_Lore:
+        - "This slot is locked!"
+
+      # When the slot is empty
+      Empty_Material: "Skull=eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjcwNWZkOTRhMGM0MzE5MjdmYjRlNjM5YjBmY2ZiNDk3MTdlNDEyMjg1YTAyYjQzOWUwMTEyZGEyMmIyZTJlYyJ9fX0="
+      Empty_Name: "&7Empty"
+      Empty_Lore:
+        - "This slot is empty!"
+
+      # When the slot is taken
+      # (Material for this item is configurable in Charm configuration)
+      Taken_Name: "{CharmName}"
+      Taken_Lore:
+        - "This slot is claimed by {CharmName}"
+
+    # Just set-up Name & Lore please
+    # NOTE: Skull can be configured in charm.yml!
+    # Placeholders:
+    #   > {CharmName} - Charm's display name
+    #   > {CharmPosition} - Charm's position text (Can be configured in lang.yml)
+    CharmItem:
+      Name: "{CharmName}"
+      Lore:
+        - "&7{CharmPosition}"
+        - ""
+        - " &7| LeftClick - Set to position 1"
+        - " &7| RightClick - Set to position 2"
+        - " &7| MiddleClick - Set to position 3"
+        - ""
+
+    # This item doesn't support PlaceholderAPI
+    Close:
+      Material: "Skull=eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjE5OGViNTRhZTA5ODAyZmU3NzUzOTllYzgwN2RhZDJkYjU1MWRiNThkZWE2YTQ2ZDA2MDhjZGQ5ZjZiOTAyZCJ9fX0="
+      Amount: 1
+      CustomModelData: 0
+      Name: "&cClose"
+      Lore: []
+      HideAttributes: true
+
+    # This item doesn't support PlaceholderAPI
+    PrevPage_On:
+      Material: "Skull=eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWZhNGM4MjcxMDgzNzQ4MGRmNTc1Y2EwZDY0Y2VmMmZjZGFkYWVjZTcwOTFiNzA3NmI5MjNjNjdlNWY0ZTg0OSJ9fX0="
+      Amount: 1
+      CustomModelData: 0
+      Name: "&a<"
+      Lore: []
+      HideAttributes: true
+
+    # This item doesn't support PlaceholderAPI
+    PrevPage_Off:
+      Material: "Skull=eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzNmNmRiYTFkMGNiZDI3NTRiZWQyZThlYjhjZTEzODZmMGJkNjAzOTliOTQ2MjA2NmY3ZDIxMDBhZjMwODBjNyJ9fX0="
+      Amount: 1
+      CustomModelData: 0
+      Name: "&7You're at the start"
+      Lore: []
+      HideAttributes: true
+
+    # This item doesn't support PlaceholderAPI
+    NextPage_On:
+      Material: "Skull=eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjM5NTExOWRkNTIwMWEyNDJiODZiNDg2NmQ2ZjA0NTQxYjAwYjkyZWJkZDU3Y2UyNzkxOWZiNWYxMDJhNmRkZCJ9fX0="
+      Amount: 1
+      CustomModelData: 0
+      Name: "&a>"
+      Lore: []
+      HideAttributes: true
+
+    # This item doesn't support PlaceholderAPI
+    NextPage_Off:
+      Material: "Skull=eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTdlNTUxNzdmNmE3M2UwZDk4MTI0MmNjYTVlNDJmYWEzYzBlNWUzZjE5MTVlYmE4ZThkOWQ1MmRlNTIyYjU2ZiJ9fX0="
+      Amount: 1
+      CustomModelData: 0
+      Name: "&7You're at the end"
+      Lore: []
+      HideAttributes: true
+
+    # Items are for menu styling...
+    # NOTE: They not have any functionality
+    # REMINDER: Fell free to use PlaceholderAPI in name or lore!
+    Items:
+
+      # A little example what can you configure in Item
+      #
+      # '?':
+      #   # Feel free to use also values:
+      #   # ViewerHead, Skull={Value} or PlayerHead={PlayerName}
+      #   Material: YOUR_MATERIAL
+      #   Amount: 1
+      #   CustomModelData: 0
+      #   Name: "&f"
+      #   Lore:
+      #     - "&7"
+      #   HideEnchantments: true
+      #   HideAttributes: true
+      #   HideDye: true
+      #   Enchantments:
+      #     - "SHARPNESS:3"
+
+      # Border item
+      '-':
+        Material: BLACK_STAINED_GLASS_PANE
+        Amount: 1
+        CustomModelData: 0
+        Name: "&f"
+        Lore: []
+        HideAttributes: true
+
+      # Player info item
+      'o':
+        Material: ViewerHead
+        Amount: 1
+        CustomModelData: 0
+        Name: "&f%player_name%"
+        Lore: []
+        HideAttributes: true

@@ -1,0 +1,58 @@
+# Turn off/on charm
+Enabled: true
+
+# What permission is required to see this charm as available?
+# NOTE: Without permission player is not available to use this charm
+Permission: "magicwands.charm.godrage"
+
+# What skull will they see in GUI?
+# NOTE: Open https://minecraft-heads.com/, select head and paste here Value
+Skull: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmM5OTU0M2E5YTI3YmQ2NGRkMmQzMGM5Y2U3Yjc3YTg5MjFhZGI4YTVmMTMzNWY3MjMzZjEyOTZhMjc5NzgxZSJ9fX0="
+
+# Define raw name for Charm
+# NOTE: Don't use colors there
+Name: "godrage"
+
+# Define description, a little lore what charm does
+Description: "High damage charm!"
+
+# Define display name for Charm
+# NOTE: You can use colors now!
+DisplayName: "&{#c87aff}God Rage"
+
+# Full number with delay (In seconds)
+# NOTE: Configure this properly, spamming can affect CPU performance
+Delay: 50
+
+# Select and configure damages for charm
+Damages:
+
+  # Give damage to looking entity
+  LookingEntity:
+
+    # Number of blocks (Radius limitation)
+    # NOTE: Don't set this value too high, it can affect server performance
+    Length: 10
+
+    # Damage
+    # NOTE: Wand amplifier will be included here!
+    Damage: 30.0
+
+# Select and configure particle effects to Charm
+# NOTE: Be careful and configure Arguments carefully
+# NOTE: This is just an example, if you don't want to use some effect, just remove section...
+Effects:
+
+  Lightning:
+
+    # Define where should particle spawn
+    # Values:
+    #   > DEALER - Entity who used charm
+    #   > DAMAGED - Primary damaged entity
+    #   > ALL - Every entity (Can be used only if effect contains Radius parameter)
+    Target: DAMAGED
+
+# Configure sounds of charm
+# FORMAT: "SOUND_NAME"
+# List of sounds you can find on https://m3ii0.gitbook.io/magicalwands/
+Sounds: []

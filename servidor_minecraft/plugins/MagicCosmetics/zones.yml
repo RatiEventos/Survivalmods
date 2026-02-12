@@ -1,0 +1,7 @@
+on_enter:
+  commands:
+  - '[console] say &aThe %player% has entered the wardrobe(%zone%)'
+on_exit:
+  commands:
+  - '[console] say &cThe %player% has come out of the wardrobe(%zone%)'
+# M2ZIFUdmNGRsF1b0kXZUVnaFtmUxElaORTQ61UeZRlT6dmVS9EeyUWQ2pWcn9WONFkR1c1N

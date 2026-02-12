@@ -1,0 +1,20 @@
+{
+  "lang": "EN_en",
+  "measurement": "kg",
+  "defaultWeight": "0-5",
+  "barrelDispawnTime": 30,
+  "hookbarLength": 10,
+  "miniGame": true,
+  "customDrop": true,
+  "dropEntityFromEgg": true,
+  "notificationNewItems": true,
+  "disableDefaultCategory": false,
+  "customDisplayName": false,
+  "moveDropToInventory": false,
+  "canSwitchMode": false,
+  "switchModePermission": "",
+  "deltaTime": 100,
+  "baseSpeed": 500,
+  "playerHealth": 2,
+  "maxBaitToRod": 10
+}

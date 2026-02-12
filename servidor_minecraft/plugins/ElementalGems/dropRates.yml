@@ -1,0 +1,141 @@
+#Set this to true to automatically add dropped gems to the account
+AutoRedeem: true
+
+
+#This is where you can customize the chances of receiving a gem
+EntityDropRates:
+  #'*': #This allows you to customize the rates for ALL types, at once. But you can whitelist a specific type as you would normally by adding it in its respective rates category
+  #  chance: 10
+  #  amount: 1
+  #  randomAmount: true
+  #  supportStacking: false
+  #  message: '{prefix} &b{amount}x &agem(s) have been dropped from killing an entity'
+  BLAZE:
+    chance: 10
+    amount: 1
+    randomAmount: true #Set as true to drop a random amount of gems between 1 and the number defined in 'amount' (This also applies to active upgrades)
+    supportStacking: false #Recommended to keep as false unless you're killing the whole stack at once (Overrides 'amount')
+    message: '{prefix} &b{amount}x &agem(s) have been dropped from killing a blaze'
+  SKELETON:
+    chance: 5
+    amount: 1
+    randomAmount: true
+    supportStacking: false #Recommended to keep as false unless you're killing the whole stack at once (Overrides 'amount')
+    message: '{prefix} &b{amount}x &agem(s) have been dropped from killing a skeleton'
+  ZOMBIE:
+    chance: 5
+    amount: 1
+    randomAmount: true #Set as true to drop a random amount of gems between 1 and the number defined in 'amount' (This also applies to active upgrades)
+    supportStacking: false
+    message: '{prefix} &b{amount}x &agem(s) have been dropped from killing a zombie'
+  PLAYER:
+    chance: 20
+    amount: 1
+    randomAmount: true
+    message: '{prefix} &b{amount}x &agem(s) have been dropped from killing a player'
+
+
+BlockDropRates:
+  #'*': #This allows you to customize the rates for ALL types, at once. But you can whitelist a specific type as you would normally by adding it in its respective rates category
+  #  chance: 10
+  #  amount: 1
+  #  randomAmount: true
+  #  message: '{prefix} &b{amount}x &agem(s) have been dropped from breaking a block'
+  EMERALD_ORE:
+    chance: 30
+    amount: 1
+    randomAmount: true
+    message: '{prefix} &b{amount}x &agem(s) have been dropped from mining an emerald ore!'
+  DIAMOND_ORE:
+    chance: 20
+    amount: 1
+    randomAmount: true
+    message: '{prefix} &b{amount}x &agem(s) have been dropped from mining a diamond ore!'
+  SUGAR_CANE_BLOCK: #Sugarcane
+    chance: 10
+    amount: 1
+    randomAmount: true
+    message: '{prefix} &b{amount}x &agem(s) have been dropped from farming sugarcane!'
+    preventFirstBlock: true #Enable this to disable gems from being received from the block connected to the ground. (Recommended for blocks that grow upwards)
+  CROPS: #Wheat
+    chance: 10
+    amount: 1
+    randomAmount: true
+    message: '{prefix} &b{amount}x &agem(s) have been dropped from farming wheat!'
+  LOG-1: #Spruce wood (This is an example of how to use data values)
+    chance: 5
+    amount: 1
+    randomAmount: true
+    message: '{prefix} &b{amount}x &agem(s) have been dropped from chopping down spruce wood!'
+
+
+FishDropRates:
+  #'*': #This allows you to customize the rates for ALL types, at once. But you can whitelist a specific type as you would normally by adding it in its respective rates category
+  #  chance: 50
+  #  amount: 1
+  #  randomAmount: true
+  #  message: '{prefix} &b{amount}x &agem(s) have been dropped from killing an entity'
+  RAW_FISH:
+    chance: 50
+    amount: 1
+    randomAmount: true
+    message: '{prefix} &b{amount}x &agem(s) have been dropped from fishing'
+  PUFFERFISH:
+    chance: 50
+    amount: 1
+    randomAmount: true
+    message: '{prefix} &b{amount}x &agem(s) have been dropped from fishing'
+  TROPICAL_FISH:
+    chance: 50
+    amount: 1
+    randomAmount: true
+    message: '{prefix} &b{amount}x &agem(s) have been dropped from fishing'
+
+
+AutomatedDropRates:
+  #'*': #This allows you to customize the rates for ALL types, at once. But you can whitelist a specific type as you would normally by adding it in its respective rates category
+  #  chance: 50
+  #  amount: 1
+  #  randomAmount: true
+  #  supportStacking: false
+  #  deathReasons:
+  #  - 'FALL'
+  #  - 'LAVA'
+  VILLAGER:
+    chance: 50
+    amount: 1
+    randomAmount: true #Set as true to drop a random amount of gems between 1 and stack size (Appies to 'supportStacking'). If false, it will drop the amount of gems equivalent to the stack size
+    supportStacking: true #Recommended to keep as false unless you're killing the whole stack at once (Overrides 'amount')
+    deathReasons: #For a list of death causes: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html
+    - 'FALL'
+    - 'LAVA'
+  IRON_GOLEM:
+    chance: 50
+    amount: 1
+    randomAmount: true
+    supportStacking: true
+    deathReasons:
+    - 'FALL'
+    - 'LAVA'
+  SKELETON:
+    chance: 50
+    amount: 1
+    randomAmount: true
+    supportStacking: true
+    deathReasons:
+    - 'FALL'
+    - 'LAVA'
+
+
+DisabledWorlds:
+  - 'world_nether'
+  
+
+#Only enable this if you are having trouble receiving gems when killing an entity (mob)
+mobDeathPatch: false
+
+
+permissionsRequiredForDropType:
+  entity: 'elementalgems.gemdrop.entity'
+  block: 'elementalgems.gemdrop.block'
+  fish: 'elementalgems.gemdrop.fish'

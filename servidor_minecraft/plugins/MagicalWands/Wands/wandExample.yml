@@ -1,0 +1,138 @@
+# Enable/Disable wand (Disable this example when you create your own wands)
+# NOTE: Do not remove this example, plugin will create a new one
+Enabled: false
+
+# Raw wand name
+Name: DefaultWand
+
+# Setup Item for your wand
+ItemStack:
+
+  # I recommend to use STICK, BLAZE_ROD or END_ROD
+  # NOTE: If you're using server resource pack, create your own texture and configure CustomModelData!
+  Material: STICK
+
+  # Configure your CustomModelData if you're using custom resource pack!
+  # NOTE: Don't play with this value randomly
+  CustomModelData: 0
+
+  # Define name for the Item
+  # NOTE:
+  #   Feel free to use PlaceholderAPI placeholders
+  #   Using HEX color -> &{#ffffff}Text
+  #   Using Gradient -> <#ffffff>{TextModifier}Text</#000000>
+  #   {TextModifier} -> Could be &l/&o/&n/&k/&m
+  Name: "<#29ffbf>&lMagical Wand</#695eff>"
+
+  # Create lore to your Item...
+  # NOTE:
+  #   Feel free to use PlaceholderAPI placeholders
+  #   Using HEX color -> &{#ffffff}Text
+  #   Using Gradient -> <#ffffff>{TextModifier}Text</#000000>
+  #   {TextModifier} -> Could be &l/&o/&n/&k/&m
+  Lore:
+    - ""
+    - "&{#29ffbf}Description:"
+    - " &f? 3 Spells"
+    - " &a+ 3% Damage"
+    - " &a+ 5% Protection"
+    - " &c+ 10% Delay"
+    - ""
+
+# Setup Wand default options
+Options:
+
+  # Define HEX code for basic charm
+  # NOTE: Use hex with length of 7 symbols includes '#'
+  BasicCharmColor: "#ffffff"
+
+  # Define BasicCharmDisplayName
+  BasicCharmDisplayName: "&fBasic"
+
+  # Define basic charm damage
+  # NOTE: Value will be not affected by Amplifier
+  BasicCharmDamage: 10.0
+
+  # Delay value
+  # NOTE: Full number in seconds
+  BasicCharmDelay: 1
+
+  # Charm length value
+  # NOTE: Full number in blocks
+  BasicCharmLength: 10
+
+  # Disable/enable configuring spells on wand
+  # NOTE: If this value is set to false, you can configure PRE-SET charms on wand below down!
+  SpellsConfiguration: true
+
+  # Define how many spells user can configure into Wand
+  # NOTE: Maximum is Three and Zero is also an option :)
+  Spells: 3
+
+  # Define spells which will be on wand by default
+  # NOTE: Player does not have to have permission for this charms
+  # REMINDER: List is not case-sensitive
+  PreSetSpells:
+    - "customcharm"
+
+# Setup Wand Benefits or Disadvantages
+# NOTE: Every value is in '%'
+# EXPLANATION:
+#   Delay: 105 = Delay from spell + 5%
+#   Damage: 89 = Damage from spell - 11%
+Amplifier:
+
+  # Delay is configured in spell
+  # NOTE: This is just amplifier
+  # REMINDER: Value is in percents (%)
+  Delay: 100
+
+  # Damage is configured in spell
+  # NOTE: This is just amplifier
+  # REMINDER: Value is in percents (%)
+  Damage: 100
+
+  # Protection is configured in spell
+  # NOTE: This is just amplifier
+  # REMINDER: Value is in percents (%)
+  Protection: 100
+
+# Configure potion effects, that gets player who is holding the Wand
+# NOTE: Effects will be cancelled after changing slot
+# FORMAT: "{effect}:{value}"
+# EXAMPLE: "invisibility:1"
+# Effects:
+#   > SPEED
+#   > SLOW
+#   > FAST_DIGGING
+#   > SLOW_DIGGING
+#   > INCREASE_DAMAGE
+#   > HEAL
+#   > HARM
+#   > JUMP
+#   > CONFUSION
+#   > REGENERATION
+#   > DAMAGE_RESISTANCE
+#   > FIRE_RESISTANCE
+#   > WATER_BREATHING
+#   > INVISIBILITY
+#   > BLINDNESS
+#   > NIGHT_VISION
+#   > HUNGER
+#   > WEAKNESS
+#   > POISON
+#   > WITHER
+#   > HEALTH_BOOST
+#   > ABSORPTION
+#   > SATURATION
+#   > GLOWING
+#   > LEVITATION
+#   > LUCK
+#   > UNLUCK
+#   > SLOW_FALLING
+#   > CONDUIT_POWER
+#   > DOLPHINS_GRACE
+#   > BAD_OMEN
+#   > HERO_OF_THE_VILLAGE
+HoldingEffects:
+  - "speed:1"
